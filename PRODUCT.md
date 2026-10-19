@@ -51,6 +51,8 @@ Contact: +1 (281) 464-2770, +1 (832) 282-3678, info@rccgdayspring.org. Giving vi
 - Luke 1:78 ("the dayspring from on high hath visited us") is the source of the name.
 - Motion craft reference: Emil Kowalski (spring-based, tactile, interruptible micro-interactions).
 - Desired register (user's words): luxurious, opulent, Loro Piana / Brunello Cucinelli / Patek Philippe / Porsche / Ferrari / Tesla; memorable experience, loading screen, sound, menu.
+- **Binding visual reference: patek.com** (user, 2026-10-19), down to typography, smooth scrolling on mobile and desktop, and minimalism. Earlier directions (dark indigo, The Agbada, white agbada) were rejected as not premium.
+- Imagery plan: the church's real photos are rebuilt in ChatGPT into campaign-grade images and new angles, keeping every real face unchanged (docs/IMAGE-BRIEF.md).
 
 ## Evidence on Hand
 

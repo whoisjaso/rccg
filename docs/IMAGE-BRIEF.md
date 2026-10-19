@@ -1,113 +1,93 @@
-# Image brief: the White Agbada
+# Image brief: Patek-grade photography from the church's real photos
 
-Paste each prompt into ChatGPT and **upload the listed reference images with it**. Reference images steer the result far better than words do. They live in `docs/reference/`:
+The site is built like patek.com: full-bleed cinematic slides, then calm white spreads. The design is finished. **The photography is what's left between this site and Patek.**
 
-| File | What it shows | Use it for |
-|---|---|---|
-| `ref-01-yoke-embroidery.png` | The site's real embroidery pattern around the RCCG emblem | Any embroidery or fabric prompt (pattern, symmetry, gold thread) |
-| `ref-02-palette.png` | The exact palette | Every prompt (colour lock) |
-| `ref-03-rccg-emblem.png` | The official RCCG emblem | Only when the emblem must appear (it must stay unaltered) |
-| `ref-04-building.jpg` | The Hartsook Street campus render | Exterior or architecture prompts |
-| `ref-05-pastors.png` | Pastors Joel and Funmi (cut-out) | Photographer brief only, never AI faces |
-| `ref-06-congregation.jpg`, `ref-08-attire.jpg` | The real congregation and their attire | Fabric, attire and colour mood |
-| `ref-07-sanctuary-interior.jpg` | The real sanctuary interior | Interior and light prompts |
-| `ref-09-site-hero-white.png` | The new site's opening screen | Overall vibe check on any prompt |
+Each prompt below takes a real photo from `docs/reference/` and rebuilds it in ChatGPT as a campaign-grade image. Some prompts also create a new angle.
 
-**How to deliver:** save each result as `.png` or `.jpg` at the size listed, named exactly as shown, into `site/assets/img/`. Tell me when they're in, and I'll convert them to WebP, grade them to the house look and wire each one into the place named below.
+## How to run each one
+1. Open ChatGPT (image generation) and **upload the source photo listed**.
+2. Also upload `docs/reference/style-site-hero.png`, the site's current opening slide, so ChatGPT matches the mood.
+3. Paste the prompt, then add the **house style line** below at the end.
+4. Download the result (ChatGPT gives you a PNG) and name it after the slot, keeping the `.png` ending. For example, `hero-pastors-2400.png`. Put it in `docs/incoming/`.
+5. Tell me it's in. I'll convert it to the site's format, make the phone and desktop sizes, check the crop, and swap it into the slot.
 
-## House style line (end every prompt with it)
+## House style line (end every prompt with this)
+> Shot like a Patek Philippe campaign: medium-format photography, soft directional light, deep but clean shadows, rich natural colour (not desaturated, not HDR), refined and quiet. Generous empty space on the left third for headline text. No text, no logos added, no watermarks.
 
-> Soft, angelic, opulent. Porcelain white and pearl, real gold thread, the deep indigo of the RCCG emblem as the only dark note. Diffused heavenly daylight from above, gentle highlights, no harsh shadows. Shot like a Loro Piana or Brunello Cucinelli campaign on medium format film: quiet, tactile, expensive. No text, no logos, no watermarks, no people's faces unless stated.
-
----
-
-## 1. White damask cloth (the site's fabric) ★ do this first
-**File:** `damask-white-tile.png`, 1024×1024, **must tile seamlessly**
-**Where it goes:** the background of every section. It replaces the plain diagonal weave currently drawn in code.
-**Attach:** `ref-01-yoke-embroidery.png`, `ref-02-palette.png`
-
-> A seamless, tileable textile swatch of white-on-white silk damask, the jacquard cloth used for a ceremonial white agbada. Tone-on-tone motif of small mirrored lotus and leaf forms woven into a porcelain white ground, visible only by the sheen difference between matte and satin weave. Perfectly flat, front-on, evenly lit, very low contrast (the pattern should be a whisper). Must tile seamlessly on all four edges. [house style]
-
-## 2. Gold embroidery macro (a full-width ribbon between sections)
-**File:** `embroidery-macro-2400.png`, 2400×900 (wide)
-**Where it goes:** a full-width band after the opening screen, so the visitor sees real thread up close.
-**Attach:** `ref-01-yoke-embroidery.png`, `ref-08-attire.jpg`, `ref-02-palette.png`
-
-> Extreme macro photograph of hand-embroidered gold metallic thread on a white silk agbada: satin-stitched teardrop petals, a running-stitch circle and small French knots, following the attached embroidery pattern. Individual twisted threads catch soft daylight; the white damask weave is visible between stitches. Shallow depth of field, the left third falls softly out of focus. Horizontal composition. [house style]
-
-## 3. The sanctuary at first light
-**File:** `sanctuary-light-2400.png`, 2400×1350
-**Where it goes:** the opening image on the Give page, and the Crossover backdrop.
-**Attach:** `ref-07-sanctuary-interior.jpg`, `ref-02-palette.png`
-
-> The attached sanctuary interior, transformed: early morning, white upholstered chairs in calm rows, a soft column of warm daylight falling from a high window across the aisle, floating dust motes glowing gold, walls in porcelain and pearl. Empty and expectant, like the moment before worship. No screens, no text on the walls. [house style]
-
-## 4. Crossover night
-**File:** `crossover-2400.png`, 2400×1350
-**Where it goes:** behind the Crossover label on the home and visit pages.
-**Attach:** `ref-02-palette.png`
-
-> Hundreds of slim white taper candles held in raised hands, silhouetted fingers only (no faces), in a white sanctuary at midnight. The flames melt into soft gold bokeh that fills the frame. Pearl white and warm gold dominate; the background falls into a gentle deep indigo. Hopeful, holy, the threshold of a new year. [house style]
-
-## 5. The books still life
-**File:** `library-still-2400.png`, 2400×1350
-**Where it goes:** the opening image on the Books and Music page.
-**Attach:** `ref-02-palette.png`, `ref-01-yoke-embroidery.png`
-
-> Overhead still life on a folded white damask agbada with gold embroidery at one corner: an open white leather Bible with gilt page edges, a gold ribbon bookmark and a small sprig of white lilies. Soft window light from the upper left, generous empty space on the right for text. [house style]
-
-## 6. Fellowship atmospheres (four images, hands only, no faces)
-**Files:** `fellow-men.png`, `fellow-women.png`, `fellow-youth.png`, `fellow-seniors.png`, each 1000×1250 (portrait)
-**Where they go:** the four fellowship rows on the Ministries page, until the real photo shoot replaces them.
-**Attach:** `ref-08-attire.jpg`, `ref-02-palette.png`
-
-- **Men:**
-  > A man's hands resting on an open Bible, wearing the cuff of a white agbada with gold embroidery, a gold wristwatch, on a pale oak table in soft daylight. No face. [house style]
-- **Women:**
-  > A woman's hands holding a white Bible on her lap, a gold ring, the edge of a cream and gold aso-oke wrapper, soft window light. No face. [house style]
-- **Youth:**
-  > A young person's hands holding an open Bible and a phone showing handwritten notes, white sneakers and a pale knit sleeve, airy white room. No face. [house style]
-- **Seniors:**
-  > Two elderly hands clasped in prayer, deep lines and beautiful texture, resting on a white chair back, gentle golden side light. No face. [house style]
-
-## 7. Woven label texture (optional detail)
-**File:** `label-weave.png`, 1200×400
-**Where it goes:** the texture inside the "Your plan" card and the Crossover label.
-**Attach:** `ref-02-palette.png`
-
-> Macro photograph of a luxury woven garment label in pale gold silk: fine horizontal weave, satin-stitched edges, folded ends, blank (no lettering). Even, soft light. Front-on and flat. [house style]
-
-## 8. Social share card
-**File:** `og-base.png`, 1200×630
-**Where it goes:** the preview image when someone shares the link on WhatsApp, Facebook or iMessage.
-**Attach:** `ref-01-yoke-embroidery.png`, `ref-02-palette.png`
-
-> White silk damask fabric fills the frame, softly lit from above. A large, calm, empty circular space in the centre (about 40% of the height) where an emblem will be placed later. Faint gold embroidery around the edges following the attached pattern. [house style]
-
-I'll composite the real RCCG emblem and the "Dayspring Chapel" lettering on top myself, so the logo stays exact.
-
-## 9. Optional: an animated opening
-**File:** `yoke-loop.mp4`, 1920×1080, 6 to 8 s, seamless loop, muted, under 6 MB (Sora, Runway or Kling)
-**Attach:** `ref-01-yoke-embroidery.png`
-
-> Slow macro camera drift across gold embroidery on white silk; soft light passes across the threads as if a curtain moved, then settles. Seamless loop. [house style]
+## Rules for real people
+- **Keep every face exactly as in the source photo.** Same features, same skin tone, same age, same hair, same body. Change only the light, background, cleanliness and framing.
+- Ask the pastors, and anyone recognisable, for their OK before publishing.
+- If ChatGPT changes a face, regenerate. A wrong face is worse than an unimproved photo.
 
 ---
 
-## Do not generate with AI
-- **Pastors Joel and Funmi, or anyone presented as a member.** Visitors meet the real people on Sunday, and a generated face undermines trust.
-- **The RCCG emblem.** Always use the official file (`ref-03-rccg-emblem.png`). If the church has a vector (SVG or PDF) version from RCCG headquarters, send it to me; it will be sharper than the current 400px PNG.
+## The four opening slides (home page)
+Size for all four: **2400×1350** (16:9). Keep the main subject in the right two-thirds.
 
-## Real photography (one Sunday with a photographer)
-This is the single biggest lift still available. Share `ref-09-site-hero-white.png` with the photographer so they understand the bright, soft look.
+### 1. `hero-pastors-2400.webp` ★ start here
+**Upload:** `src-pastors-couple.png`
+> Editorial portrait of this exact couple, faces and likeness unchanged. Place them on a deep warm charcoal seamless backdrop with a soft pool of light behind them. Use a large soft key light from the left, with gentle rim light on the shoulders. Refine the clothing: same colours and garments, pressed and immaculate. Frame from mid-thigh up, standing in the right half of a wide 16:9 frame, with calm empty space on the left.
 
-1. **Pastors Joel and Funmi.** Both in white or cream attire with gold, standing in the new sanctuary in daylight. Shoot both 4:5 and 16:9. The current solo portrait of Pastor Joel is only 800px wide.
-2. **Each fellowship.** Candid, 6 to 10 people talking or praying; never lined up facing the camera.
-3. **Details.**
-   - embroidery on members' attire
-   - hands raised in worship
-   - the communion table
-   - the front doors
-4. **Arrival.** Ushers greeting at the door. This is the image that sells "Plan a visit".
-5. **The building at golden hour,** from the same angle as `ref-04-building.jpg`.
-6. **Avoid:** lyric screens, exit signs, flash.
+### 2. `hero-worship-2400.webp`
+**Upload:** `src-worship.jpg`
+> The same worship moment, made cinematic. Keep the people, their clothing and their raised hands as they are. Remove the projector screen and its lyrics entirely and replace them with a soft wash of warm stage light falling from above. Add a gentle atmospheric haze in the light beams. Camera low behind the congregation, shallow depth of field, hands raised against the glow. Wide 16:9.
+
+### 3. `hero-campus-1920.webp` (2400×1350 is fine; keep this filename)
+**Upload:** `src-building-render.jpg`
+> Turn this architectural render into a real photograph of the same building at blue hour. Same architecture, stone and roofline, and keep the circular RCCG emblem on the facade exactly. Show warm light glowing from the windows and a softly lit entrance canopy. A thin layer of rain on the forecourt reflects the lights. Lower, closer three-quarter angle than the render. Remove the parked cars. Deep blue sky with the last warmth on the horizon. Wide 16:9.
+
+### 4. `hero-ribbon-2400.webp`
+**Upload:** `src-ribbon.jpg`
+> The same ribbon-cutting moment at the church doors, cleaned and relit. Keep every person, face and outfit exactly. Use warm late-afternoon sunlight raking across the glass doors. Remove the parked cars and street clutter in the reflections. The red ribbon and bow are crisp. Slight low angle, documentary but polished, like a luxury brand's opening-day photograph. Wide 16:9.
+
+---
+
+## Editorial spreads (white sections)
+Size: **1400×1750** (4:5 portrait).
+
+### 5. `ed-sanctuary-1400.webp` (the mission spread and the Give page)
+**Upload:** `src-sanctuary-interior.jpg`
+> This same sanctuary, empty, at first light. Turn off the screen and remove the "Welcome to our church" graphic; show a calm dark screen instead. Soft morning daylight comes from the side and the room glows in warm neutral tones. Rows of chairs are perfectly aligned. Symmetrical, centred view down the aisle. 4:5 portrait.
+
+### 6. `ed-joel-800.webp` (save at 1000×1250)
+**Upload:** `src-pastor-joel.jpg`
+> Editorial portrait of this exact man, face unchanged. Warm light-grey seamless studio backdrop, soft window-style light from the left. Same blue suit, pressed. Calm, dignified, a slight smile, looking toward the camera. 4:5 portrait, head and shoulders with a little space above.
+
+### 7. `ed-funmi-800.webp` (save at 1000×1250)
+**Upload:** `src-pastor-funmi.png`
+> Editorial portrait of this exact woman, face unchanged. Replace the lilac background with a warm light-grey seamless studio backdrop and soft window-style light from the left. Same outfit and necklace. Gracious and confident. 4:5 portrait.
+
+### 8. `ed-ribbon-1400.webp`, a new angle (the "Visit us" spread)
+**Upload:** `src-building-render.jpg`
+> A close architectural detail of this building's main entrance: glass doors under the canopy at golden hour, the stone pillar texture in sharp focus, warm interior light visible through the glass. No people. Photographic, calm, like a flagship boutique entrance. 4:5 portrait.
+
+---
+
+## Full-width bands
+Size: **2400×1030** (21:9).
+
+### 9. `band-congregation-2400.webp` (the "A place for every season" band and the Ministries page)
+**Upload:** `src-congregation-group.jpg`
+> This same group of church members, every face and outfit unchanged. Clean up the background into the soft-lit interior of the new sanctuary. Warm, even light, with natural poses and a relaxed, joyful feeling. Wide 21:9, with the group in the right two-thirds and soft space on the left.
+
+### 10. `band-family-2400.webp` (the "Watch and listen" band)
+**Upload:** `src-leaders-group.jpg`
+> This same group of church leaders and members, faces and native attire unchanged. Remove the projector screen and the text behind them; replace it with a softly lit warm wall. Gentle key light, rich fabric colour, dignified. Wide 21:9, with the group in the right two-thirds.
+
+---
+
+## Optional new angles (for future slides)
+Each one becomes another stacked slide or spread. Save it into `site/assets/img/slots/` with the name shown and tell me where you want it.
+
+- **`hero-aerial-2400.webp`** (upload `src-building-render.jpg`):
+  > A drone view of this same campus at sunset, slightly elevated, warm light on the roof, long shadows across the grounds.
+- **`detail-bible-1400.webp`:**
+  > Macro photograph of an open Bible resting on a sanctuary chair, morning light across the pages, shallow depth of field.
+- **`detail-hands-1400.webp`** (upload `src-worship.jpg`):
+  > Close detail of two hands raised in worship against a warm haze of stage light, from the same congregation.
+- **`hero-crossover-2400.webp`:**
+  > Candles held in raised hands in a darkened sanctuary at midnight, warm gold bokeh. Hands and silhouettes only, no faces.
+
+## Also needed from the church
+- **A vector RCCG emblem (SVG or PDF)** for the header.
+- **Real photos from one Sunday:** the pastors in the sanctuary, each fellowship candid, ushers at the door, and the building at golden hour. Real, well-lit photos beat every AI improvement.
