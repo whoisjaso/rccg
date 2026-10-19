@@ -417,7 +417,7 @@
     const form = $("[data-planner]");
     const card = $("[data-verdict]");
     if (!form || !card) return;
-    const ICON = { arrive: "clock", child: "baby", family: "users-three", prayer: "hands-praying", pastors: "handshake", home: "house-line", seat: "armchair", map: "map-pin" };
+    const ICON = { arrive: "clock", child: "baby", family: "users-three", prayer: "hands-praying", pastors: "handshake", home: "house-line", seat: "armchair", welcome: "hand-waving", map: "map-pin" };
 
     const render = () => {
       const fd = new FormData(form);
@@ -437,7 +437,7 @@
       if (need === "prayer") notes.push(["prayer", "Let an usher know you would like prayer, or send a request ahead of time."]);
       if (need === "pastors") notes.push(["pastors", "Ask to meet Pastors Joel and Funmi Uzoma after the service."]);
       if (need === "home") notes.push(["home", "Looking for a church home? Ask about the Men's, Women's, Youth and Seniors fellowships."]);
-      if (need === "welcome") notes.push(["seat", "Come as you are. You will be welcomed as family."]);
+      if (need === "welcome") notes.push(["welcome", "Come as you are. You will be welcomed as family."]);
       notes.push(["map", `${CHURCH.address}.`]);
 
       card.classList.add("is-updating");
