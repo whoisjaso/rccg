@@ -39,75 +39,55 @@ Audit of **rccgdayspring.org** as of 19 Oct 2026, and the reasoning behind the n
 
 ---
 
-## 2. The new direction: "The House"
+## 2. The new direction: The White Agbada
 
-**Positioning:** the restraint of Loro Piana and Brunello Cucinelli, the ceremony of Patek Philippe, the threshold moment of Porsche and Ferrari.
-Luxury here doesn't mean gold everywhere. It means confidence, space, slowness and craft.
+**The idea.** The site is a garment. A white ceremonial agbada, the garment worn to celebrations across the Nigerian diaspora, with gold embroidery stitched around the **official RCCG emblem**. Newcomers see a calm, opulent, light-filled house. Diaspora visitors recognise the emblem and the cloth instantly.
 
-### Identity
-- **The mark** is a new vector monogram: a sun rising over still water with a cross at its zenith, set in a fine ring. It's drawn directly from Luke 1:78. It works at 16 px as a favicon and at billboard size. File: `site/assets/img/mark.svg`.
-- **The wordmark** is **DAYSPRING** in wide-tracked Cormorant Garamond, with *Chapel · Houston* beneath it.
-- **The denomination** is honoured, not hidden. The RCCG emblem sits in the footer as "A parish of The Redeemed Christian Church of God".
+**Identity.**
+- **The RCCG emblem leads**, unaltered.
+- **"Dayspring Chapel"** is set in Bodoni Moda, a couture serif.
+- **Interface text** is Hanken Grotesk.
+- **Icons** come from the Phosphor set.
 
-### Palette
-| Token | Hex | Use |
-|---|---|---|
-| Ink | `#0E0D0B` | Primary ground: warm near-black, never pure black |
-| Bone | `#F2EDE4` | Light sections, text on ink |
-| Ivory | `#F9F6F0` | Light editorial sections |
-| Brass | `#C9A96E` | The only accent: hairlines, numerals, italics |
-| Stone | `#A69D90` | Secondary text |
+**Palette.** Every colour comes from the cloth and the emblem:
 
-### Typography
-- **Cormorant Garamond.** Light weights for display and italic for emphasis. This is the voice of the house.
-- **Manrope.** Small, wide-tracked uppercase for labels. This is the detail, like a watch dial's minute track.
-- **Roman numerals (I–X)** structure every section, the way a maison numbers its collections.
+| Role | Hex |
+|---|---|
+| Porcelain ground | `#FCFBF7` |
+| Lilac pearl | `#F2EFF8` |
+| Warm pearl | `#F5EFE3` |
+| Embroidery gold | `#B08B40` |
+| Text-safe gold | `#7D5D22` |
+| Ink, the emblem's own field | `#291871` family, `#1C1546` |
+| Footer, the one dark anchor | Deep indigo `#15103A` |
 
-### Photography
-Every photograph was re-graded for one look: desaturated, warm split-tone, lifted blacks, fine film grain and a soft vignette. The documentary gallery runs in toned monochrome and **blooms into colour on hover**, so the phone photos read as campaign images.
+**Signature moments.**
+- **The threshold.** On a first visit, 76 gold threads embroider the yoke around the emblem. Each stitch makes a needle sound if sound is on. Then the visitor chooses "Enter with sound" or "Enter in silence". All sound is synthesised live in the browser and is strictly opt-in.
+- **Sheen.** Soft light follows the pointer across the cloth.
+- **Stitched hems.** The seams between sections sew themselves in as you scroll.
+- **Motion.** In the spirit of Emil Kowalski: short ease-out transitions, buttons that press (scale 0.97), and a draggable bottom-sheet menu on phones. Toasts confirm actions like "Added to your calendar".
 
-### The experience: what makes it memorable
-1. **The threshold.** On the first visit, the monogram draws itself line by line, the letters of DAYSPRING resolve out of blur, Luke 1:78 fades in and a brass progress line fills. Then the visitor chooses: **"Enter with sound"** or **"Enter in silence"**. The screen splits like a curtain and the house opens. Returning visitors get a one-second version.
-2. **Sound design.** Every sound is synthesised live in the browser, so there are no files to download:
-   - an ambient organ-like pad (D major add 9, slowly breathing through a filter)
-   - a glassy tick on hover
-   - a small two-note bell on click
-   - a breath of air when the menu or a page transition opens
-   - a rising arpeggio on arrival
+**What drives attendance ("occupancy").**
+1. **A live "Next service" line** in the opening screen, the menu and a sticky phone bar. It reads, for example, "Bible Study, Wed 7 pm, in 2 days" in Houston time, and switches to "Happening now".
+2. **A services list ranked by what comes next.** The nearest service is set largest, with one-tap **Add to calendar**: real `.ics` files with weekly or last-Friday repeats and a one-hour reminder.
+3. **Plan your Sunday.** Three taps (who is coming, which gathering, what would help) produce a personal plan card with:
+   - the date
+   - an arrival time
+   - notes for families, children, prayer or meeting the pastors
+   - Add to calendar, Directions, and "Let us know you are coming" (a pre-written email)
+4. **First-visit questions**, answered from known facts only.
+5. **Directions everywhere.** One tap to Google Maps from the opening screen, the menu, the phone bar and the visit page.
+6. **Google structured data** for the church, its address and its Sunday and Wednesday hours, so "church near me" searches can show service times.
+7. **A sticky phone bar.** Next service, Directions and Plan a visit are always one thumb away.
 
-   It's off by default, the visitor's choice is remembered, and it pauses when the tab is hidden.
-3. **A live clock.** The hero always shows the *next* gathering in Houston time ("Bible Study & Prayer Warfare: Wednesday 7:00 PM, in 2d 2h 34m"). It switches to "In session now" during services, and handles the last Friday of the month for Power Night.
-4. **The Crossover countdown** rolls over to the next year automatically. It never goes stale again.
-5. **The mandate reveal.** The mission statement lights up word by word as the visitor reads down the page.
-6. **The pinned gallery.** Scrolling down moves the dedication story sideways, frame by frame, with a brass progress line.
-7. **The menu.** It's a full-screen ink overlay with numbered serif chapters. Hovering a chapter crossfades a photograph on the right with a one-line italic caption.
-8. **Page transitions.** An ink curtain rises with the monogram before every page change.
-9. **Details:** a custom brass cursor that becomes "View", "Listen", "Acquire" or "Watch" over the right objects; magnetic buttons; book covers that turn toward you on hover; a portrait that follows the cursor through the fellowship list; film grain over everything; and a giant outlined "Dayspring" signing off every page.
-
-### Structure: six chapters instead of nine scattered pages
-| | Page | Purpose |
-|---|---|---|
-| I | Welcome | Hero, live service clock, mandate, pastors, the new house, gatherings, Crossover, library, broadcast, visit, give |
-| II | The Pastors | Full editorial biographies, timelines, scripture interlude |
-| III | Ministries | Four fellowships and three church groups, with real copy |
-| IV | The Library | The three books and two albums, each presented like a product |
-| V | Plan a Visit | Schedule, first-Sunday guide, live map, contact form |
-| VI | Give | PayPal (clean link), giving in service, partnership |
-
-### Technical
-- **Static HTML, CSS and vanilla JS.** There's no WordPress, no plugins, no database and nothing to hack. It loads fast and hosts free on Vercel, Netlify or Cloudflare Pages.
-- **Lenis smooth-scroll from CDN is optional.** The site works fully without it.
-- **Accessibility is built in:** a skip link, `prefers-reduced-motion` respected (animations collapse, the loader shortens), focus states, alt text, an inert menu when closed, and Escape to close.
-- **SEO and sharing:** `Church` structured data (address, phone, parent organisation), Open Graph images and canonical URLs on every page.
-- **Images are 4.8 MB total in WebP**, served at multiple sizes with `srcset`.
-
----
+**Pages:** Welcome, Plan a visit, The pastors, Ministries, Books and music, Give.
 
 ## 3. Open items for the church to confirm
 
-- [ ] **Fellowship meeting days and times, and a leader name for each.** The new pages have descriptive copy but no schedule, because none was published.
-- [ ] **Whether the next Crossover service follows the same 10:00 pm format.** The countdown assumes 31 Dec at 10:00 pm, Houston time.
-- [ ] **The founding year of the Dayspring parish**, for a possible "Est." line.
-- [ ] **Instagram and Spotify URLs**, if they exist, so they can be added to the footer.
-- [ ] **A contact form backend.** The form currently opens the visitor's email app pre-filled to info@rccgdayspring.org. A service like Formspree or Netlify Forms would make it submit in place.
-- [ ] **A photo shoot.** See `IMAGE-BRIEF.md`. This is the single biggest upgrade still available.
+- [ ] **Fellowship meeting days, times and leaders.** The pages say times are shared in church; send them and they go live.
+- [ ] **The Crossover format.** The countdown assumes 31 December, 10 pm, Houston time.
+- [ ] **A vector RCCG emblem (SVG or PDF)** for maximum sharpness.
+- [ ] **Instagram, Spotify and WhatsApp links**, if they exist. A WhatsApp "message us" button would help diaspora visitors most.
+- [ ] **A form backend** (Formspree or Netlify Forms) so messages send in place instead of opening the visitor's email app.
+- [ ] **A Google Business Profile with service times and photos.** This is the biggest free attendance lever outside the site.
+- [ ] **The photo shoot and the generated images.** See `IMAGE-BRIEF.md`.

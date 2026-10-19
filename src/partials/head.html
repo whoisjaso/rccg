@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{{title}}</title>
 <meta name="description" content="{{description}}">
-<meta name="theme-color" content="#0e0d0b">
+<meta name="theme-color" content="#fcfbf7">
 <link rel="canonical" href="https://rccgdayspring.org/{{path}}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="RCCG Dayspring Chapel">
@@ -13,36 +13,17 @@
 <meta property="og:description" content="{{description}}">
 <meta property="og:image" content="https://rccgdayspring.org/assets/img/{{og}}">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/img/rccg-emblem-400.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/rccg-emblem-400.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=Hanken+Grotesk:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
 <link rel="stylesheet" href="assets/css/main.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Church","name":"RCCG Dayspring Chapel","url":"https://rccgdayspring.org/","email":"info@rccgdayspring.org","telephone":"+1-281-464-2770","address":{"@type":"PostalAddress","streetAddress":"10788 Hartsook Street","addressLocality":"Houston","addressRegion":"TX","postalCode":"77034","addressCountry":"US"},"parentOrganization":{"@type":"Organization","name":"The Redeemed Christian Church of God"},"sameAs":["https://www.youtube.com/@rccgdayspringchapelhouston55","https://www.facebook.com/rccgdayspringchapel"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Church","name":"RCCG Dayspring Chapel","url":"https://rccgdayspring.org/","logo":"https://rccgdayspring.org/assets/img/rccg-emblem-400.png","email":"info@rccgdayspring.org","telephone":"+1-281-464-2770","address":{"@type":"PostalAddress","streetAddress":"10788 Hartsook Street","addressLocality":"Houston","addressRegion":"TX","postalCode":"77034","addressCountry":"US"},"parentOrganization":{"@type":"Organization","name":"The Redeemed Christian Church of God"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"19:00","closes":"20:30"}],"sameAs":["https://www.youtube.com/@rccgdayspringchapelhouston55","https://www.facebook.com/rccgdayspringchapel"]}</script>
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
 <script src="assets/js/main.js" defer></script>
 </head>
 <body class="page-{{page}}">
+<script>try{var f=!sessionStorage.getItem("ds-visited"),r=matchMedia("(prefers-reduced-motion: reduce)").matches;if("{{page}}"==="home"&&f&&!r)document.body.classList.add("is-threshold")}catch(e){}</script>
 <a class="skip" href="#main">Skip to content</a>
-<div class="grain" aria-hidden="true"></div>
-
-<div class="loader" role="status" aria-label="Loading RCCG Dayspring Chapel">
-  <div class="loader__panel loader__panel--t"></div>
-  <div class="loader__panel loader__panel--b"></div>
-  <div class="loader__inner">
-    {{mark:loader__mark:1.2}}
-    <div class="loader__word" aria-hidden="true"><span style="animation-delay:.9s">D</span><span style="animation-delay:.96s">A</span><span style="animation-delay:1.02s">Y</span><span style="animation-delay:1.08s">S</span><span style="animation-delay:1.14s">P</span><span style="animation-delay:1.2s">R</span><span style="animation-delay:1.26s">I</span><span style="animation-delay:1.32s">N</span><span style="animation-delay:1.38s">G</span></div>
-    <div class="loader__sub eyebrow">Chapel &nbsp;·&nbsp; Houston</div>
-    <p class="loader__verse">&ldquo;The dayspring from on high hath visited us.&rdquo; &mdash; Luke 1:78</p>
-    <div class="loader__enter">
-      <button class="btn btn--solid" data-enter="sound" type="button">Enter with sound <i class="arr"></i></button>
-      <button class="quiet" data-enter="quiet" type="button">Enter in silence</button>
-    </div>
-  </div>
-  <div class="loader__bar" aria-hidden="true">
-    <span class="eyebrow eyebrow--muted">RCCG</span>
-    <div class="loader__track"><i class="loader__fill"></i></div>
-    <span class="loader__count num">000</span>
-  </div>
-</div>
-<div class="curtain" aria-hidden="true">{{mark:loader__mark:1.6}}</div>
