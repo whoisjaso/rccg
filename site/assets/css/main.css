@@ -153,7 +153,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .slide { position: sticky; top: 0; height: 100svh; min-height: 560px; overflow: hidden; color: var(--white); }
 .slide__media { position: absolute; inset: 0; transform-origin: 50% 50%; will-change: transform; }
 .slide__media img { width: 100%; height: 100%; object-fit: cover; }
-.slide__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgb(20 18 17 / .55) 0%, rgb(20 18 17 / .15) 45%, rgb(20 18 17 / 0) 70%), linear-gradient(0deg, rgb(20 18 17 / .5) 0%, rgb(20 18 17 / 0) 45%); }
+.slide__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgb(20 18 17 / .38) 0%, rgb(20 18 17 / 0) 20%), linear-gradient(90deg, rgb(20 18 17 / .55) 0%, rgb(20 18 17 / .15) 45%, rgb(20 18 17 / 0) 70%), linear-gradient(0deg, rgb(20 18 17 / .5) 0%, rgb(20 18 17 / 0) 45%); }
 .slide__shade { position: absolute; inset: 0; background: #000; opacity: 0; pointer-events: none; }
 .slide__copy { position: absolute; left: clamp(20px, 5.5vw, 80px); right: var(--gutter); bottom: clamp(48px, 11vh, 120px); max-width: 560px; }
 .slide__copy .text { color: rgb(255 255 255 / .92); margin: 18px 0 26px; max-width: 46ch; }
@@ -353,7 +353,7 @@ address { font-style: normal; }
   .brand { padding-top: 4px; }
   .brand img, .header.is-solid .brand img { width: 24px; height: 24px; }
   .slide__live { display: none; }
-  .slide__media::after { background: linear-gradient(0deg, rgb(20 18 17 / .82) 0%, rgb(20 18 17 / .5) 38%, rgb(20 18 17 / 0) 62%); }
+  .slide__media::after { background: linear-gradient(180deg, rgb(20 18 17 / .38) 0%, rgb(20 18 17 / 0) 18%), linear-gradient(0deg, rgb(20 18 17 / .82) 0%, rgb(20 18 17 / .5) 38%, rgb(20 18 17 / 0) 62%); }
   .mbar .pill--icon .ph { font-size: 18px; }
 }
 @media (max-width: 600px) {
@@ -377,9 +377,11 @@ html.reduce-motion *, html.reduce-motion *::before, html.reduce-motion *::after 
 .feature__copy address { margin-bottom: 4px; }
 
 .op-pastors { object-position: 62% 50%; }
-.op-ribbon { object-position: 60% 50%; }
-@media (max-width: 860px) { .op-pastors { object-position: 73% 30%; } .op-ribbon { object-position: 30% 20%; } }
+.op-ribbon { object-position: 55% 40%; }
+@media (max-width: 860px) { .op-pastors { object-position: 73% 30%; } .op-ribbon { object-position: 38% 30%; } }
 .op-worship { object-position: 50% 50%; }
 @media (max-width: 860px) { .op-worship { object-position: 66% 40%; } }
 .op-campus { object-position: 50% 50%; }
 @media (max-width: 860px) { .op-campus { object-position: 70% 50%; } }
+.header:not(.is-solid) .header__left, .header:not(.is-solid) .header__right, .header:not(.is-solid) .brand { filter: drop-shadow(0 0 1.5px rgb(0 0 0 / .55)) drop-shadow(0 1px 10px rgb(0 0 0 / .45)); }
+.page-lost .header .header__left, .page-lost .header .header__right, .page-lost .header .brand { filter: none; }
