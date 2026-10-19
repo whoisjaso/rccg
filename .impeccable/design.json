@@ -1,540 +1,445 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-19T22:59:54+00:00",
+  "generatedAt": "2026-10-19T23:25:09+00:00",
   "title": "Design System: RCCG Dayspring Chapel",
   "extensions": {
     "colorMeta": {
-      "emblem-indigo": {
-        "role": "secondary",
-        "displayName": "Emblem Indigo",
-        "canonical": "oklch(30.0% 0.142 282.4)",
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "canonical": "oklch(100.0% 0.000 89.9)",
         "tonalRamp": [
-          "#0a002f",
-          "#221a57",
-          "#3e3982",
-          "#5c59b0",
-          "#7e7dd5",
-          "#a3a4f5",
-          "#c6c9ff",
-          "#e5e8ff"
+          "#0b0b0b",
+          "#262626",
+          "#454545",
+          "#666666",
+          "#898989",
+          "#aeaeae",
+          "#d4d4d4",
+          "#eeeeee"
         ]
       },
-      "ink-indigo": {
+      "paper": {
         "role": "neutral",
-        "displayName": "Ink Indigo",
-        "canonical": "oklch(23.9% 0.088 284.0)",
+        "displayName": "Warm Paper",
+        "canonical": "oklch(97.3% 0.003 84.6)",
         "tonalRamp": [
-          "#0a0621",
-          "#232145",
-          "#403f6c",
-          "#605f95",
-          "#8383b9",
-          "#a8a8db",
-          "#cbccfa",
-          "#e9eaff"
+          "#0c0b0a",
+          "#272625",
+          "#464543",
+          "#676664",
+          "#8a8987",
+          "#afaeac",
+          "#d5d4d2",
+          "#efeeec"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Charcoal Ink",
+        "canonical": "oklch(30.3% 0.009 285.9)",
+        "tonalRamp": [
+          "#0b0b0f",
+          "#26262b",
+          "#44444a",
+          "#65656b",
+          "#88888e",
+          "#adadb3",
+          "#d3d3da",
+          "#eeeef4"
         ]
       },
       "ink-soft": {
         "role": "neutral",
         "displayName": "Soft Ink",
-        "canonical": "oklch(45.7% 0.071 290.6)",
+        "canonical": "oklch(47.5% 0.011 292.5)",
         "tonalRamp": [
-          "#0c071d",
-          "#26213e",
-          "#453f63",
-          "#665f8b",
-          "#8983af",
-          "#ada8d1",
-          "#d0ccf1",
-          "#eeeaff"
+          "#0b0a10",
+          "#26252c",
+          "#45444b",
+          "#66656c",
+          "#89888f",
+          "#aeadb5",
+          "#d4d3db",
+          "#eeedf6"
         ]
       },
-      "ink-soft-warm": {
-        "role": "neutral",
-        "displayName": "Warm Soft Ink",
-        "canonical": "oklch(44.4% 0.028 330.4)",
-        "tonalRamp": [
-          "#10080f",
-          "#2d232b",
-          "#4d404b",
-          "#70616e",
-          "#938491",
-          "#b7a9b5",
-          "#d9ccd7",
-          "#f6eaf4"
-        ]
-      },
-      "embroidery-gold": {
+      "taupe": {
         "role": "primary",
-        "displayName": "Embroidery Gold",
-        "canonical": "oklch(65.7% 0.103 82.8)",
+        "displayName": "Pale Taupe",
+        "canonical": "oklch(58.6% 0.036 71.6)",
         "tonalRamp": [
-          "#180600",
-          "#382100",
-          "#5c3f00",
-          "#82600f",
-          "#a5843f",
-          "#c8a96f",
-          "#e9cd99",
-          "#ffebbd"
+          "#140800",
+          "#312312",
+          "#514230",
+          "#736350",
+          "#978672",
+          "#bdab96",
+          "#e4d1bb",
+          "#feebd5"
         ]
       },
-      "gold-text": {
+      "taupe-deep": {
         "role": "primary",
-        "displayName": "Text-Safe Gold",
-        "canonical": "oklch(50.0% 0.086 79.6)",
+        "displayName": "Maison Taupe",
+        "canonical": "oklch(49.5% 0.032 70.5)",
         "tonalRamp": [
-          "#170700",
-          "#372200",
-          "#5a400d",
-          "#7f6029",
-          "#a3844f",
-          "#c6a97b",
-          "#e7cda4",
-          "#ffebc6"
+          "#140800",
+          "#312414",
+          "#504232",
+          "#726352",
+          "#968674",
+          "#bcab98",
+          "#e2d1be",
+          "#fdebd8"
         ]
       },
-      "gold-text-deep": {
+      "taupe-press": {
         "role": "primary",
-        "displayName": "Deep Gold",
-        "canonical": "oklch(44.8% 0.079 79.1)",
+        "displayName": "Pressed Taupe",
+        "canonical": "oklch(43.6% 0.028 69.1)",
         "tonalRamp": [
-          "#160700",
-          "#362200",
-          "#584015",
-          "#7d6130",
-          "#a18455",
-          "#c4aa80",
-          "#e5cda8",
-          "#ffebc9"
+          "#130901",
+          "#302417",
+          "#4f4335",
+          "#716355",
+          "#958677",
+          "#baab9b",
+          "#e1d1c1",
+          "#fbecdb"
         ]
       },
-      "gold-pale": {
-        "role": "primary",
-        "displayName": "Pale Gold",
-        "canonical": "oklch(86.4% 0.060 89.0)",
-        "tonalRamp": [
-          "#120a00",
-          "#2f2509",
-          "#504423",
-          "#73653f",
-          "#978862",
-          "#baad8b",
-          "#dcd0b2",
-          "#f9eed2"
-        ]
-      },
-      "porcelain-ground": {
+      "line": {
         "role": "neutral",
-        "displayName": "Porcelain Ground",
-        "canonical": "oklch(98.8% 0.005 95.1)",
-        "tonalRamp": [
-          "#0c0b0a",
-          "#272624",
-          "#464542",
-          "#676663",
-          "#8a8986",
-          "#afaeab",
-          "#d2d1ce",
-          "#efeeec"
-        ]
-      },
-      "pearl-raised": {
-        "role": "neutral",
-        "displayName": "Raised Pearl",
-        "canonical": "oklch(97.5% 0.004 301.4)",
-        "tonalRamp": [
-          "#0b0b0c",
-          "#272628",
-          "#454547",
-          "#666568",
-          "#89898b",
-          "#aeadb0",
-          "#d1d0d2",
-          "#efeef0"
-        ]
-      },
-      "pearl-field": {
-        "role": "neutral",
-        "displayName": "Pearl Field",
-        "canonical": "oklch(97.3% 0.007 88.6)",
-        "tonalRamp": [
-          "#0c0b09",
-          "#272624",
-          "#464541",
-          "#686662",
-          "#8b8985",
-          "#afaeaa",
-          "#d2d1cd",
-          "#f0eeeb"
-        ]
-      },
-      "lining": {
-        "role": "neutral",
-        "displayName": "Lining",
-        "canonical": "oklch(97.9% 0.007 88.6)",
-        "tonalRamp": [
-          "#0c0b09",
-          "#272624",
-          "#464541",
-          "#686662",
-          "#8b8985",
-          "#afaeaa",
-          "#d2d1cd",
-          "#f0eeeb"
-        ]
-      },
-      "lining-deep": {
-        "role": "neutral",
-        "displayName": "Deep Lining",
-        "canonical": "oklch(95.6% 0.013 86.8)",
+        "displayName": "Hairline",
+        "canonical": "oklch(90.8% 0.009 78.3)",
         "tonalRamp": [
           "#0d0b07",
-          "#282621",
-          "#47453f",
-          "#69665e",
-          "#8c8981",
-          "#b1aea7",
-          "#d3d1ca",
-          "#f1eee8"
+          "#292621",
+          "#484440",
+          "#696560",
+          "#8c8983",
+          "#b1ada8",
+          "#d8d4ce",
+          "#f2eee8"
         ]
       },
-      "woven-label": {
+      "night": {
         "role": "neutral",
-        "displayName": "Woven Label",
-        "canonical": "oklch(94.5% 0.033 88.1)",
+        "displayName": "Night",
+        "canonical": "oklch(22.4% 0.004 48.6)",
         "tonalRamp": [
-          "#0f0b03",
-          "#2b2618",
-          "#4b4434",
-          "#6e6551",
-          "#918874",
-          "#b5ad9b",
-          "#d7d0c0",
-          "#f4eedf"
+          "#0c0b0a",
+          "#282625",
+          "#474443",
+          "#686564",
+          "#8b8887",
+          "#b0adac",
+          "#d6d3d2",
+          "#f1eeec"
         ]
       },
-      "night-indigo": {
-        "role": "neutral",
-        "displayName": "Night Indigo",
-        "canonical": "oklch(21.0% 0.078 282.8)",
+      "error": {
+        "role": "error",
+        "displayName": "Error Red",
+        "canonical": "oklch(50.1% 0.178 28.7)",
         "tonalRamp": [
-          "#09071f",
-          "#232242",
-          "#404068",
-          "#606090",
-          "#8284b4",
-          "#a7a9d6",
-          "#cbcdf6",
-          "#e9ebff"
-        ]
-      },
-      "night-indigo-raised": {
-        "role": "neutral",
-        "displayName": "Raised Night",
-        "canonical": "oklch(25.1% 0.101 281.7)",
-        "tonalRamp": [
-          "#090525",
-          "#21204a",
-          "#3e3e72",
-          "#5d5e9c",
-          "#8082c1",
-          "#a5a8e2",
-          "#c8ccff",
-          "#e7eaff"
-        ]
-      },
-      "night-text": {
-        "role": "neutral",
-        "displayName": "Night Text",
-        "canonical": "oklch(95.4% 0.017 84.6)",
-        "tonalRamp": [
-          "#0d0b06",
-          "#29261f",
-          "#49453c",
-          "#6a655c",
-          "#8e897e",
-          "#b2ada4",
-          "#d5d0c8",
-          "#f2eee6"
-        ]
-      },
-      "night-text-soft": {
-        "role": "neutral",
-        "displayName": "Night Soft Text",
-        "canonical": "oklch(81.4% 0.048 293.4)",
-        "tonalRamp": [
-          "#0c0817",
-          "#272336",
-          "#464159",
-          "#67617e",
-          "#8a84a2",
-          "#aeaac5",
-          "#d1cde6",
-          "#efebff"
-        ]
-      },
-      "night-gold": {
-        "role": "primary",
-        "displayName": "Night Gold",
-        "canonical": "oklch(78.8% 0.102 85.1)",
-        "tonalRamp": [
-          "#170700",
-          "#372200",
-          "#5a4000",
-          "#806110",
-          "#a38440",
-          "#c6aa6f",
-          "#e7ce9a",
-          "#ffecbd"
+          "#220000",
+          "#480f0b",
+          "#712b24",
+          "#9d493e",
+          "#c36e62",
+          "#e4978b",
+          "#ffc1b6",
+          "#ffddd3"
         ]
       }
     },
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "Page H1s and the hero name only."
+        "purpose": "Slide and photo-hero titles, white over the warm overlay."
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Section H2s and the pull quote."
+        "purpose": "Section and spread titles in taupe-deep on white or paper."
       },
       "title": {
         "displayName": "Title",
-        "purpose": "Card, group and FAQ titles; ranked gatherings scale from here."
-      },
-      "lede": {
-        "displayName": "Lede",
-        "purpose": "Opening paragraphs, the address, the threshold question."
+        "purpose": "Sub-titles inside spreads and lists."
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Running text in soft ink, max 62ch."
+        "purpose": "All running text in Lora, max 58ch."
       },
       "label": {
         "displayName": "Label",
-        "purpose": "Buttons, nav, footer headings, metadata. Nothing interactive below 15px."
-      },
-      "numeral": {
-        "displayName": "Numerals",
-        "purpose": "Fact figures in deep gold."
+        "purpose": "Form legends, footer column heads, pill text, tabular times. Never a kicker above a headline."
       }
     },
     "shadows": [
       {
-        "name": "emblem-lift",
-        "value": "0 22px 50px -16px rgb(41 24 113 / .3), 0 0 0 10px rgb(255 255 255 / .9)",
-        "purpose": "The emblem on its white collar in the hero."
+        "name": "plan-card-lift",
+        "value": "0 1px 0 #e4e0da, 0 30px 60px -36px rgb(46 46 51 / .35)",
+        "purpose": "The plan card, the one floating container."
       },
       {
         "name": "object",
-        "value": "0 24px 34px -18px rgb(41 24 113 / .26), 0 2px 4px rgb(41 24 113 / .12)",
-        "purpose": "Book and album covers at rest."
-      },
-      {
-        "name": "object-lifted",
-        "value": "0 34px 44px -20px rgb(41 24 113 / .3), 0 2px 4px rgb(41 24 113 / .12)",
-        "purpose": "Covers on hover, with an 8px rise."
-      },
-      {
-        "name": "held-card",
-        "value": "0 30px 60px -28px rgb(41 24 113 / .26)",
-        "purpose": "Sticky verdict card."
-      },
-      {
-        "name": "drawer",
-        "value": "18px 0 60px -20px rgb(41 24 113 / .2)",
-        "purpose": "Menu side panel; bottom sheet uses 0 -18px 60px -20px."
+        "value": "0 18px 30px -16px rgb(46 46 51 / .45)",
+        "purpose": "Book and album covers resting on paper."
       },
       {
         "name": "toast",
-        "value": "0 16px 40px -12px rgb(41 24 113 / .2)",
-        "purpose": "Stacked toasts."
+        "value": "0 16px 40px -14px rgb(0 0 0 / .45)",
+        "purpose": "Transient toasts."
+      },
+      {
+        "name": "header-hairline",
+        "value": "0 1px 0 #e4e0da",
+        "purpose": "Solid header bottom edge, with 10px backdrop blur."
       }
     ],
     "motion": [
       {
         "name": "out",
         "value": "cubic-bezier(0.23, 1, 0.32, 1)",
-        "purpose": "Default for state changes, reveals, seams sewing in (1.6s), press feedback (160ms)."
+        "purpose": "Default easing for states, reveals, header."
       },
       {
         "name": "in-out",
         "value": "cubic-bezier(0.77, 0, 0.175, 1)",
-        "purpose": "Symmetric moves."
+        "purpose": "Loader progress line."
       },
       {
         "name": "drawer",
         "value": "cubic-bezier(0.32, 0.72, 0, 1)",
-        "purpose": "Drawer and scrim, 500ms."
+        "purpose": "Menu panel (550ms) and scrim (500ms)."
       },
       {
         "name": "press",
-        "value": "scale(0.97) over 160ms",
-        "purpose": "Active state for buttons and chips; 0.94 for round icon buttons."
+        "value": "scale(0.97) 160ms",
+        "purpose": "Pills and chips on press; icon buttons 0.94."
       },
       {
-        "name": "yoke-sew",
-        "value": "--p 0 to 1, stroke-dashoffset per path with delay --d",
-        "purpose": "Hero embroidery sewn in by one progress variable; emblem settles from scale .92."
+        "name": "photo-reveal",
+        "value": "clip-path inset(8% 0 0 0) to 0 over 1.2s; image scale 1.06 to 1 over 1.6s",
+        "purpose": "The one authored motion for photography."
+      },
+      {
+        "name": "stack-recede",
+        "value": "scale(1 - 0.06p) translateY(-4p%) plus shade",
+        "purpose": "Covered slide recedes as the next rises."
+      },
+      {
+        "name": "lenis",
+        "value": "lenis@1.1.13 duration 1.15, expo ease, smoothWheel, syncTouch (lerp 0.085, inertia 28)",
+        "purpose": "Smooth scroll on desktop and touch; off under reduced motion and while the menu is open."
+      },
+      {
+        "name": "reduced",
+        "value": "animation/transition 0.01ms",
+        "purpose": "System preference or footer switch."
       }
     ],
     "breakpoints": [
       {
-        "name": "wide",
-        "value": "1100px"
+        "name": "lg",
+        "value": "1000px"
       },
       {
-        "name": "tablet",
-        "value": "900px"
+        "name": "md",
+        "value": "860px"
       },
       {
-        "name": "phone",
+        "name": "sm",
         "value": "600px"
       }
-    ]
+    ],
+    "imageSlots": {
+      "directory": "site/assets/img/slots/",
+      "families": [
+        {
+          "prefix": "hero-",
+          "ratio": "16:9",
+          "sizes": [
+            "2400",
+            "1280"
+          ]
+        },
+        {
+          "prefix": "ed-",
+          "ratio": "4:5",
+          "sizes": [
+            "1400",
+            "800"
+          ]
+        },
+        {
+          "prefix": "band-",
+          "ratio": "21:9",
+          "sizes": [
+            "2400",
+            "1280"
+          ]
+        }
+      ],
+      "provenance": "Each image carries a same-name .json sidecar.",
+      "replacement": "Placeholders; the church replaces them with its own rebuilt photographs of the same names per docs/IMAGE-BRIEF.md."
+    }
   },
   "components": [
     {
-      "name": "Primary Button",
+      "name": "Outline Pill",
       "kind": "button",
-      "refersTo": "button-primary",
-      "description": "Garment-label call to action in text-safe gold with a basted inner edge; Plan your Sunday.",
-      "html": "<button class=\"ds-btn\">Plan your Sunday <svg width=\"19\" height=\"19\" viewBox=\"0 0 256 256\" fill=\"currentColor\"><path d=\"M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z\"/></svg></button>",
-      "css": ":host{--gold-text:#7d5d22;--emblem:#291871;--text:#1c1546;--label:#f6ecd4;--line:160 125 55;--display:'Bodoni Moda',Didot,serif;--sans:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;--out:cubic-bezier(0.23,1,0.32,1)} .ds-btn{position:relative;display:inline-flex;align-items:center;gap:12px;min-height:54px;padding:0 26px;border:0;border-radius:2px;font-family:var(--sans);font-size:15px;font-weight:600;letter-spacing:.02em;background:linear-gradient(180deg,#86662a,#6b501c);color:#fffaf0;cursor:pointer;transition:transform .16s var(--out),background .2s var(--out)} .ds-btn::after{content:'';position:absolute;inset:4px;border:1px dashed rgb(255 246 222/.5);border-radius:1px;pointer-events:none} .ds-btn:hover{background:linear-gradient(180deg,#93722f,#77591f)} .ds-btn:focus-visible{outline:2px solid var(--gold-text);outline-offset:3px} .ds-btn:active{transform:scale(.97)}"
+      "refersTo": "button-outline",
+      "description": "Default button everywhere on white and paper.",
+      "html": "<a class=\"ds-pill\" href=\"#\">Add to calendar</a>",
+      "css": ".ds-pill{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:42px;padding:0 24px;border-radius:999px;font-family:var(--sans,'Open Sans',Arial,sans-serif);font-size:12px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--taupe-deep,#6e5f4e);background:transparent;box-shadow:inset 0 0 0 1px currentColor;transition:background-color .25s cubic-bezier(.23,1,.32,1),color .25s cubic-bezier(.23,1,.32,1),transform .16s cubic-bezier(.23,1,.32,1)}.ds-pill:hover{background:var(--taupe-deep,#6e5f4e);color:#fff;box-shadow:inset 0 0 0 1px var(--taupe-deep,#6e5f4e)}.ds-pill:focus-visible{outline:1px solid var(--taupe,#8a7965);outline-offset:4px}.ds-pill:active{transform:scale(.97)}"
     },
     {
-      "name": "Ghost Button",
+      "name": "Solid Pill",
       "kind": "button",
-      "refersTo": "button-ghost",
-      "description": "Secondary action (Directions) with a stitch-line edge.",
-      "html": "<button class=\"ds-btn-ghost\">10788 Hartsook Street</button>",
-      "css": ":host{--gold-text:#7d5d22;--emblem:#291871;--text:#1c1546;--label:#f6ecd4;--line:160 125 55;--display:'Bodoni Moda',Didot,serif;--sans:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;--out:cubic-bezier(0.23,1,0.32,1)} .ds-btn-ghost{position:relative;display:inline-flex;align-items:center;gap:12px;min-height:54px;padding:0 26px;border:0;border-radius:2px;font-family:var(--sans);font-size:15px;font-weight:600;letter-spacing:.02em;background:transparent;color:var(--text);box-shadow:inset 0 0 0 1px rgb(var(--line)/.55);cursor:pointer;transition:transform .16s var(--out),background .2s var(--out)} .ds-btn-ghost::after{content:'';position:absolute;inset:4px;border:1px dashed rgb(var(--line)/.28);pointer-events:none} .ds-btn-ghost:hover{background:rgb(var(--line)/.1)} .ds-btn-ghost:focus-visible{outline:2px solid var(--gold-text);outline-offset:3px} .ds-btn-ghost:active{transform:scale(.97)}"
+      "refersTo": "button-solid",
+      "description": "The single primary action in a context: mobile bar, plan card.",
+      "html": "<a class=\"ds-pill-solid\" href=\"#\">Plan a visit</a>",
+      "css": ".ds-pill-solid{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 24px;border-radius:999px;font-family:var(--sans,'Open Sans',Arial,sans-serif);font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;background:var(--taupe-deep,#6e5f4e);color:#fff;transition:background-color .25s cubic-bezier(.23,1,.32,1),transform .16s cubic-bezier(.23,1,.32,1)}.ds-pill-solid:hover{background:#5c4f41}.ds-pill-solid:focus-visible{outline:1px solid var(--taupe,#8a7965);outline-offset:4px}.ds-pill-solid:active{transform:scale(.97)}"
     },
     {
-      "name": "Planner Chip",
+      "name": "White Pill on Photograph",
+      "kind": "button",
+      "refersTo": "button-white",
+      "description": "Call to action on a slide, band or photo hero.",
+      "html": "<div class=\"ds-photo\"><a class=\"ds-pill-white\" href=\"#\">Plan your visit</a></div>",
+      "css": ".ds-photo{padding:40px;background:linear-gradient(90deg,rgb(20 18 17/.62),rgb(20 18 17/.12)),#1d1b1a}.ds-pill-white{display:inline-flex;align-items:center;min-height:42px;padding:0 24px;border-radius:999px;font-family:var(--sans,'Open Sans',Arial,sans-serif);font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;background:#fff;color:var(--taupe-deep,#6e5f4e);transition:background-color .25s cubic-bezier(.23,1,.32,1),transform .16s}.ds-pill-white:hover{background:var(--paper,#f7f6f4)}.ds-pill-white:focus-visible{outline:1px solid #fff;outline-offset:4px}.ds-pill-white:active{transform:scale(.97)}"
+    },
+    {
+      "name": "Planner Chips",
       "kind": "chip",
       "refersTo": "chip",
-      "description": "V-notched radio chip; selected state becomes a woven label.",
-      "html": "<div class=\"ds-chips\"><label class=\"ds-chip\"><input type=\"radio\" name=\"ds-who\" checked><span>Just me</span></label><label class=\"ds-chip\"><input type=\"radio\" name=\"ds-who\"><span>With children</span></label></div>",
-      "css": ":host{--gold-text:#7d5d22;--emblem:#291871;--text:#1c1546;--label:#f6ecd4;--line:160 125 55;--display:'Bodoni Moda',Didot,serif;--sans:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;--out:cubic-bezier(0.23,1,0.32,1)} .ds-chips{display:flex;gap:10px;flex-wrap:wrap} .ds-chip{position:relative} .ds-chip input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer} .ds-chip span{position:relative;display:inline-flex;align-items:center;min-height:48px;padding:0 20px;border-radius:2px;background:#fff;color:var(--text);box-shadow:inset 0 0 0 1px rgb(var(--line)/.35);font-family:var(--sans);font-size:15px;font-weight:500;clip-path:polygon(0 0,100% 0,calc(100% - 7px) 50%,100% 100%,0 100%,7px 50%);transition:background .2s var(--out),transform .16s var(--out)} .ds-chip span::after{content:'';position:absolute;inset:5px 12px;border-top:1px dashed transparent;border-bottom:1px dashed transparent} .ds-chip:hover input:not(:checked)+span{background:#fbf8f1} .ds-chip input:checked+span{background:repeating-linear-gradient(90deg,rgb(41 24 113/.045) 0 1px,transparent 1px 3px),var(--label);color:var(--emblem);font-weight:600;box-shadow:inset 0 0 0 1px rgb(var(--line)/.7)} .ds-chip input:checked+span::after{border-color:rgb(41 24 113/.4)} .ds-chip input:focus-visible+span{outline:2px solid #6c4f1a;outline-offset:3px} .ds-chip input:active+span{transform:scale(.97)}"
+      "description": "Radio choices in the visit planner.",
+      "html": "<div class=\"ds-chips\"><label class=\"ds-chip\"><input type=\"radio\" name=\"ds-who\" checked><span>Just me</span></label><label class=\"ds-chip\"><input type=\"radio\" name=\"ds-who\"><span>With family</span></label></div>",
+      "css": ".ds-chips{display:flex;flex-wrap:wrap;gap:10px}.ds-chip{position:relative}.ds-chip input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer}.ds-chip span{display:inline-flex;align-items:center;min-height:42px;padding:0 20px;border-radius:999px;box-shadow:inset 0 0 0 1px #d6d0c6;font-family:var(--sans,'Open Sans',Arial,sans-serif);font-size:13px;letter-spacing:.04em;color:var(--ink,#2e2e33);transition:background-color .2s cubic-bezier(.23,1,.32,1),color .2s,box-shadow .2s}.ds-chip:hover input:not(:checked)+span{box-shadow:inset 0 0 0 1px var(--taupe,#8a7965)}.ds-chip input:checked+span{background:var(--taupe-deep,#6e5f4e);color:#fff;box-shadow:inset 0 0 0 1px var(--taupe-deep,#6e5f4e)}.ds-chip input:focus-visible+span{outline:1px solid var(--taupe,#8a7965);outline-offset:3px}"
     },
     {
-      "name": "Text Field",
+      "name": "Underline Field",
       "kind": "input",
-      "refersTo": "input",
-      "description": "White field with stitch-line edge; focus thickens to a gold ring.",
-      "html": "<label class=\"ds-field\"><span>Your name</span><input placeholder=\"First and last name\"></label>",
-      "css": ":host{--gold-text:#7d5d22;--emblem:#291871;--text:#1c1546;--label:#f6ecd4;--line:160 125 55;--display:'Bodoni Moda',Didot,serif;--sans:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;--out:cubic-bezier(0.23,1,0.32,1)} .ds-field{display:grid;gap:8px;font-family:var(--sans)} .ds-field span{font-size:15px;font-weight:600;color:#57507c} .ds-field input{min-height:52px;padding:12px 16px;border:0;border-radius:2px;background:#fff;box-shadow:inset 0 0 0 1px rgb(var(--line)/.45);color:var(--text);font:inherit;font-size:17px;transition:box-shadow .2s var(--out)} .ds-field input::placeholder{color:#6e6891} .ds-field input:focus{outline:none;box-shadow:inset 0 0 0 2px var(--gold-text)}"
+      "refersTo": "input-field",
+      "description": "Boxless text field with an uppercase label.",
+      "html": "<div class=\"ds-field\"><label for=\"ds-name\">Your name</label><input id=\"ds-name\" placeholder=\"\"></div>",
+      "css": ".ds-field{display:grid;gap:6px;max-width:360px}.ds-field label{font-family:var(--sans,'Open Sans',Arial,sans-serif);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft,#5c5b62)}.ds-field input{min-height:48px;padding:10px 0;border:0;border-bottom:1px solid var(--ink-soft,#5c5b62);border-radius:0;background:transparent;color:var(--ink,#2e2e33);font-family:var(--serif,Lora,Georgia,serif);font-size:16px;transition:border-color .2s cubic-bezier(.23,1,.32,1)}.ds-field input:focus{outline:none;border-color:var(--taupe-deep,#6e5f4e)}"
     },
     {
-      "name": "Header Navigation",
+      "name": "Header",
       "kind": "nav",
       "refersTo": "",
-      "description": "The neckline: links left, emblem wordmark centre, primary action right; stitched underline on hover.",
-      "html": "<nav class=\"ds-nav\"><div class=\"ds-nav__l\"><a href=\"#\">Pastors</a><a href=\"#\" aria-current=\"page\">Ministries</a></div><span class=\"ds-nav__brand\">Dayspring Chapel<small>RCCG Houston</small></span><div class=\"ds-nav__r\"><a href=\"#\">Give</a></div></nav>",
-      "css": ":host{--gold-text:#7d5d22;--emblem:#291871;--text:#1c1546;--label:#f6ecd4;--line:160 125 55;--display:'Bodoni Moda',Didot,serif;--sans:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;--out:cubic-bezier(0.23,1,0.32,1)} .ds-nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;height:76px;padding:0 32px;background:rgb(252 251 247/.88);font-family:var(--sans);color:var(--text);position:relative} .ds-nav::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:repeating-linear-gradient(90deg,rgb(var(--line)/.45) 0 6px,transparent 6px 11px)} .ds-nav__l,.ds-nav__r{display:flex;gap:22px} .ds-nav__r{justify-content:flex-end} .ds-nav a{position:relative;color:inherit;text-decoration:none;font-size:15px;font-weight:500;padding:10px 0} .ds-nav a::after{content:'';position:absolute;left:0;right:0;bottom:4px;height:1px;background:repeating-linear-gradient(90deg,var(--gold-text) 0 4px,transparent 4px 7px);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--out)} .ds-nav a:hover::after,.ds-nav a[aria-current]::after{transform:none} .ds-nav a:focus-visible{outline:2px solid var(--gold-text);outline-offset:3px} .ds-nav__brand{display:flex;flex-direction:column;font-family:var(--display);font-size:21px;line-height:1.2} .ds-nav__brand small{font-family:var(--sans);font-size:13px;color:#57507c;letter-spacing:.04em}"
+      "description": "Three-column header, centred emblem wordmark; shown in its solid state.",
+      "html": "<header class=\"ds-header\"><button class=\"ds-menu\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 256 256\" fill=\"currentColor\"><path d=\"M224 128a8 8 0 0 1-8 8H40a8 8 0 0 1 0-16h176a8 8 0 0 1 8 8ZM40 72h176a8 8 0 0 0 0-16H40a8 8 0 0 0 0 16Zm176 112H40a8 8 0 0 0 0 16h176a8 8 0 0 0 0-16Z\"/></svg>Menu</button><a class=\"ds-brand\" href=\"#\"><span class=\"ds-brand__name\">Dayspring Chapel</span><span class=\"ds-brand__sub\">Houston</span></a><a class=\"ds-cta\" href=\"#\">Plan a visit</a></header>",
+      "css": ".ds-header{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:72px;padding:0 32px;background:rgb(255 255 255/.96);color:var(--ink,#2e2e33);box-shadow:0 1px 0 var(--line,#e4e0da)}.ds-menu{display:inline-flex;align-items:center;gap:12px;min-height:44px;background:none;border:0;color:inherit;font-family:var(--sans,'Open Sans',Arial,sans-serif);font-size:13px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}.ds-brand{display:grid;justify-items:center;gap:5px;text-decoration:none;color:inherit;line-height:1}.ds-brand__name{font-family:var(--sans,'Open Sans',Arial,sans-serif);font-size:15px;letter-spacing:.14em;text-transform:uppercase}.ds-brand__sub{font-family:var(--sans,'Open Sans',Arial,sans-serif);font-size:11px;letter-spacing:.32em;text-transform:uppercase;opacity:.85}.ds-cta{justify-self:end;display:inline-flex;align-items:center;min-height:42px;padding:0 24px;border-radius:999px;font-family:var(--sans,'Open Sans',Arial,sans-serif);font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--taupe-deep,#6e5f4e);box-shadow:inset 0 0 0 1px var(--taupe-deep,#6e5f4e);transition:background-color .25s,color .25s}.ds-cta:hover{background:var(--taupe-deep,#6e5f4e);color:#fff}.ds-cta:focus-visible,.ds-menu:focus-visible{outline:1px solid var(--taupe,#8a7965);outline-offset:4px}"
     },
     {
-      "name": "Basted Card",
-      "kind": "card",
-      "refersTo": "card-panel",
-      "description": "Raised-pearl panel with an inset dashed basting edge; no shadow.",
-      "html": "<a class=\"ds-card\" href=\"#\"><h3>Sunday services</h3><p>Every Sunday worship, live on YouTube.</p><span>Watch the channel</span></a>",
-      "css": ":host{--gold-text:#7d5d22;--emblem:#291871;--text:#1c1546;--label:#f6ecd4;--line:160 125 55;--display:'Bodoni Moda',Didot,serif;--sans:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;--out:cubic-bezier(0.23,1,0.32,1)} .ds-card{position:relative;display:grid;gap:12px;padding:40px;background:#f7f6f9;border-radius:2px;color:var(--text);text-decoration:none;font-family:var(--sans);transition:transform .3s var(--out)} .ds-card::after{content:'';position:absolute;inset:8px;border:1px dashed rgb(var(--line)/.3);pointer-events:none} .ds-card h3{margin:0;font-family:var(--display);font-weight:400;font-size:30px;line-height:1.15} .ds-card p{margin:0;color:#57507c} .ds-card span{font-weight:600;color:var(--gold-text)} .ds-card:active{transform:scale(.99)} .ds-card:focus-visible{outline:2px solid var(--gold-text);outline-offset:3px}"
-    },
-    {
-      "name": "Woven Label",
+      "name": "Stacked Slide",
       "kind": "custom",
       "refersTo": "",
-      "description": "V-notched cream garment label with indigo warp; a standalone object, never a heading prefix.",
-      "html": "<span class=\"ds-label\"><b>Crossover</b><span>31 December, 10 pm</span></span>",
-      "css": ":host{--gold-text:#7d5d22;--emblem:#291871;--text:#1c1546;--label:#f6ecd4;--line:160 125 55;--display:'Bodoni Moda',Didot,serif;--sans:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;--out:cubic-bezier(0.23,1,0.32,1)} .ds-label{position:relative;display:inline-grid;gap:2px;padding:14px 30px 13px;color:var(--emblem);text-align:center;background:repeating-linear-gradient(90deg,rgb(41 24 113/.05) 0 1px,transparent 1px 3px),var(--label);clip-path:polygon(0 0,100% 0,calc(100% - 10px) 50%,100% 100%,0 100%,10px 50%)} .ds-label::after{content:'';position:absolute;inset:5px 16px;border-top:1px dashed rgb(41 24 113/.35);border-bottom:1px dashed rgb(41 24 113/.35)} .ds-label b{font-family:var(--display);font-weight:600;font-size:17px;letter-spacing:.14em;text-transform:uppercase} .ds-label span{font-family:var(--sans);font-size:13px;letter-spacing:.04em;color:#3d3470}"
+      "description": "Full-bleed photo slide on night with bottom-left copy and the vertical dot rail.",
+      "html": "<section class=\"ds-slide\"><div class=\"ds-slide__copy\"><h2 class=\"ds-display\">Sunday Worship</h2><p class=\"ds-slide__text\">Every Sunday at 10:30 am, after Sunday School at ten.</p><a class=\"ds-slide__pill\" href=\"#\">Service times</a></div><div class=\"ds-dots\"><i class=\"is-on\"></i><i></i><i></i><i></i></div></section>",
+      "css": ".ds-slide{position:relative;height:420px;overflow:hidden;color:#fff;background:linear-gradient(90deg,rgb(20 18 17/.55),rgb(20 18 17/.15) 45%,rgb(20 18 17/0) 70%),linear-gradient(0deg,rgb(20 18 17/.5),rgb(20 18 17/0) 45%),radial-gradient(circle at 70% 40%,#5a4c3e,#1d1b1a 70%)}.ds-slide__copy{position:absolute;left:48px;bottom:48px;max-width:560px}.ds-display{margin:0;font-family:var(--sans,'Open Sans',Arial,sans-serif);font-weight:300;font-size:clamp(28px,3.1vw,44px);line-height:1.15;letter-spacing:.02em;text-transform:uppercase}.ds-slide__text{margin:18px 0 26px;max-width:46ch;font-family:var(--serif,Lora,Georgia,serif);line-height:1.75;color:rgb(255 255 255/.92)}.ds-slide__pill{display:inline-flex;align-items:center;min-height:42px;padding:0 24px;border-radius:999px;background:#fff;color:var(--taupe-deep,#6e5f4e);font-family:var(--sans,'Open Sans',Arial,sans-serif);font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:background-color .25s}.ds-slide__pill:hover{background:var(--paper,#f7f6f4)}.ds-slide__pill:focus-visible{outline:1px solid #fff;outline-offset:4px}.ds-dots{position:absolute;right:24px;top:50%;transform:translateY(-50%);display:grid;gap:20px}.ds-dots i{width:8px;height:8px;border-radius:50%;box-shadow:inset 0 0 0 1px rgb(255 255 255/.9)}.ds-dots i.is-on{background:#fff;transform:scale(1.2)}"
     },
     {
-      "name": "Verdict Card",
-      "kind": "card",
-      "refersTo": "verdict-card",
-      "description": "The planner's answer: woven-label card with basted edge and emblem-indigo actions.",
-      "html": "<aside class=\"ds-verdict\"><h3>Sunday Worship</h3><p>Sun, Oct 25, 10:30 am</p><button>Add to calendar</button></aside>",
-      "css": ":host{--gold-text:#7d5d22;--emblem:#291871;--text:#1c1546;--label:#f6ecd4;--line:160 125 55;--display:'Bodoni Moda',Didot,serif;--sans:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;--out:cubic-bezier(0.23,1,0.32,1)} .ds-verdict{position:relative;padding:34px 32px 30px;background:var(--label);color:var(--emblem);border-radius:2px;box-shadow:0 30px 60px -28px rgb(41 24 113/.26);font-family:var(--sans);max-width:360px} .ds-verdict::before{content:'';position:absolute;inset:8px;border:1px dashed rgb(41 24 113/.35);pointer-events:none} .ds-verdict h3{margin:0 0 4px;font-family:var(--display);font-weight:400;font-size:36px;line-height:1.05} .ds-verdict p{margin:0 0 18px;color:#3d3470} .ds-verdict button{position:relative;width:100%;min-height:54px;border:0;border-radius:2px;background:var(--emblem);color:#fffdf8;font:600 15px var(--sans);letter-spacing:.02em;cursor:pointer;transition:transform .16s var(--out),background .2s} .ds-verdict button:hover{background:#3a27a0} .ds-verdict button:focus-visible{outline:2px solid var(--gold-text);outline-offset:3px} .ds-verdict button:active{transform:scale(.97)}"
+      "name": "Service Row",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Hairline list of gatherings; the next one is promoted in size and taupe.",
+      "html": "<ul class=\"ds-svc\"><li><div><div class=\"ds-svc__name ds-svc__name--next\">Sunday Worship</div><div class=\"ds-svc__when\">Sundays, 10:30 am to 12:00 noon</div></div><span class=\"ds-svc__in\">In 3 days</span></li><li><div><div class=\"ds-svc__name\">Wednesday Bible Study</div><div class=\"ds-svc__when\">Wednesdays, 7:00 to 8:30 pm</div></div><span class=\"ds-svc__in\">Tomorrow</span></li></ul>",
+      "css": ".ds-svc{list-style:none;margin:0;padding:0;border-top:1px solid var(--line,#e4e0da)}.ds-svc li{display:flex;justify-content:space-between;align-items:center;gap:32px;padding:26px 0;border-bottom:1px solid var(--line,#e4e0da)}.ds-svc__name{font-family:var(--sans,'Open Sans',Arial,sans-serif);font-weight:300;text-transform:uppercase;letter-spacing:.06em;font-size:17px;line-height:1.25;color:var(--ink,#2e2e33)}.ds-svc__name--next{font-size:clamp(21px,2vw,26px);color:var(--taupe-deep,#6e5f4e)}.ds-svc__when{margin-top:4px;font-family:var(--serif,Lora,Georgia,serif);font-size:15px;color:var(--ink-soft,#5c5b62)}.ds-svc__in{font-family:var(--sans,'Open Sans',Arial,sans-serif);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--taupe-deep,#6e5f4e);white-space:nowrap}"
+    },
+    {
+      "name": "Footer Toggle",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Sound and Reduce motion switches in the footer.",
+      "html": "<button class=\"ds-toggle\" aria-pressed=\"true\" onclick=\"this.setAttribute('aria-pressed',this.getAttribute('aria-pressed')!=='true')\">Reduce motion <span class=\"ds-toggle__track\"></span></button>",
+      "css": ".ds-toggle{display:inline-flex;align-items:center;gap:10px;min-height:44px;background:none;border:0;cursor:pointer;font-family:var(--sans,'Open Sans',Arial,sans-serif);font-size:12px;letter-spacing:.06em;color:var(--ink-soft,#5c5b62)}.ds-toggle__track{position:relative;width:32px;height:18px;border-radius:18px;background:#d9d4cc;transition:background-color .2s cubic-bezier(.23,1,.32,1)}.ds-toggle__track::after{content:'';position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgb(0 0 0/.2);transition:transform .25s cubic-bezier(.23,1,.32,1)}.ds-toggle[aria-pressed=true] .ds-toggle__track{background:var(--taupe-deep,#6e5f4e)}.ds-toggle[aria-pressed=true] .ds-toggle__track::after{transform:translateX(14px)}.ds-toggle:focus-visible{outline:1px solid var(--taupe,#8a7965);outline-offset:4px}"
     }
   ],
   "narrative": {
-    "northStar": "The White Agbada",
-    "overview": "The page is a ceremonial garment. A white agbada of porcelain and pearl cloth, embroidered in gold thread around the RCCG emblem at its neckline, worn on the day a congregation dedicates its own house. Everything visible is cloth, thread, or label: grounds are woven fabric with a faint indigo-and-gold twill, separators are running stitches, buttons are garment labels with a basted inner edge, and the one deep surface (the footer) is the indigo lining that shows at the hem. Opulence comes from restraint and handwork, never from clutter or decoration for its own sake.\n\nThe emblem's own indigo (#291871 family) is the system's ink; gold is the system's thread. White is not empty space here but the fabric itself: it carries a 45-degree twill weave and, on pointer devices, a soft gold sheen that follows the hand. Type speaks in two registers: Bodoni Moda for the voice (names, headlines, verses, the address), Hanken Grotesk for everything a visitor reads to act or presses. Motion is spring-tactile and interruptible; the hero yoke is sewn in on load by a single progress variable, seams sew themselves closed as they scroll in, and sound is a strictly opt-in needle click.\n\nThe built world diverges from the direction contract written before the white switch: that contract originally named indigo twill grounds and wine linings and has since been updated to the white world. The shipped world is white. Indigo survives as ink, emblem accent and the deep footer; \"wine\" survives only as legacy modifier names whose values are now warm pearl.",
+    "northStar": "The Maison on Hartsook Street",
+    "overview": "The site is built the way a watch house presents itself, with patek.com as the binding reference (a user decision recorded in PRODUCT.md): full-bleed photography that holds the screen and stacks as you scroll, then calm white editorial spreads where a light uppercase title, a few lines of serif and one outline pill do all the talking. Opulence comes from restraint and finish, never from ornament. There are no cards in a grid, no banners, no announcement strips, no gradients for their own sake.\n\nThe surface is white, with one warm paper ground (#f7f6f4) as the only alternate. Ink is a soft charcoal, never black. Warm taupe is the single accent, and it is used the way a maison uses its house colour: on titles, the selected chip, the active nav item, icons and the focus ring. Behind photography the ground turns to night (#1d1b1a) so the slides read as one continuous dark film before the white begins.\n\nDensity is low and the rhythm is long: sections breathe at up to 160px top and bottom, features are separated by up to 180px, body text never runs past 58ch. Motion is slow, eased and interruptible; smooth scrolling (Lenis) runs on desktop and touch, the stacked slides recede as the next one rises, photographs open with a clip reveal. Sound is synthesized in the browser, off until chosen. Both sound and motion have visible toggles in the footer. An earlier direction (indigo grounds and white agbada embroidery) was rejected by the user as not premium and is not part of this system.",
     "keyCharacteristics": [
-      "Porcelain and pearl cloth grounds with a woven twill texture, never flat white boxes.",
-      "Gold for thread (strokes, stitches, ornament) and a darker text-safe gold for words and primary actions.",
-      "The emblem's indigo as ink and as the one deep anchor (footer, `.theme-deep`).",
-      "Dashed running-stitch rules instead of solid borders; basted inner outlines inside buttons, cards and labels.",
-      "Near-square corners (2px) everywhere; the only curves are the embroidery itself and round icon buttons.",
-      "Bodoni Moda display with optical sizing over Hanken Grotesk at 17px."
+      "White plus one warm paper ground; charcoal ink; taupe as the only accent.",
+      "Open Sans Light uppercase titles over Lora serif text.",
+      "Outline pill buttons; square photographs; hairline rules instead of boxes.",
+      "Full-bleed stacked photo slides with vertical dots on the home page; 82svh photo heroes on inner pages.",
+      "Two-column editorial spreads on a 12-column grid, alternating sides.",
+      "The RCCG emblem small and centred in the header, the loader and the footer.",
+      "Every photograph lives in a named slot that the church can replace with a better image of the same name."
     ],
     "rules": [
       {
-        "name": "The Thread and Ink Rule",
-        "body": "Gold that must be read is #7d5d22 or darker; #b08b40 is thread and only ever strokes ornament. If a gold element carries words, it uses the text-safe gold.",
+        "name": "The Two Taupes Rule",
+        "body": "Text-size taupe is always taupe-deep. Pale taupe is for icons, rules, focus and selection; it never carries a sentence or a label.",
         "section": "colors"
       },
       {
-        "name": "The One Lining Rule",
-        "body": "There is exactly one dark surface family, the indigo lining, and it is reached only by overriding tokens (`.footer`, `.theme-deep`). Light sections never invent their own dark fills.",
+        "name": "The One Accent Rule",
+        "body": "Taupe is the only hue in the interface. New features get emphasis from size, weight, space or position, never from a new colour.",
         "section": "colors"
       },
       {
-        "name": "The Emblem Is Untouched Rule",
-        "body": "The RCCG emblem appears as the supplied raster, unrecoloured, always on a white disc or white ground. The palette borrows from it; it never paints over it.",
+        "name": "The One Paper Rule",
+        "body": "White and #f7f6f4 are the only light grounds. No tinted cards, no third neutral, no coloured section bands; colour beyond these comes only from photography.",
         "section": "colors"
       },
       {
-        "name": "The Two Voices Rule",
-        "body": "Bodoni speaks (names, headings, verses, the address, the quote); Hanken works (anything read to act, anything pressed). Bodoni is never used for a button or a form field.",
+        "name": "The Light Title Rule",
+        "body": "Every title is Open Sans, uppercase, weight 300 (400 only at the small Title step), with balanced wrapping. No bold titles, no serif titles, no mixed case.",
         "section": "typography"
       },
       {
-        "name": "The Optical Size Rule",
-        "body": "Every Bodoni setting declares `font-variation-settings: \"opsz\"` matched to its size (18 to 96), so hairlines stay intact at display and sturdy at 17px.",
+        "name": "The No-Kicker Rule",
+        "body": "A headline stands alone. Do not stack a small uppercase label above it; the label style is reserved for form legends, column heads and controls.",
         "section": "typography"
       },
       {
-        "name": "The Next Service Rule",
-        "body": "The next gathering and the address are never more than one glance away: in the hero on desktop, in the fixed action bar on phones.",
+        "name": "The Glance Rule",
+        "body": "The next service is never more than one glance away: on slide one, in the mobile action bar, and in the footer.",
         "section": "layout"
       },
       {
-        "name": "The Cloth Is Flat Rule",
-        "body": "Bands and panels never take shadows; they are separated by tone and seams. A shadow means a physical object resting on the cloth.",
+        "name": "The Hairline Rule",
+        "body": "Structure is drawn with 1px #e4e0da rules (top and bottom of lists, between rows), never with boxed cards or tinted panels.",
         "section": "elevation"
       },
       {
-        "name": "The Sheen Rule",
-        "body": "Light, not elevation, answers the hand: on fine pointers a 520px radial gold glow follows the cursor across `.cloth` (multiply on white, screen on the indigo lining).",
-        "section": "elevation"
+        "name": "The Slot Rule",
+        "body": "Photographs are replaceable by name. Reference images only through `assets/img/slots/` with the slot's name and sizes, never hard-wire a one-off file into a layout; when the church supplies a new image under the same name, it must drop in without code changes.",
+        "section": "components"
       },
       {
-        "name": "The Running Stitch Rule",
-        "body": "Rules and borders are dashed stitch, never solid: `repeating-linear-gradient` dashes (9/6, 6/5, 4/3 px) or `1px dashed rgb(var(--line) / .22 to .4)`. Seams between sections (`.hem`) sew themselves left to right as they enter the viewport.",
-        "section": "shapes"
+        "name": "The Opt-In Senses Rule",
+        "body": "Sound is off until the visitor turns it on, and both sound and motion can be switched off from every page. Any new motion or sound must respect both switches.",
+        "section": "components"
       }
     ],
     "dos": [
-      "**Do** treat every light surface as cloth: give bands `.cloth` (twill at .022 / .03 alpha and pointer sheen) and alternate porcelain #fcfbf7, pearl #f8f6f1 and lining #faf8f3.",
-      "**Do** set gold words in #7d5d22 (or #6c4f1a for emphasis) and reserve #b08b40 for embroidery strokes.",
-      "**Do** separate content with dashed running-stitch rules in `rgb(160 125 55 / .22 to .4)` and baste filled shapes with an inset dashed edge.",
-      "**Do** tint every shadow with the emblem's indigo `rgb(41 24 113)` and keep them long, soft and negatively spread.",
-      "**Do** reach the dark world only by overriding tokens on a container (`.footer`, `.theme-deep`), so components stay the same and only the cloth changes.",
-      "**Do** keep interactive targets at least 44px (buttons 54px, chips 48px, inputs 52px) and interactive text at 15px or larger.",
-      "**Do** use the `out` curve `cubic-bezier(0.23, 1, 0.32, 1)` for state changes, the `drawer` curve `cubic-bezier(0.32, 0.72, 0, 1)` for panels, scale(0.97) on press, and collapse motion entirely under `prefers-reduced-motion`."
+      "**Do** set every title in Open Sans Light uppercase and every paragraph in Lora; keep running text at 16px, 1.75 line height, under 58ch.",
+      "**Do** use taupe-deep (#6e5f4e) for any taupe text, and pale taupe (#8a7965) only for icons, rules, focus and selection.",
+      "**Do** draw structure with 1px #e4e0da hairlines and generous white space instead of boxes.",
+      "**Do** use outline pills by default, a white pill on photography, and a single solid pill for the primary action in a context.",
+      "**Do** put photographs full-bleed on night, or square at 4:5 in a 6-of-12 column spread, and alternate spread sides down a page.",
+      "**Do** place imagery through named slots in `site/assets/img/slots/` with a provenance `.json`, so the church's own replacements of the same name drop in.",
+      "**Do** keep the RCCG emblem unaltered, small and centred.",
+      "**Do** keep the next service visible within one glance, and end every page with a way to come on Sunday.",
+      "**Do** respect reduced motion and keep sound opt-in, with both toggles in the footer."
     ],
     "donts": [
-      "**Don't** recolour, redraw or place the RCCG emblem on a coloured fill; it sits on white.",
-      "**Don't** use solid 1px borders or grey hairlines; seams are stitched.",
-      "**Don't** round corners beyond 2px on buttons, cards, chips, inputs or photographs.",
-      "**Don't** set body text, buttons or form fields in Bodoni Moda, or headings in Hanken Grotesk.",
-      "**Don't** add dark section fills, gradients or new accent hues to the light pages; the palette is white cloth, gold thread, indigo ink.",
-      "**Don't** put drop shadows on flat bands or panels; shadows belong to objects (covers, the emblem, held cards, sheets).",
-      "**Don't** make sound play without the visitor turning it on."
+      "**Don't** introduce a second accent hue, a tinted card ground, or any light ground besides white and #f7f6f4.",
+      "**Don't** use bold or mixed-case titles, serif titles, or uppercase serif.",
+      "**Don't** add rounded-corner cards, card grids, banners or announcement strips; the only card is the plan card.",
+      "**Don't** place a small uppercase label above a headline as a kicker.",
+      "**Don't** put white text on a photograph without the warm overlay, or place photographs directly on white while loading.",
+      "**Don't** use pale taupe (#8a7965) for body, label or button text.",
+      "**Don't** recolour, redraw or enlarge the RCCG emblem into a hero graphic.",
+      "**Don't** bring back the rejected indigo or agbada embroidery vocabulary."
     ]
   }
 }

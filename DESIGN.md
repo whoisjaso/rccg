@@ -1,321 +1,310 @@
 ---
 name: RCCG Dayspring Chapel
-description: The white agbada. A porcelain garment embroidered in gold around the RCCG emblem, for a Houston parish.
+description: A maison website for a church. White space, light uppercase titles, a quiet serif voice, warm taupe, full-bleed photography that stacks as you scroll.
 colors:
-  emblem-indigo: "#291871"
-  ink-indigo: "#1c1546"
-  ink-soft: "#57507c"
-  ink-soft-warm: "#5d4e5b"
-  embroidery-gold: "#b08b40"
-  gold-text: "#7d5d22"
-  gold-text-deep: "#6c4f1a"
-  gold-pale: "#e2d1a6"
-  porcelain-ground: "#fcfbf7"
-  pearl-raised: "#f7f6f9"
-  pearl-field: "#f8f6f1"
-  lining: "#faf8f3"
-  lining-deep: "#f4f0e7"
-  woven-label: "#f6ecd4"
-  night-indigo: "#15103a"
-  night-indigo-raised: "#1d1650"
-  night-text: "#f5efe3"
-  night-text-soft: "#c3bddf"
-  night-gold: "#d8b56a"
+  white: "#ffffff"
+  paper: "#f7f6f4"
+  ink: "#2e2e33"
+  ink-soft: "#5c5b62"
+  taupe: "#8a7965"
+  taupe-deep: "#6e5f4e"
+  taupe-press: "#5c4f41"
+  line: "#e4e0da"
+  night: "#1d1b1a"
+  error: "#b3261e"
 typography:
   display:
-    fontFamily: "Bodoni Moda, Didot, Bodoni 72, serif"
-    fontSize: "clamp(46px, 7.2vw, 96px)"
-    fontWeight: 400
-    lineHeight: 0.98
-    letterSpacing: "-0.02em"
-    fontVariation: "\"opsz\" 96"
-  headline:
-    fontFamily: "Bodoni Moda, Didot, Bodoni 72, serif"
-    fontSize: "clamp(36px, 4.8vw, 68px)"
-    fontWeight: 400
-    lineHeight: 1.04
-    letterSpacing: "-0.015em"
-    fontVariation: "\"opsz\" 72"
-  title:
-    fontFamily: "Bodoni Moda, Didot, Bodoni 72, serif"
-    fontSize: "clamp(24px, 2.3vw, 32px)"
-    fontWeight: 400
+    fontFamily: "Open Sans, Helvetica Neue, Arial, sans-serif"
+    fontSize: "clamp(28px, 3.1vw, 44px)"
+    fontWeight: 300
     lineHeight: 1.15
-    fontVariation: "\"opsz\" 36"
-  lede:
-    fontFamily: "Bodoni Moda, Didot, Bodoni 72, serif"
-    fontSize: "clamp(21px, 2vw, 27px)"
-    fontWeight: 400
-    lineHeight: 1.4
-    fontVariation: "\"opsz\" 24"
-  body:
-    fontFamily: "Hanken Grotesk, Helvetica Neue, Arial, sans-serif"
-    fontSize: "17px"
-    fontWeight: 400
-    lineHeight: 1.65
-  label:
-    fontFamily: "Hanken Grotesk, Helvetica Neue, Arial, sans-serif"
-    fontSize: "15px"
-    fontWeight: 600
     letterSpacing: "0.02em"
-  numeral:
-    fontFamily: "Bodoni Moda, Didot, Bodoni 72, serif"
-    fontSize: "clamp(36px, 3.6vw, 52px)"
+  headline:
+    fontFamily: "Open Sans, Helvetica Neue, Arial, sans-serif"
+    fontSize: "clamp(24px, 2.2vw, 32px)"
+    fontWeight: 300
+    lineHeight: 1.2
+    letterSpacing: "0.02em"
+  title:
+    fontFamily: "Open Sans, Helvetica Neue, Arial, sans-serif"
+    fontSize: "clamp(17px, 1.3vw, 19px)"
     fontWeight: 400
-    lineHeight: 1
-    fontFeature: "\"lnum\", \"tnum\""
+    lineHeight: 1.35
+    letterSpacing: "0.06em"
+  body:
+    fontFamily: "Lora, Georgia, Times New Roman, serif"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: 1.75
+    letterSpacing: "0.01em"
+  label:
+    fontFamily: "Open Sans, Helvetica Neue, Arial, sans-serif"
+    fontSize: "12px"
+    fontWeight: 400
+    lineHeight: 1.5
+    letterSpacing: "0.12em"
 rounded:
-  hairline: "1px"
-  cut: "2px"
-  toast: "4px"
-  sheet: "18px"
+  none: "0px"
+  pill: "999px"
   round: "50%"
 spacing:
-  gutter: "clamp(20px, 4.5vw, 72px)"
-  max: "1360px"
-  stack: "24px"
-  stack-lg: "40px"
-  section: "clamp(80px, 10vw, 144px)"
-  section-snug: "clamp(64px, 8vw, 112px)"
-  grid-gap: "clamp(24px, 3vw, 48px)"
+  gutter: "clamp(20px, 5.5vw, 80px)"
+  section: "clamp(88px, 11vw, 160px)"
+  feature-gap: "clamp(96px, 12vw, 180px)"
+  column-gap: "clamp(24px, 3vw, 48px)"
+  max: "1100px"
+  wide: "1440px"
+  header: "88px"
+  header-sm: "64px"
 components:
-  button-primary:
-    backgroundColor: "{colors.gold-text}"
-    textColor: "{colors.porcelain-ground}"
-    typography: "{typography.label}"
-    rounded: "{rounded.cut}"
-    padding: "0 26px"
-    height: "54px"
-  button-ghost:
+  button-outline:
     backgroundColor: "transparent"
-    textColor: "{colors.ink-indigo}"
+    textColor: "{colors.taupe-deep}"
     typography: "{typography.label}"
-    rounded: "{rounded.cut}"
-    padding: "0 26px"
-    height: "54px"
-  button-small:
-    backgroundColor: "{colors.gold-text}"
-    textColor: "{colors.porcelain-ground}"
-    rounded: "{rounded.cut}"
-    padding: "0 16px"
+    rounded: "{rounded.pill}"
+    padding: "0 24px"
     height: "42px"
-  button-emblem:
-    backgroundColor: "{colors.emblem-indigo}"
-    textColor: "{colors.porcelain-ground}"
+  button-outline-hover:
+    backgroundColor: "{colors.taupe-deep}"
+    textColor: "{colors.white}"
+  button-solid:
+    backgroundColor: "{colors.taupe-deep}"
+    textColor: "{colors.white}"
     typography: "{typography.label}"
-    rounded: "{rounded.cut}"
-    padding: "0 26px"
-    height: "54px"
+    rounded: "{rounded.pill}"
+    padding: "0 24px"
+    height: "42px"
+  button-solid-hover:
+    backgroundColor: "{colors.taupe-press}"
+  button-white:
+    backgroundColor: "{colors.white}"
+    textColor: "{colors.taupe-deep}"
+    typography: "{typography.label}"
+    rounded: "{rounded.pill}"
+    padding: "0 24px"
+    height: "42px"
+  button-white-hover:
+    backgroundColor: "{colors.paper}"
+  button-glass:
+    backgroundColor: "transparent"
+    textColor: "{colors.white}"
+    typography: "{typography.label}"
+    rounded: "{rounded.pill}"
+    padding: "0 24px"
+    height: "42px"
   chip:
-    backgroundColor: "#ffffff"
-    textColor: "{colors.ink-indigo}"
-    rounded: "{rounded.cut}"
+    backgroundColor: "transparent"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.pill}"
     padding: "0 20px"
-    height: "48px"
+    height: "42px"
   chip-selected:
-    backgroundColor: "{colors.woven-label}"
-    textColor: "{colors.emblem-indigo}"
-    rounded: "{rounded.cut}"
-    padding: "0 20px"
-    height: "48px"
-  input:
-    backgroundColor: "#ffffff"
-    textColor: "{colors.ink-indigo}"
+    backgroundColor: "{colors.taupe-deep}"
+    textColor: "{colors.white}"
+  input-field:
+    backgroundColor: "transparent"
+    textColor: "{colors.ink}"
     typography: "{typography.body}"
-    rounded: "{rounded.cut}"
-    padding: "12px 16px"
-    height: "52px"
-  card-panel:
-    backgroundColor: "{colors.pearl-raised}"
-    textColor: "{colors.ink-indigo}"
-    rounded: "{rounded.cut}"
+    rounded: "{rounded.none}"
+    padding: "10px 0"
+    height: "48px"
+  plan-card:
+    backgroundColor: "{colors.white}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.none}"
     padding: "clamp(28px, 3vw, 44px)"
-  verdict-card:
-    backgroundColor: "{colors.woven-label}"
-    textColor: "{colors.emblem-indigo}"
-    rounded: "{rounded.cut}"
-    padding: "34px 32px 30px"
   toast:
-    backgroundColor: "{colors.woven-label}"
-    textColor: "{colors.emblem-indigo}"
-    rounded: "{rounded.toast}"
-    padding: "14px 18px"
-  footer:
-    backgroundColor: "{colors.night-indigo}"
-    textColor: "{colors.night-text}"
+    backgroundColor: "{colors.ink}"
+    textColor: "{colors.white}"
+    rounded: "{rounded.pill}"
+    padding: "14px 20px"
 ---
 
 # Design System: RCCG Dayspring Chapel
 
 ## Overview
 
-**Creative North Star: "The White Agbada"**
+**Creative North Star: "The Maison on Hartsook Street"**
 
-The page is a ceremonial garment. A white agbada of porcelain and pearl cloth, embroidered in gold thread around the RCCG emblem at its neckline, worn on the day a congregation dedicates its own house. Everything visible is cloth, thread, or label: grounds are woven fabric with a faint indigo-and-gold twill, separators are running stitches, buttons are garment labels with a basted inner edge, and the one deep surface (the footer) is the indigo lining that shows at the hem. Opulence comes from restraint and handwork, never from clutter or decoration for its own sake.
+The site is built the way a watch house presents itself, with patek.com as the binding reference (a user decision recorded in PRODUCT.md): full-bleed photography that holds the screen and stacks as you scroll, then calm white editorial spreads where a light uppercase title, a few lines of serif and one outline pill do all the talking. Opulence comes from restraint and finish, never from ornament. There are no cards in a grid, no banners, no announcement strips, no gradients for their own sake.
 
-The emblem's own indigo (#291871 family) is the system's ink; gold is the system's thread. White is not empty space here but the fabric itself: it carries a 45-degree twill weave and, on pointer devices, a soft gold sheen that follows the hand. Type speaks in two registers: Bodoni Moda for the voice (names, headlines, verses, the address), Hanken Grotesk for everything a visitor reads to act or presses. Motion is spring-tactile and interruptible; the hero yoke is sewn in on load by a single progress variable, seams sew themselves closed as they scroll in, and sound is a strictly opt-in needle click.
+The surface is white, with one warm paper ground (#f7f6f4) as the only alternate. Ink is a soft charcoal, never black. Warm taupe is the single accent, and it is used the way a maison uses its house colour: on titles, the selected chip, the active nav item, icons and the focus ring. Behind photography the ground turns to night (#1d1b1a) so the slides read as one continuous dark film before the white begins.
 
-The built world diverges from the direction contract written before the white switch: that contract originally named indigo twill grounds and wine linings and has since been updated to the white world. The shipped world is white. Indigo survives as ink, emblem accent and the deep footer; "wine" survives only as legacy modifier names whose values are now warm pearl.
+Density is low and the rhythm is long: sections breathe at up to 160px top and bottom, features are separated by up to 180px, body text never runs past 58ch. Motion is slow, eased and interruptible; smooth scrolling (Lenis) runs on desktop and touch, the stacked slides recede as the next one rises, photographs open with a clip reveal. Sound is synthesized in the browser, off until chosen. Both sound and motion have visible toggles in the footer. An earlier direction (indigo grounds and white agbada embroidery) was rejected by the user as not premium and is not part of this system.
 
 **Key Characteristics:**
-- Porcelain and pearl cloth grounds with a woven twill texture, never flat white boxes.
-- Gold for thread (strokes, stitches, ornament) and a darker text-safe gold for words and primary actions.
-- The emblem's indigo as ink and as the one deep anchor (footer, `.theme-deep`).
-- Dashed running-stitch rules instead of solid borders; basted inner outlines inside buttons, cards and labels.
-- Near-square corners (2px) everywhere; the only curves are the embroidery itself and round icon buttons.
-- Bodoni Moda display with optical sizing over Hanken Grotesk at 17px.
+- White plus one warm paper ground; charcoal ink; taupe as the only accent.
+- Open Sans Light uppercase titles over Lora serif text.
+- Outline pill buttons; square photographs; hairline rules instead of boxes.
+- Full-bleed stacked photo slides with vertical dots on the home page; 82svh photo heroes on inner pages.
+- Two-column editorial spreads on a 12-column grid, alternating sides.
+- The RCCG emblem small and centred in the header, the loader and the footer.
+- Every photograph lives in a named slot that the church can replace with a better image of the same name.
 
 ## Colors
 
-A white garment with gold embroidery and indigo ink: two warm-white grounds, a pale indigo-tinted raise, gold in three strengths, and the emblem's indigo for text and accent.
+A near-monochrome warm-neutral palette: white and paper grounds, charcoal ink, and one warm taupe accent in two strengths.
 
 ### Primary
-- **Text-Safe Gold** (#7d5d22): the colour of words and actions on white. Primary buttons (as a vertical gradient from #86662a to #6b501c), text links, `.live` next-service line, icons in contact lists, focus outlines, selection highlight, caret. Passes AA on porcelain and pearl.
-- **Deep Gold** (#6c4f1a): emphasis gold. Hover colour for links, the first-ranked gathering name, pledge and timeline headings, the large numerals in fact rows.
-- **Embroidery Gold** (#b08b40): thread only. Strokes of the yoke embroidery, the seal rings, the pastors' arch. Never used for body text (it fails AA on white).
-- **Pale Gold** (#e2d1a6): scrollbar thumb and the softest gold surface tint.
-
-### Secondary
-- **Emblem Indigo** (#291871): the RCCG emblem's own field colour. Text on woven labels, the verdict card and toasts; the filled button inside the verdict card (hover #3a27a0); every shadow and twill tint is built from its RGB (41 24 113).
+- **Maison Taupe** (taupe-deep): the working accent and the only colour allowed at text size. Section headlines, label text, outline pill text and fill, the selected chip, the current nav item, the toggle when on, the active service row. Measures 6.2:1 on white, 5.7:1 on paper; white on it measures 6.2:1.
+- **Pale Taupe** (taupe): the decorative strength. Icons in lists, contacts and FAQ, the select chevron, the loader progress line, the focus outline, the text selection and caret. 4.2:1 on white and 3.9:1 on paper, so it is for icons, rules and large display only, never for body or label text.
+- **Pressed Taupe** (taupe-press): hover state of the solid pill only.
 
 ### Neutral
-- **Ink Indigo** (#1c1546): primary text on all light grounds.
-- **Soft Ink** (#57507c): secondary text, captions, metadata, body paragraphs.
-- **Warm Soft Ink** (#5d4e5b): secondary text on the lining (warm pearl) grounds and in verses.
-- **Porcelain Ground** (#fcfbf7): page background, header veil (as `rgb(252 251 247 / .88)` with 14px blur).
-- **Pearl Field** (#f8f6f1): alternate cloth band (`.cloth--deep`).
-- **Raised Pearl** (#f7f6f9): cool-tinted raise for channel cards, ways panels, the drawer.
-- **Lining** (#faf8f3) and **Deep Lining** (#f4f0e7): warm bands and warm cards (`.cloth--lining`, `.channel--lining`).
-- **Woven Label** (#f6ecd4): the gold-cream of a garment label: labels, selected chips, toasts. The verdict card sits on a near-white pearl (#fbf8f1) so it never becomes a cream plane on the white page.
-- **Stitch Line** (rgb 160 125 55 at .22 to .55 alpha): every dashed rule, ghost-button edge and input outline.
+- **White** (white): the default ground for every page, the menu panel, the plan card and the solid header.
+- **Warm Paper** (paper): the one alternate section ground (`section--paper`), the shelf behind book covers, the map placeholder.
+- **Charcoal Ink** (ink): all body text and the solid header's text; the toast ground. 13.5:1 on white.
+- **Soft Ink** (ink-soft): secondary text: service times, FAQ answers, footer legal, field labels, the plan card's time line. 6.7:1 on white.
+- **Hairline** (line): every rule: list dividers, FAQ, footer, menu rows, the solid header's bottom edge, the loader track.
+- **Night** (night): the ground behind the stacked slides and inner-page photo heroes, so photographs never sit on white while loading or receding. The menu scrim is night at 35%.
+- **Error Red** (error): invalid field underline and its message; nowhere else.
 
-### Deep anchor (token override)
-- **Night Indigo** (#15103a) with **Raised Night** (#1d1650), **Night Text** (#f5efe3), **Night Soft Text** (#c3bddf), **Night Gold** (#d8b56a, deep #f1d99c): the footer and any `.theme-deep` block redefine the same semantic tokens rather than introducing new classes. Sheen switches from `multiply` to `screen` and the twill strengthens.
+Photo copy sits on a fixed warm-black overlay (rgb 20 18 17 at 45 to 62%, fading toward the right and the top), so white text on any slide holds contrast whatever image fills the slot.
 
 ### Named Rules
-**The Thread and Ink Rule.** Gold that must be read is #7d5d22 or darker; #b08b40 is thread and only ever strokes ornament. If a gold element carries words, it uses the text-safe gold.
+**The Two Taupes Rule.** Text-size taupe is always taupe-deep. Pale taupe is for icons, rules, focus and selection; it never carries a sentence or a label.
 
-**The One Lining Rule.** There is exactly one dark surface family, the indigo lining, and it is reached only by overriding tokens (`.footer`, `.theme-deep`). Light sections never invent their own dark fills.
+**The One Accent Rule.** Taupe is the only hue in the interface. New features get emphasis from size, weight, space or position, never from a new colour.
 
-**The Emblem Is Untouched Rule.** The RCCG emblem appears as the supplied raster, unrecoloured, always on a white disc or white ground. The palette borrows from it; it never paints over it.
+**The One Paper Rule.** White and #f7f6f4 are the only light grounds. No tinted cards, no third neutral, no coloured section bands; colour beyond these comes only from photography.
 
 ## Typography
 
-**Display Font:** Bodoni Moda (with Didot, Bodoni 72, serif), variable optical size 6 to 96, weights 400 to 700, italic for verses.
-**Body Font:** Hanken Grotesk (with Helvetica Neue, Arial, sans-serif), weights 400, 500, 600.
+**Display Font:** Open Sans 300/400 (with Helvetica Neue, Arial)
+**Body Font:** Lora 400, 400 italic, 500 (with Georgia, Times New Roman)
 
-**Character:** A high-contrast Didone at hairline weight is the voice of a tailor's label and a hymn book; a plain, warm grotesk carries times, addresses and buttons so older visitors on phones read them without effort.
+**Character:** A light, widely tracked uppercase sans for every title, like engraving on a case back, over a warm book serif that does the speaking. The sans never carries paragraphs; the serif never goes uppercase.
 
 ### Hierarchy
-- **Display** (400, clamp(46px, 7.2vw, 96px), 0.98, -0.02em, opsz 96): page H1s and the hero name only.
-- **Headline** (400, clamp(36px, 4.8vw, 68px), 1.04, -0.015em, opsz 72): section H2s; also the pull quote at up to 64px.
-- **Title** (400, clamp(24px, 2.3vw, 32px), 1.15, opsz 36): card and group titles, FAQ heading. Ranked gathering names scale from 72px (next up) down to 21px by rank.
-- **Lede** (400, clamp(21px, 2vw, 27px), 1.4): opening paragraph in the display face; the address and the threshold question use the same register.
-- **Body** (400, 17px, 1.65): Hanken Grotesk, soft ink, max 62ch.
-- **Label** (600, 15px, 0.02em): buttons, nav, footer headings, `.small` metadata (15px), captions (15px), fine print (13px). Nothing interactive drops below 15px.
-- **Numerals** (Bodoni 400, clamp(36px, 3.6vw, 52px), deep gold): fact figures; times use `lining-nums tabular-nums`.
+- **Display** (Open Sans 300, clamp(28px, 3.1vw, 44px), 1.15, uppercase, 0.02em): slide and hero titles over photography only, white.
+- **Headline** (Open Sans 300, clamp(24px, 2.2vw, 32px), 1.2, uppercase, 0.02em, taupe-deep): section and spread titles on white or paper.
+- **Title** (Open Sans 400, clamp(17px, 1.3vw, 19px), 1.35, uppercase, 0.06em): sub-titles inside a spread or list. Related uppercase light names: service rows (17px, the first row 21 to 26px in taupe-deep), plan card date (22 to 28px), menu links (19px, 0.08em).
+- **Body** (Lora 400, 16px, 1.75, 0.01em): all running text, max 58ch (62ch in FAQ answers, 46ch on slides). Secondary lines drop to 15px in ink-soft. Italic only for author bylines on the shelf.
+- **Label** (Open Sans 400, 12px, 0.12em, uppercase): form legends, footer column heads, pill text (0.1em), the "next service" line, tabular service times. Labels name controls and columns; they never sit above a headline as a kicker.
+
+Numbers that align (times, years) use lining tabular figures.
 
 ### Named Rules
-**The Two Voices Rule.** Bodoni speaks (names, headings, verses, the address, the quote); Hanken works (anything read to act, anything pressed). Bodoni is never used for a button or a form field.
+**The Light Title Rule.** Every title is Open Sans, uppercase, weight 300 (400 only at the small Title step), with balanced wrapping. No bold titles, no serif titles, no mixed case.
 
-**The Optical Size Rule.** Every Bodoni setting declares `font-variation-settings: "opsz"` matched to its size (18 to 96), so hairlines stay intact at display and sturdy at 17px.
+**The No-Kicker Rule.** A headline stands alone. Do not stack a small uppercase label above it; the label style is reserved for form legends, column heads and controls.
 
 ## Layout
 
-A centred column of cloth bands. Content sits in `.wrap` (max 1360px) with a fluid gutter (clamp(20px, 4.5vw, 72px)). Sections breathe at clamp(80px, 10vw, 144px) vertical padding (snug: clamp(64px, 8vw, 112px)). Two-column compositions use a 12-column grid (gap clamp(24px, 3vw, 48px)) with an asymmetric 6 / gap / 5 split, or 7fr / 5fr for planner, inner-page heroes, visit and give panels. Vertical rhythm inside blocks is 24px (`.stack`) and 40px (`.stack-lg`).
+- **Container:** content max 1100px, wide max 1440px (footer, shelf), side gutter clamp(20px, 5.5vw, 80px).
+- **Section rhythm:** clamp(88px, 11vw, 160px) top and bottom; consecutive features separated by clamp(96px, 12vw, 180px). Sections alternate white and paper.
+- **Editorial spread:** a 12-column grid; media spans 6 columns at a 4:5 crop (5:4 for the wide variant), copy spans columns 8 to 12. The flip variant mirrors it. Spreads alternate sides down a page.
+- **Statement:** a centred headline (max 26ch), one paragraph and centred pills, used to open lists such as services and the shelf.
+- **Stacked slides:** each slide is 100svh (min 560px) and sticky at the top, so the next slide rises over it. Copy sits bottom-left, max 560px wide. A vertical rail of dots is pinned right of centre.
+- **Full-bleed band:** 78svh photograph with copy bottom-left, max 640px.
+- **Inner page hero:** 82svh photograph on night, same copy position.
+- **Plan:** 6fr / 5fr columns; the plan card is sticky at 104px.
+- **Header:** 88px, three columns (menu left, centred emblem and wordmark, sound, directions and call to action right); shrinks to 72px and turns solid white after the hero. 64px under 860px.
+- **Breakpoints:** 1000px (shelf to 3 columns, footer to 2), 860px (everything single column and centred, mobile action bar appears, header CTA hides), 600px (shelf to 2 columns).
+- **Mobile action bar:** under 860px a fixed 68px white bar carries the next service, a directions icon pill and a solid "Plan a visit" pill; the page reserves its height at the bottom.
 
-The home hero is strictly symmetric: the yoke embroidery is centred at up to 860px wide (aspect 1000 / 640, shrinking with viewport height), emblem at its heart, with the name, church line, next-service line and two actions centred beneath. The ministries groups step down diagonally (0, 64px, 128px offsets). "The house" is a sticky horizontal photo strip driven by scroll with a stitched progress rule.
-
-Breakpoints: 1100px (footer to 2 columns, shelf to 3), 900px (header 64px, everything single column, drawer becomes a bottom sheet, fixed 72px action bar appears with next service + Plan + Directions), 600px (shelf 2 columns, hero buttons full width, footer 1 column).
-
-**The Next Service Rule.** The next gathering and the address are never more than one glance away: in the hero on desktop, in the fixed action bar on phones.
+### Named Rules
+**The Glance Rule.** The next service is never more than one glance away: on slide one, in the mobile action bar, and in the footer.
 
 ## Elevation & Depth
 
-Depth is textile, not material-design. Surfaces are flat cloth separated by tone (porcelain, pearl, lining) and by stitched seams; shadows appear only where a real object lifts off the fabric (a book, a card held out, the emblem on its disc, a sliding drawer). All shadows are tinted with the emblem's indigo, long and soft with negative spread, never grey and never hard-offset.
+Flat by default. Depth comes from photography, sticky layering and hairlines, not from shadow. The stacked slides create the main sense of depth: the covered slide scales down by up to 6%, lifts 4% and darkens under the one rising over it. Shadows exist in only three places, all soft and warm-ink based.
 
 ### Shadow Vocabulary
-- **Emblem lift** (`box-shadow: 0 22px 50px -16px rgb(41 24 113 / .3), 0 0 0 10px rgb(255 255 255 / .9)`): the emblem in the hero, with its white collar ring.
-- **Object** (`box-shadow: 0 24px 34px -18px rgb(41 24 113 / .26), 0 2px 4px rgb(41 24 113 / .12)`): book and album covers; deepens on hover to `0 34px 44px -20px rgb(41 24 113 / .3)` with an 8px rise.
-- **Held card** (`box-shadow: 0 30px 60px -28px rgb(41 24 113 / .26)`): the sticky verdict card.
-- **Drawer** (`box-shadow: 18px 0 60px -20px rgb(41 24 113 / .2)`; on phones `0 -18px 60px -20px`): menu panel over a `rgb(28 21 70 / .32)` scrim.
-- **Toast** (`box-shadow: 0 16px 40px -12px rgb(41 24 113 / .2)`).
+- **Plan card lift** (`box-shadow: 0 1px 0 #e4e0da, 0 30px 60px -36px rgb(46 46 51 / .35)`): the one floating container, the plan card.
+- **Object shadow** (`box-shadow: 0 18px 30px -16px rgb(46 46 51 / .45)`): book and album covers on the shelf, as if resting on paper.
+- **Toast shadow** (`box-shadow: 0 16px 40px -14px rgb(0 0 0 / .45)`): transient confirmation toasts.
+
+The solid header uses a 1px hairline shadow plus 10px backdrop blur, not elevation.
 
 ### Named Rules
-**The Cloth Is Flat Rule.** Bands and panels never take shadows; they are separated by tone and seams. A shadow means a physical object resting on the cloth.
-
-**The Sheen Rule.** Light, not elevation, answers the hand: on fine pointers a 520px radial gold glow follows the cursor across `.cloth` (multiply on white, screen on the indigo lining).
+**The Hairline Rule.** Structure is drawn with 1px #e4e0da rules (top and bottom of lists, between rows), never with boxed cards or tinted panels.
 
 ## Shapes
 
-Tailored and nearly square. The working radius is 2px (buttons, chips, inputs, cards, photographs) and 1px for book covers and inner basting. Round shapes are reserved for 44px icon buttons (sound, close), the emblem disc and the embroidery itself. The phone drawer is the single soft shape (18px top corners, with a 44 x 5px handle).
-
-Two recurring silhouettes carry the world:
-- **The basted edge:** a 1px dashed outline inset 4 to 10px inside a filled shape (buttons, cards, verdict, photo frames).
-- **The label notch:** woven labels and planner chips are clipped with V-notched ends (`polygon(0 0, 100% 0, calc(100% - 10px) 50%, 100% 100%, 0 100%, 10px 50%)`, 7px on chips).
-
-**The Running Stitch Rule.** Rules and borders are dashed stitch, never solid: `repeating-linear-gradient` dashes (9/6, 6/5, 4/3 px) or `1px dashed rgb(var(--line) / .22 to .4)`. Seams between sections (`.hem`) sew themselves left to right as they enter the viewport.
+Two shapes only: the square and the pill. Photographs, spreads, bands, the plan card, the map and form fields are square-cornered. Everything you press is a full pill (999px): buttons, chips, toasts. Circles appear only for icon buttons (44px), slide dots (8px) and the toggle thumb. Fields are a single bottom underline with no box. Pills draw their outline as an inset 1px shadow in currentColor so the stroke never changes the box size.
 
 ## Components
 
 ### Buttons
-Garment labels: firm, square, with a basted inner edge.
-- **Shape:** near-square (2px), min-height 54px, padding 0 26px, gap 12px for a trailing or leading Phosphor icon (19px).
-- **Primary:** text-safe gold gradient (#86662a to #6b501c) with #fffaf0 text, 15px / 600 / 0.02em; inner dashed edge `inset 4px, 1px dashed rgb(255 246 222 / .5)`.
-- **Hover / Focus / Active:** hover lifts the gradient a step (#93722f to #77591f), fine pointers only; focus is a 2px text-safe gold outline at 3px offset; active presses to scale(0.97) in 160ms on the `out` curve.
-- **Ghost:** transparent with ink text and a 1px inset stitch-line edge (`rgb(var(--line) / .55)`); hover tints the cloth `rgb(var(--line) / .1)`.
-- **Small:** 42px high, 0 16px. **Emblem:** inside the verdict card, buttons fill with emblem indigo (hover #3a27a0).
+Quiet, engraved, never loud. Uppercase Open Sans 12px at 0.1em, 42px tall (minimum), 24px side padding, full pill.
+- **Outline (default):** transparent with a 1px taupe-deep stroke and taupe-deep text. Hover fills taupe-deep with white text.
+- **Solid:** taupe-deep with white text; hover deepens to taupe-press. Used for the one primary action in a context (mobile bar, plan card).
+- **White:** white with taupe-deep text, for calls to action on photography; hover goes to paper.
+- **Glass:** white text and a 75% white stroke on the transparent header over photography; turns into the outline style when the header goes solid.
+- **Press:** every pill scales to 0.97 on press (160ms). Hover styles apply only on hover-capable fine pointers.
+- **Icon buttons:** 44px circles with a 22px Phosphor regular icon; hover is a 14% grey wash, press scales to 0.94.
 
 ### Chips
-- **Style:** white with a 1px inset stitch-line edge, V-notched ends, 48px high, 15px / 500.
-- **State:** selected becomes a woven label (cream #f6ecd4 with fine indigo warp lines, emblem-indigo text, 600, dashed inner rules top and bottom). Radio inputs, so the planner reads as questions with one answer each.
+- **Style:** pill, 42px, 20px side padding, 13px Open Sans at 0.04em in ink with a 1px #d6d0c6 inset stroke. Built on visually hidden radio inputs.
+- **State:** hover strokes in pale taupe; selected fills taupe-deep with white text; focus shows a 1px pale taupe outline at 3px offset.
 
 ### Cards / Containers
-- **Corner Style:** 2px.
-- **Background:** raised pearl (channels, ways), deep lining (warm channel), porcelain.
-- **Shadow Strategy:** none; see The Cloth Is Flat Rule.
-- **Border:** a basted inner outline inset 8px (`1px dashed rgb(var(--line) / .28 to .35)`).
-- **Internal Padding:** clamp(28px, 3vw, 44px) to clamp(28px, 3.4vw, 48px).
+- **Plan card:** the only card. White, square, clamp(28px, 3vw, 44px) padding, plan card lift shadow, sticky beside the planner. Inside: a light uppercase date, a soft time line, an icon list on a 22px icon column, then full-width stacked pills. When answers change, the body dims to 25% with a 2px blur, then returns.
+- **Shelf work:** a paper 4:5 tile with the cover inset 14% and the object shadow; uppercase 12px title and an italic serif byline centred beneath. Hover lifts the cover 6px.
 
 ### Inputs / Fields
-- **Style:** white fill, 52px min-height, 12px 16px padding, 2px radius, 1px inset stitch-line edge at .45; label above in 15px / 600 soft ink.
-- **Focus:** the edge thickens to a 2px inset text-safe gold ring; no outer glow.
-- **Error:** `:user-invalid` swaps to a 2px #c0392b ring with a 13px #a52a1f message beneath. Select arrows are drawn in gold with two gradients.
+- **Style:** no box, transparent, 48px tall, a single bottom underline, 16px serif text. Labels above in 12px uppercase ink-soft.
+- **Focus:** the underline turns taupe-deep; no glow.
+- **Error:** underline and message turn error red, shown only after user interaction (`:user-invalid`).
+- **Select:** the same underline with a small two-stroke chevron in pale taupe.
 
 ### Navigation
-- **Header (the neckline):** fixed, 76px (64px on phones), three-column grid with Menu + two links left, emblem and Bodoni wordmark centred, sound toggle, Give and a small primary button right. Transparent over the hero; becomes a porcelain veil (88%, 14px blur) with a stitched bottom seam once scrolled; hides on scroll down.
-- **Links:** 15px / 500; a 4/3 dashed gold underline draws in from the left on hover and stays for `aria-current`.
-- **Drawer:** side panel (max 520px) on desktop, bottom sheet on phones (88svh, draggable), raised-pearl ground. Items are Bodoni at clamp(30px, 4.2vh, 40px) with a Hanken sub-line, separated by dashed rules, staggering in by 30ms; current page is gold.
-- **Mobile action bar:** fixed 72px porcelain veil with stitched top seam: next service on the left, Plan (primary) and Directions (ghost) right.
+- **Header:** transparent white-on-photo at 88px; after the hero it becomes 96% white with blur, charcoal text, a hairline bottom and 72px height; it hides on scroll down and returns on scroll up. Left: "Menu" with a list icon (label hidden under 860px). Centre: the RCCG emblem (34px, 28px when solid) over "Dayspring Chapel" (15px, 0.14em) and "Houston" (11px, 0.32em). Right: the sound icon button, a directions icon button and a glass "Plan a visit" pill (the last two hidden under 860px).
+- **Menu panel:** a left drawer up to 460px (full width on phones) over a night scrim, sliding in on the drawer curve over 550ms. Links are 19px light uppercase rows divided by hairlines, each with a small pale taupe caret; rows enter with a 30ms stagger; hover nudges the link 6px right in taupe-deep; the current page is taupe-deep. Contact details sit in the panel foot.
 
-### Yoke Embroidery (signature)
-The hero ornament is an SVG agbada yoke (generated by `tools_yoke.py`): satin strokes (3.2px), thin satin (2px), running stitch (2.1px, 7/5 dash), fine running stitch (1.4px, 4/4, 75% opacity) and knots, all in embroidery gold with round caps and joins. A single `--p` progress variable sews every stitch in through masked stroke-dashoffsets with per-path delays, and the emblem fades and settles from 0.92 scale as it completes. Its concentric rings return as the **seal** (168px, three rings, emblem at the centre) at the close of the give section.
+### Stacked Slides (signature)
+Four full-bleed slides on night, each sticky so the next rises over it. Copy bottom-left: display title, one serif line at 92% white, a white pill; slide one adds the live "next service" line computed in Houston time. A vertical rail of 8px outlined dots sits right; the active dot fills white and scales to 1.2. The covered slide recedes (scale and shade).
 
-### Woven Label (signature)
-A garment label used sparingly (Crossover date, visit page): cream ground with indigo warp lines, V-notched ends, dashed inner rules, Bodoni 17px / 600 uppercase at 0.14em over a 13px Hanken line. It is a standalone object, never a heading prefix.
+### Services List
+Gatherings in the order they come, each row on hairlines: a light uppercase name with its time beneath in soft ink, and on the right an uppercase "in X days" note in taupe-deep beside an outline "Add to calendar" pill that downloads a calendar entry. The next gathering is promoted: larger (21 to 26px) and in taupe-deep.
 
-### Ranked Gatherings
-The schedule is ordered by how soon each gathering comes, and type size follows rank: the next one is set at clamp(38px, 5vw, 72px) in deep gold, then 40px, 30px, 24px. Each row is separated by dashed rules, with time detail in 15px soft ink and a gold "in N days" countdown.
+### FAQ
+Native details on hairlines: 13px uppercase questions, a pale taupe plus icon that rotates 45 degrees when open, height animated to auto over 350ms, answers in soft ink at 62ch.
 
-### Verdict Card
-The planner's answer: a woven-label cream card with a dashed inner edge inset 8px, Bodoni title, a checklist with indigo Phosphor icons, and full-width emblem-indigo buttons (add to calendar, email). Sticks beside the questions on desktop; blurs to 20% opacity for 250ms while it recomposes.
+### Footer
+Four columns of 12px taupe-deep uppercase heads over 14.5px serif lists, then a hairline and a three-part brand row: legal line left, centred emblem and wordmark, and two switches right: **Sound** and **Reduce motion**. Switches are 32 by 18px tracks, taupe-deep when on, with a white thumb; both choices are remembered.
+
+### Loader
+White screen, the emblem fading and settling in (76px), the wordmark in 20px light uppercase at 0.32em, and a 140px hairline that fills with pale taupe. Full length on first visit in a session, quick after that and under reduced motion.
+
+### Toast
+A charcoal pill, 13px sans at 0.03em, a warm pale icon, rising 14px into place at the bottom centre.
+
+### Image Slots
+Every photograph lives in `site/assets/img/slots/` under a fixed name and size family: `hero-*` (16:9, 2400 and 1280), `ed-*` (4:5, 1400 and 800), `band-*` (21:9, 2400 and 1280). Each file carries a `.json` provenance sidecar. These are placeholders the church replaces with its own rebuilt photographs of the same names (see docs/IMAGE-BRIEF.md); the layout, crops and copy positions are designed around the slot, not the current image.
+
+### Motion
+- **Curves:** out `cubic-bezier(0.23, 1, 0.32, 1)` for almost everything; in-out `cubic-bezier(0.77, 0, 0.175, 1)` for the loader line; drawer `cubic-bezier(0.32, 0.72, 0, 1)` for the menu and scrim.
+- **Durations:** 160ms press, 200 to 300ms colour states, 400 to 550ms header and drawer, 1.2 to 1.6s photograph reveal.
+- **Photograph reveal:** the one authored motion for imagery: the frame opens from an 8% top clip while the image settles from 1.06 scale.
+- **Smooth scroll:** Lenis 1.1.13, duration 1.15 with expo easing, synced on touch. Stopped while the menu is open and disabled under reduced motion.
+- **Reduced motion:** the system preference or the footer switch collapses all animation and transition to near zero and turns smooth scroll off.
+
+### Named Rules
+**The Slot Rule.** Photographs are replaceable by name. Reference images only through `assets/img/slots/` with the slot's name and sizes, never hard-wire a one-off file into a layout; when the church supplies a new image under the same name, it must drop in without code changes.
+
+**The Opt-In Senses Rule.** Sound is off until the visitor turns it on, and both sound and motion can be switched off from every page. Any new motion or sound must respect both switches.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** treat every light surface as cloth: give bands `.cloth` (twill at .022 / .03 alpha and pointer sheen) and alternate porcelain #fcfbf7, pearl #f8f6f1 and lining #faf8f3.
-- **Do** set gold words in #7d5d22 (or #6c4f1a for emphasis) and reserve #b08b40 for embroidery strokes.
-- **Do** separate content with dashed running-stitch rules in `rgb(160 125 55 / .22 to .4)` and baste filled shapes with an inset dashed edge.
-- **Do** tint every shadow with the emblem's indigo `rgb(41 24 113)` and keep them long, soft and negatively spread.
-- **Do** reach the dark world only by overriding tokens on a container (`.footer`, `.theme-deep`), so components stay the same and only the cloth changes.
-- **Do** keep interactive targets at least 44px (buttons 54px, chips 48px, inputs 52px) and interactive text at 15px or larger.
-- **Do** use the `out` curve `cubic-bezier(0.23, 1, 0.32, 1)` for state changes, the `drawer` curve `cubic-bezier(0.32, 0.72, 0, 1)` for panels, scale(0.97) on press, and collapse motion entirely under `prefers-reduced-motion`.
+- **Do** set every title in Open Sans Light uppercase and every paragraph in Lora; keep running text at 16px, 1.75 line height, under 58ch.
+- **Do** use taupe-deep (#6e5f4e) for any taupe text, and pale taupe (#8a7965) only for icons, rules, focus and selection.
+- **Do** draw structure with 1px #e4e0da hairlines and generous white space instead of boxes.
+- **Do** use outline pills by default, a white pill on photography, and a single solid pill for the primary action in a context.
+- **Do** put photographs full-bleed on night, or square at 4:5 in a 6-of-12 column spread, and alternate spread sides down a page.
+- **Do** place imagery through named slots in `site/assets/img/slots/` with a provenance `.json`, so the church's own replacements of the same name drop in.
+- **Do** keep the RCCG emblem unaltered, small and centred.
+- **Do** keep the next service visible within one glance, and end every page with a way to come on Sunday.
+- **Do** respect reduced motion and keep sound opt-in, with both toggles in the footer.
 
 ### Don't:
-- **Don't** recolour, redraw or place the RCCG emblem on a coloured fill; it sits on white.
-- **Don't** use solid 1px borders or grey hairlines; seams are stitched.
-- **Don't** round corners beyond 2px on buttons, cards, chips, inputs or photographs.
-- **Don't** set body text, buttons or form fields in Bodoni Moda, or headings in Hanken Grotesk.
-- **Don't** add dark section fills, gradients or new accent hues to the light pages; the palette is white cloth, gold thread, indigo ink.
-- **Don't** put drop shadows on flat bands or panels; shadows belong to objects (covers, the emblem, held cards, sheets).
-- **Don't** make sound play without the visitor turning it on.
+- **Don't** introduce a second accent hue, a tinted card ground, or any light ground besides white and #f7f6f4.
+- **Don't** use bold or mixed-case titles, serif titles, or uppercase serif.
+- **Don't** add rounded-corner cards, card grids, banners or announcement strips; the only card is the plan card.
+- **Don't** place a small uppercase label above a headline as a kicker.
+- **Don't** put white text on a photograph without the warm overlay, or place photographs directly on white while loading.
+- **Don't** use pale taupe (#8a7965) for body, label or button text.
+- **Don't** recolour, redraw or enlarge the RCCG emblem into a hero graphic.
+- **Don't** bring back the rejected indigo or agbada embroidery vocabulary.

@@ -10,7 +10,6 @@ og: ribbon-1600.webp
 -->
 Tokens: {{title}} {{description}} {{page}} {{path}} {{og}}
         {{cur:key}}         -> aria-current="page" when key == page
-        {{yoke}}            -> inline agbada yoke embroidery (tools_yoke.py)
 """
 import re
 from pathlib import Path
@@ -18,11 +17,9 @@ from pathlib import Path
 ROOT = Path(__file__).parent
 SRC, OUT = ROOT / "src", ROOT / "site"
 part = lambda n: (SRC / "partials" / f"{n}.html").read_text(encoding="utf-8")
-YOKE = part("yoke").strip()
 
 
 def render(tpl, meta):
-    tpl = tpl.replace("{{yoke}}", YOKE)
     tpl = re.sub(r"\{\{cur:(\w+)\}\}",
                  lambda m: ' aria-current="page"' if m.group(1) == meta["page"] else "", tpl)
     return re.sub(r"\{\{(\w+)\}\}", lambda m: meta.get(m.group(1), m.group(0)), tpl)
