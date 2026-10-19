@@ -155,7 +155,7 @@ The page is a ceremonial garment. A white agbada of porcelain and pearl cloth, e
 
 The emblem's own indigo (#291871 family) is the system's ink; gold is the system's thread. White is not empty space here but the fabric itself: it carries a 45-degree twill weave and, on pointer devices, a soft gold sheen that follows the hand. Type speaks in two registers: Bodoni Moda for the voice (names, headlines, verses, the address), Hanken Grotesk for everything a visitor reads to act or presses. Motion is spring-tactile and interruptible; the hero yoke is sewn in on load by a single progress variable, seams sew themselves closed as they scroll in, and sound is a strictly opt-in needle click.
 
-The built world diverges from the direction contract written before the white switch: that contract named indigo twill grounds and wine linings. The shipped world is white. Indigo survives as ink, emblem accent and the deep footer; "wine" survives only as legacy modifier names whose values are now warm pearl.
+The built world diverges from the direction contract written before the white switch: that contract originally named indigo twill grounds and wine linings and has since been updated to the white world. The shipped world is white. Indigo survives as ink, emblem accent and the deep footer; "wine" survives only as legacy modifier names whose values are now warm pearl.
 
 **Key Characteristics:**
 - Porcelain and pearl cloth grounds with a woven twill texture, never flat white boxes.
@@ -172,7 +172,7 @@ A white garment with gold embroidery and indigo ink: two warm-white grounds, a p
 ### Primary
 - **Text-Safe Gold** (#7d5d22): the colour of words and actions on white. Primary buttons (as a vertical gradient from #86662a to #6b501c), text links, `.live` next-service line, icons in contact lists, focus outlines, selection highlight, caret. Passes AA on porcelain and pearl.
 - **Deep Gold** (#6c4f1a): emphasis gold. Hover colour for links, the first-ranked gathering name, pledge and timeline headings, the large numerals in fact rows.
-- **Embroidery Gold** (#b08b40): thread only. Strokes of the yoke embroidery, the seal rings, the pastors' arch, group icons. Never used for body text (it fails AA on white).
+- **Embroidery Gold** (#b08b40): thread only. Strokes of the yoke embroidery, the seal rings, the pastors' arch. Never used for body text (it fails AA on white).
 - **Pale Gold** (#e2d1a6): scrollbar thumb and the softest gold surface tint.
 
 ### Secondary
@@ -185,8 +185,8 @@ A white garment with gold embroidery and indigo ink: two warm-white grounds, a p
 - **Porcelain Ground** (#fcfbf7): page background, header veil (as `rgb(252 251 247 / .88)` with 14px blur).
 - **Pearl Field** (#f8f6f1): alternate cloth band (`.cloth--deep`).
 - **Raised Pearl** (#f7f6f9): cool-tinted raise for channel cards, ways panels, the drawer.
-- **Lining** (#faf8f3) and **Deep Lining** (#f4f0e7): warm bands and warm cards (`.cloth--wine`, `.channel--wine`).
-- **Woven Label** (#f6ecd4): the cream of a garment label: labels, selected chips, verdict card, toasts.
+- **Lining** (#faf8f3) and **Deep Lining** (#f4f0e7): warm bands and warm cards (`.cloth--lining`, `.channel--lining`).
+- **Woven Label** (#f6ecd4): the gold-cream of a garment label: labels, selected chips, toasts. The verdict card sits on a near-white pearl (#fbf8f1) so it never becomes a cream plane on the white page.
 - **Stitch Line** (rgb 160 125 55 at .22 to .55 alpha): every dashed rule, ghost-button edge and input outline.
 
 ### Deep anchor (token override)
@@ -272,7 +272,7 @@ Garment labels: firm, square, with a basted inner edge.
 
 ### Cards / Containers
 - **Corner Style:** 2px.
-- **Background:** raised pearl (channels, ways), deep lining (warm channel), porcelain (ministry groups on a pearl band).
+- **Background:** raised pearl (channels, ways), deep lining (warm channel), porcelain.
 - **Shadow Strategy:** none; see The Cloth Is Flat Rule.
 - **Border:** a basted inner outline inset 8px (`1px dashed rgb(var(--line) / .28 to .35)`).
 - **Internal Padding:** clamp(28px, 3vw, 44px) to clamp(28px, 3.4vw, 48px).
