@@ -378,4 +378,4 @@ html.reduce-motion *, html.reduce-motion *::before, html.reduce-motion *::after 
 
 .op-pastors { object-position: 62% 50%; }
 .op-ribbon { object-position: 60% 50%; }
-@media (max-width: 860px) { .op-pastors { object-position: 66% 0%; } .op-ribbon { object-position: 30% 20%; } }
+@media (max-width: 860px) { .op-pastors { object-position: 73% 30%; } .op-ribbon { object-position: 30% 20%; } }
