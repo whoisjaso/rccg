@@ -1,0 +1,122 @@
+<title>{{TITLE}}</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Open+Sans:wght@300;400;600&display=swap">
+<style>
+/* Layout: one column of numbered work cards, each a three-step recipe (upload, paste, send back), matching the site's maison style. */
+:root {
+  --bg: #ffffff; --paper: #f7f6f4; --ink: #2e2e33; --soft: #5c5b62; --taupe: #6e5f4e; --taupe-2: #8a7965; --line: #e4e0da; --code: #faf9f7; --ok: #2f6b45;
+  --sans: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+  --serif: "Lora", Georgia, "Times New Roman", serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #1b1a19; --paper: #232120; --ink: #ece8e2; --soft: #b5afa6; --taupe: #cdb99f; --taupe-2: #a8957e; --line: #3a3633; --code: #201f1d; --ok: #7cc49a; color-scheme: dark; } }
+:root[data-theme="dark"] { --bg: #1b1a19; --paper: #232120; --ink: #ece8e2; --soft: #b5afa6; --taupe: #cdb99f; --taupe-2: #a8957e; --line: #3a3633; --code: #201f1d; --ok: #7cc49a; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--serif); font-size: 16px; line-height: 1.7; margin: 0; }
+.wrap { max-width: 1080px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--sans); font-weight: 300; text-transform: uppercase; letter-spacing: .04em; margin: 0; text-wrap: balance; }
+code { font-family: var(--mono); font-size: 13px; }
+
+/* Intro */
+.intro { padding-block: 56px 32px; border-bottom: 1px solid var(--line); }
+.intro h1 { font-size: clamp(26px, 4vw, 38px); }
+.intro .lead { margin: 14px 0 0; max-width: 62ch; color: var(--soft); }
+.how { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 28px 0 0; padding: 0; list-style: none; }
+.how li { padding: 18px 18px 16px; background: var(--paper); border-top: 1px solid var(--taupe-2); min-width: 0; }
+.how b { display: block; font-family: var(--sans); font-weight: 600; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--taupe); margin-bottom: 4px; }
+.how p { margin: 0; font-size: 15px; }
+.rules { margin: 18px 0 0; font-size: 15px; color: var(--soft); max-width: 70ch; }
+
+/* Jump list */
+.jump { display: flex; flex-wrap: wrap; gap: 8px; padding-block: 22px; border-bottom: 1px solid var(--line); }
+.jump a { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--line); text-decoration: none; color: var(--ink); font-family: var(--sans); font-size: 13px; }
+.jump a span { color: var(--taupe); font-weight: 600; }
+.jump a:hover { box-shadow: inset 0 0 0 1px var(--taupe); }
+
+/* Cards */
+.card { padding-block: 48px; border-bottom: 1px solid var(--line); scroll-margin-top: 12px; }
+.card__head { display: flex; gap: 18px; align-items: baseline; margin-bottom: 24px; }
+.card__num { font-family: var(--sans); font-weight: 300; font-size: 40px; line-height: 1; color: var(--taupe); min-width: 2.2ch; }
+.card__titles h2 { font-size: clamp(20px, 2.4vw, 26px); }
+.card__titles p { margin: 4px 0 0; color: var(--soft); font-size: 15px; }
+.badge { display: inline-block; vertical-align: middle; margin-left: 10px; padding: 2px 10px; border-radius: 999px; background: var(--taupe); color: var(--bg); font-size: 11px; font-weight: 600; letter-spacing: .1em; }
+.card__body { display: grid; gap: 28px; }
+.step h3 { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; letter-spacing: .1em; }
+.step__n { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--ink); color: var(--bg); font-size: 12px; font-weight: 600; flex: none; }
+.step__row { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.hint { margin: 6px 0 14px 34px; font-size: 14px; color: var(--soft); }
+
+.refs { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+.ref { margin: 0; min-width: 0; background: var(--paper); }
+.ref__img { aspect-ratio: 4 / 3; display: grid; place-items: center; background: repeating-conic-gradient(var(--paper) 0 25%, var(--bg) 0 50%) 0 0 / 16px 16px; overflow: hidden; }
+.ref__img img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+.ref figcaption { display: grid; gap: 2px; padding: 12px 14px 14px; }
+.ref__n { font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--taupe); }
+.ref__kind { font-family: var(--sans); font-size: 12px; color: var(--soft); }
+.ref b { font-weight: 500; }
+.ref code { color: var(--soft); word-break: break-all; }
+
+.prompt { margin: 12px 0 0; padding: 18px 20px; background: var(--code); border: 1px solid var(--line); border-left: 2px solid var(--taupe-2); font-family: var(--mono); font-size: 13px; line-height: 1.65; white-space: pre-wrap; word-break: break-word; overflow-x: auto; max-height: 480px; overflow-y: auto; }
+.copy { font-family: var(--sans); font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--bg); background: var(--taupe); border: 0; border-radius: 999px; padding: 10px 20px; cursor: pointer; transition: transform .15s ease, background-color .2s ease; }
+.copy:active { transform: scale(.97); }
+.copy.is-done { background: var(--ok); }
+.copy--small { padding: 6px 14px; font-size: 11px; }
+.copy:focus-visible, .jump a:focus-visible { outline: 2px solid var(--taupe); outline-offset: 3px; }
+.save { margin: 10px 0 0 34px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.save code { font-size: 14px; padding: 6px 10px; background: var(--paper); border: 1px solid var(--line); }
+
+.extras-head { padding-block: 56px 0; }
+.extras-head h2 { font-size: 24px; }
+.extras-head p { color: var(--soft); margin: 8px 0 0; }
+.foot { padding-block: 40px 64px; color: var(--soft); font-size: 14px; }
+
+@media (max-width: 700px) {
+  .how { grid-template-columns: 1fr; }
+  .card__head { gap: 12px; }
+  .card__num { font-size: 30px; }
+  .hint, .save { margin-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .copy { transition: none; } }
+</style>
+
+<header class="intro wrap">
+  <h1>{{TITLE}}</h1>
+  <p class="lead">{{LEAD}}</p>
+  <ol class="how">
+    <li><b>Step 1</b><p>Open ChatGPT image generation and upload the images shown on the card, in order.</p></li>
+    <li><b>Step 2</b><p>Tap <em>Copy prompt</em> and paste the whole prompt in one go.</p></li>
+    <li><b>Step 3</b><p>Send the result back in chat with the name shown on its card.</p></li>
+  </ol>
+  <p class="rules">If a face changes, reply with one correction only, such as "Restore her exact face from the source photo, change nothing else." Get the people pictured to approve edited photos before publishing.</p>
+</header>
+
+<nav class="jump wrap" aria-label="Jump to a prompt">{{NAV}}<a href="#extras"><span>+</span>Optional angles</a></nav>
+
+<main class="wrap">
+{{CARDS}}
+<div class="extras-head" id="extras"><h2>Optional new angles</h2><p>Extra images for future slides. Upload the style reference with each, plus the source photo where one is shown.</p></div>
+{{EXTRAS}}
+</main>
+<footer class="foot wrap">Prompts written for ChatGPT image generation.</footer>
+
+<script>
+document.addEventListener('click', async (e) => {
+  const b = e.target.closest('[data-copy], [data-copy-text]');
+  if (!b) return;
+  const text = b.dataset.copyText ?? document.getElementById(b.dataset.copy).textContent;
+  const label = b.textContent;
+  try {
+    await navigator.clipboard.writeText(text);
+    b.textContent = 'Copied'; b.classList.add('is-done');
+  } catch (err) {
+    const el = b.dataset.copy ? document.getElementById(b.dataset.copy) : b.previousElementSibling;
+    const r = document.createRange(); r.selectNodeContents(el);
+    const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+    b.textContent = 'Selected, press copy';
+  }
+  setTimeout(() => { b.textContent = label; b.classList.remove('is-done'); }, 1800);
+});
+</script>
