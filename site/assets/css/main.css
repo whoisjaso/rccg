@@ -387,3 +387,5 @@ html.reduce-motion *, html.reduce-motion *::before, html.reduce-motion *::after 
 .page-lost .header .header__left, .page-lost .header .header__right, .page-lost .header .brand { filter: none; }
 .op-group { object-position: 62% 22%; }
 @media (max-width: 860px) { .op-group { object-position: 70% 22%; } }
+.op-orig { object-position: 50% 0%; }
+@media (max-width: 860px) { .op-orig { object-position: 52% 0%; } }
