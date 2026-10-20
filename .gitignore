@@ -5,3 +5,6 @@ docs/reference-photos.zip
 video/*/work/
 video/*/out/*.mkv
 video/*/out/*.cues.json
+video/*/out/vo/*.mkv
+video/*/out/vo/*.cues.json
+video/*/vo/takes/

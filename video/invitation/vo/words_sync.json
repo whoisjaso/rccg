@@ -1,0 +1,1612 @@
+[
+{
+"w": "You've",
+"s": 0.0667,
+"e": 0.24,
+"s_whisper": 0.0,
+"s_ref": 0.062,
+"s_frame": 4,
+"delta_ms": 62.0,
+"method": "pause-onset"
+},
+{
+"w": "been",
+"s": 0.2333,
+"e": 0.36,
+"s_whisper": 0.24,
+"s_ref": 0.231,
+"s_frame": 14,
+"delta_ms": -9.0,
+"method": "boundary-valley"
+},
+{
+"w": "carrying",
+"s": 0.3667,
+"e": 0.66,
+"s_whisper": 0.36,
+"s_ref": 0.36,
+"s_frame": 22,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "it",
+"s": 0.6667,
+"e": 0.86,
+"s_whisper": 0.66,
+"s_ref": 0.66,
+"s_frame": 40,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "alone",
+"s": 0.8167,
+"e": 1.2,
+"s_whisper": 0.86,
+"s_ref": 0.821,
+"s_frame": 49,
+"delta_ms": -39.0,
+"method": "boundary-valley"
+},
+{
+"w": "for",
+"s": 1.2,
+"e": 1.66,
+"s_whisper": 1.2,
+"s_ref": 1.203,
+"s_frame": 72,
+"delta_ms": 3.0,
+"method": "boundary-valley"
+},
+{
+"w": "a",
+"s": 1.6667,
+"e": 1.82,
+"s_whisper": 1.66,
+"s_ref": 1.66,
+"s_frame": 100,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "long",
+"s": 1.8167,
+"e": 2.02,
+"s_whisper": 1.82,
+"s_ref": 1.82,
+"s_frame": 109,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "time.",
+"s": 2.0167,
+"e": 2.7,
+"s_whisper": 2.02,
+"s_ref": 2.02,
+"s_frame": 121,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "The",
+"s": 3.3333,
+"e": 3.44,
+"s_whisper": 3.4,
+"s_ref": 3.331,
+"s_frame": 200,
+"delta_ms": -69.0,
+"method": "pause-onset"
+},
+{
+"w": "late",
+"s": 3.4333,
+"e": 3.66,
+"s_whisper": 3.44,
+"s_ref": 3.44,
+"s_frame": 206,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "nights.",
+"s": 3.7,
+"e": 4.0,
+"s_whisper": 3.66,
+"s_ref": 3.696,
+"s_frame": 222,
+"delta_ms": 36.0,
+"method": "boundary-valley"
+},
+{
+"w": "The",
+"s": 4.8,
+"e": 4.88,
+"s_whisper": 4.74,
+"s_ref": 4.8,
+"s_frame": 288,
+"delta_ms": 50.0,
+"method": "clamped to take start (whisper onset fell in silence)"
+},
+{
+"w": "habit",
+"s": 4.9,
+"e": 5.14,
+"s_whisper": 4.88,
+"s_ref": 4.906,
+"s_frame": 294,
+"delta_ms": 26.0,
+"method": "boundary-valley"
+},
+{
+"w": "you",
+"s": 5.0833,
+"e": 5.34,
+"s_whisper": 5.14,
+"s_ref": 5.08,
+"s_frame": 305,
+"delta_ms": -60.0,
+"method": "boundary-valley"
+},
+{
+"w": "hide.",
+"s": 5.3333,
+"e": 5.6,
+"s_whisper": 5.34,
+"s_ref": 5.34,
+"s_frame": 320,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "The",
+"s": 6.25,
+"e": 6.32,
+"s_whisper": 6.16,
+"s_ref": 6.25,
+"s_frame": 375,
+"delta_ms": 76.0,
+"method": "clamped to take start (whisper onset fell in silence)"
+},
+{
+"w": "words",
+"s": 6.3667,
+"e": 6.6,
+"s_whisper": 6.32,
+"s_ref": 6.359,
+"s_frame": 382,
+"delta_ms": 39.0,
+"method": "boundary-valley"
+},
+{
+"w": "you",
+"s": 6.5833,
+"e": 6.86,
+"s_whisper": 6.6,
+"s_ref": 6.58,
+"s_frame": 395,
+"delta_ms": -20.0,
+"method": "boundary-valley"
+},
+{
+"w": "can't",
+"s": 6.85,
+"e": 7.16,
+"s_whisper": 6.86,
+"s_ref": 6.845,
+"s_frame": 411,
+"delta_ms": -15.0,
+"method": "boundary-valley"
+},
+{
+"w": "take",
+"s": 7.1167,
+"e": 7.3,
+"s_whisper": 7.16,
+"s_ref": 7.117,
+"s_frame": 427,
+"delta_ms": -43.0,
+"method": "boundary-valley"
+},
+{
+"w": "back.",
+"s": 7.3,
+"e": 7.66,
+"s_whisper": 7.3,
+"s_ref": 7.3,
+"s_frame": 438,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "The",
+"s": 8.2333,
+"e": 8.3,
+"s_whisper": 8.08,
+"s_ref": 8.2333,
+"s_frame": 494,
+"delta_ms": 0.0,
+"method": "clamped to take start (whisper onset fell in silence)"
+},
+{
+"w": "bitterness",
+"s": 8.3167,
+"e": 8.56,
+"s_whisper": 8.3,
+"s_ref": 8.321,
+"s_frame": 499,
+"delta_ms": 21.0,
+"method": "boundary-valley"
+},
+{
+"w": "you",
+"s": 8.5,
+"e": 8.82,
+"s_whisper": 8.56,
+"s_ref": 8.508,
+"s_frame": 510,
+"delta_ms": -52.0,
+"method": "boundary-valley"
+},
+{
+"w": "call",
+"s": 8.8,
+"e": 9.0,
+"s_whisper": 8.82,
+"s_ref": 8.805,
+"s_frame": 528,
+"delta_ms": -15.0,
+"method": "boundary-valley"
+},
+{
+"w": "fine.",
+"s": 9.0333,
+"e": 9.3,
+"s_whisper": 9.0,
+"s_ref": 9.04,
+"s_frame": 542,
+"delta_ms": 40.0,
+"method": "boundary-valley"
+},
+{
+"w": "The",
+"s": 9.8167,
+"e": 9.9,
+"s_whisper": 9.76,
+"s_ref": 9.8167,
+"s_frame": 589,
+"delta_ms": 45.0,
+"method": "clamped to take start (whisper onset fell in silence)"
+},
+{
+"w": "empty",
+"s": 9.9333,
+"e": 10.3,
+"s_whisper": 9.9,
+"s_ref": 9.929,
+"s_frame": 596,
+"delta_ms": 29.0,
+"method": "boundary-valley"
+},
+{
+"w": "after",
+"s": 10.3333,
+"e": 10.94,
+"s_whisper": 10.3,
+"s_ref": 10.333,
+"s_frame": 620,
+"delta_ms": 33.0,
+"method": "boundary-valley"
+},
+{
+"w": "the",
+"s": 10.9,
+"e": 11.12,
+"s_whisper": 10.94,
+"s_ref": 10.896,
+"s_frame": 654,
+"delta_ms": -44.0,
+"method": "boundary-valley"
+},
+{
+"w": "party",
+"s": 11.1167,
+"e": 11.38,
+"s_whisper": 11.12,
+"s_ref": 11.121,
+"s_frame": 667,
+"delta_ms": 1.0,
+"method": "boundary-valley"
+},
+{
+"w": "ends.",
+"s": 11.3333,
+"e": 11.76,
+"s_whisper": 11.38,
+"s_ref": 11.326,
+"s_frame": 680,
+"delta_ms": -54.0,
+"method": "boundary-valley"
+},
+{
+"w": "And",
+"s": 12.5,
+"e": 12.58,
+"s_whisper": 12.46,
+"s_ref": 12.497,
+"s_frame": 750,
+"delta_ms": 37.0,
+"method": "pause-onset"
+},
+{
+"w": "that",
+"s": 12.5833,
+"e": 12.76,
+"s_whisper": 12.58,
+"s_ref": 12.58,
+"s_frame": 755,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "quiet",
+"s": 12.7833,
+"e": 13.12,
+"s_whisper": 12.76,
+"s_ref": 12.782,
+"s_frame": 767,
+"delta_ms": 22.0,
+"method": "boundary-valley"
+},
+{
+"w": "ache.",
+"s": 13.1167,
+"e": 13.62,
+"s_whisper": 13.12,
+"s_ref": 13.12,
+"s_frame": 787,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "Nothing",
+"s": 14.5167,
+"e": 14.82,
+"s_whisper": 14.54,
+"s_ref": 14.524,
+"s_frame": 871,
+"delta_ms": -16.0,
+"method": "pause-onset"
+},
+{
+"w": "fixes.",
+"s": 14.7667,
+"e": 15.26,
+"s_whisper": 14.82,
+"s_ref": 14.77,
+"s_frame": 886,
+"delta_ms": -50.0,
+"method": "boundary-valley"
+},
+{
+"w": "But",
+"s": 16.8667,
+"e": 16.98,
+"s_whisper": 16.7,
+"s_ref": 16.8667,
+"s_frame": 1012,
+"delta_ms": 0.0,
+"method": "clamped to take start (whisper onset fell in silence)"
+},
+{
+"w": "hear",
+"s": 16.9833,
+"e": 17.2,
+"s_whisper": 16.98,
+"s_ref": 16.98,
+"s_frame": 1019,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "me,",
+"s": 17.2333,
+"e": 17.42,
+"s_whisper": 17.2,
+"s_ref": 17.232,
+"s_frame": 1034,
+"delta_ms": 32.0,
+"method": "boundary-valley"
+},
+{
+"w": "you",
+"s": 17.8167,
+"e": 17.96,
+"s_whisper": 17.76,
+"s_ref": 17.814,
+"s_frame": 1069,
+"delta_ms": 54.0,
+"method": "pause-onset"
+},
+{
+"w": "are",
+"s": 17.9667,
+"e": 18.12,
+"s_whisper": 17.96,
+"s_ref": 17.96,
+"s_frame": 1078,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "not",
+"s": 18.1167,
+"e": 18.38,
+"s_whisper": 18.12,
+"s_ref": 18.12,
+"s_frame": 1087,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "too",
+"s": 18.4167,
+"e": 18.62,
+"s_whisper": 18.38,
+"s_ref": 18.42,
+"s_frame": 1105,
+"delta_ms": 40.0,
+"method": "boundary-valley"
+},
+{
+"w": "far",
+"s": 18.6167,
+"e": 18.84,
+"s_whisper": 18.62,
+"s_ref": 18.62,
+"s_frame": 1117,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "gone.",
+"s": 18.8833,
+"e": 19.16,
+"s_whisper": 18.84,
+"s_ref": 18.88,
+"s_frame": 1133,
+"delta_ms": 40.0,
+"method": "boundary-valley"
+},
+{
+"w": "Not",
+"s": 19.7167,
+"e": 19.88,
+"s_whisper": 19.68,
+"s_ref": 19.712,
+"s_frame": 1183,
+"delta_ms": 32.0,
+"method": "pause-onset"
+},
+{
+"w": "too",
+"s": 19.8833,
+"e": 20.04,
+"s_whisper": 19.88,
+"s_ref": 19.884,
+"s_frame": 1193,
+"delta_ms": 4.0,
+"method": "boundary-valley"
+},
+{
+"w": "late,",
+"s": 20.0333,
+"e": 20.36,
+"s_whisper": 20.04,
+"s_ref": 20.04,
+"s_frame": 1202,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "not",
+"s": 20.9167,
+"e": 21.1,
+"s_whisper": 20.86,
+"s_ref": 20.922,
+"s_frame": 1255,
+"delta_ms": 62.0,
+"method": "pause-onset"
+},
+{
+"w": "too",
+"s": 21.1333,
+"e": 21.28,
+"s_whisper": 21.1,
+"s_ref": 21.127,
+"s_frame": 1268,
+"delta_ms": 27.0,
+"method": "boundary-valley"
+},
+{
+"w": "much.",
+"s": 21.3,
+"e": 21.74,
+"s_whisper": 21.28,
+"s_ref": 21.302,
+"s_frame": 1278,
+"delta_ms": 22.0,
+"method": "boundary-valley"
+},
+{
+"w": "Come",
+"s": 22.8,
+"e": 22.92,
+"s_whisper": 22.66,
+"s_ref": 22.8,
+"s_frame": 1368,
+"delta_ms": 97.0,
+"method": "clamped to take start (whisper onset fell in silence)"
+},
+{
+"w": "on",
+"s": 22.9,
+"e": 23.08,
+"s_whisper": 22.92,
+"s_ref": 22.9,
+"s_frame": 1374,
+"delta_ms": -20.0,
+"method": "boundary-valley"
+},
+{
+"w": "to",
+"s": 23.1167,
+"e": 23.24,
+"s_whisper": 23.08,
+"s_ref": 23.115,
+"s_frame": 1387,
+"delta_ms": 35.0,
+"method": "boundary-valley"
+},
+{
+"w": "me,",
+"s": 23.2167,
+"e": 23.46,
+"s_whisper": 23.24,
+"s_ref": 23.218,
+"s_frame": 1393,
+"delta_ms": -22.0,
+"method": "boundary-valley"
+},
+{
+"w": "all",
+"s": 23.7167,
+"e": 23.86,
+"s_whisper": 23.68,
+"s_ref": 23.716,
+"s_frame": 1423,
+"delta_ms": 36.0,
+"method": "pause-onset"
+},
+{
+"w": "ye",
+"s": 23.8667,
+"e": 24.06,
+"s_whisper": 23.86,
+"s_ref": 23.86,
+"s_frame": 1432,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "that",
+"s": 24.1,
+"e": 24.3,
+"s_whisper": 24.06,
+"s_ref": 24.1,
+"s_frame": 1446,
+"delta_ms": 40.0,
+"method": "boundary-valley"
+},
+{
+"w": "labor",
+"s": 24.2667,
+"e": 24.54,
+"s_whisper": 24.3,
+"s_ref": 24.273,
+"s_frame": 1456,
+"delta_ms": -27.0,
+"method": "boundary-valley"
+},
+{
+"w": "and",
+"s": 24.5167,
+"e": 24.96,
+"s_whisper": 24.54,
+"s_ref": 24.51,
+"s_frame": 1471,
+"delta_ms": -30.0,
+"method": "boundary-valley"
+},
+{
+"w": "are",
+"s": 24.95,
+"e": 25.08,
+"s_whisper": 24.96,
+"s_ref": 24.956,
+"s_frame": 1497,
+"delta_ms": -4.0,
+"method": "boundary-valley"
+},
+{
+"w": "heavy",
+"s": 25.0833,
+"e": 25.32,
+"s_whisper": 25.08,
+"s_ref": 25.08,
+"s_frame": 1505,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "laden,",
+"s": 25.3167,
+"e": 25.72,
+"s_whisper": 25.32,
+"s_ref": 25.32,
+"s_frame": 1519,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "and",
+"s": 26.0833,
+"e": 26.16,
+"s_whisper": 26.0,
+"s_ref": 26.081,
+"s_frame": 1565,
+"delta_ms": 81.0,
+"method": "pause-onset"
+},
+{
+"w": "I",
+"s": 26.1667,
+"e": 26.28,
+"s_whisper": 26.16,
+"s_ref": 26.16,
+"s_frame": 1570,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "will",
+"s": 26.2833,
+"e": 26.38,
+"s_whisper": 26.28,
+"s_ref": 26.28,
+"s_frame": 1577,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "give",
+"s": 26.4167,
+"e": 26.52,
+"s_whisper": 26.38,
+"s_ref": 26.412,
+"s_frame": 1585,
+"delta_ms": 32.0,
+"method": "boundary-valley"
+},
+{
+"w": "you",
+"s": 26.5333,
+"e": 26.66,
+"s_whisper": 26.52,
+"s_ref": 26.528,
+"s_frame": 1592,
+"delta_ms": 8.0,
+"method": "boundary-valley"
+},
+{
+"w": "rest.",
+"s": 26.6833,
+"e": 26.94,
+"s_whisper": 26.66,
+"s_ref": 26.677,
+"s_frame": 1601,
+"delta_ms": 17.0,
+"method": "boundary-valley"
+},
+{
+"w": "The",
+"s": 27.6333,
+"e": 28.28,
+"s_whisper": 27.64,
+"s_ref": 27.64,
+"s_frame": 1658,
+"delta_ms": 0.0,
+"method": "pause-onset"
+},
+{
+"w": "day",
+"s": 28.2833,
+"e": 28.46,
+"s_whisper": 28.28,
+"s_ref": 28.28,
+"s_frame": 1697,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "spring",
+"s": 28.4333,
+"e": 28.76,
+"s_whisper": 28.46,
+"s_ref": 28.436,
+"s_frame": 1706,
+"delta_ms": -24.0,
+"method": "boundary-valley"
+},
+{
+"w": "from",
+"s": 28.7667,
+"e": 28.98,
+"s_whisper": 28.76,
+"s_ref": 28.76,
+"s_frame": 1726,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "on",
+"s": 28.9833,
+"e": 29.16,
+"s_whisper": 28.98,
+"s_ref": 28.98,
+"s_frame": 1739,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "high",
+"s": 29.1667,
+"e": 29.44,
+"s_whisper": 29.16,
+"s_ref": 29.16,
+"s_frame": 1750,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "hath",
+"s": 29.4667,
+"e": 29.7,
+"s_whisper": 29.44,
+"s_ref": 29.468,
+"s_frame": 1768,
+"delta_ms": 28.0,
+"method": "boundary-valley"
+},
+{
+"w": "visited",
+"s": 29.7167,
+"e": 29.98,
+"s_whisper": 29.7,
+"s_ref": 29.722,
+"s_frame": 1783,
+"delta_ms": 22.0,
+"method": "boundary-valley"
+},
+{
+"w": "us.",
+"s": 29.95,
+"e": 30.54,
+"s_whisper": 29.98,
+"s_ref": 29.949,
+"s_frame": 1797,
+"delta_ms": -31.0,
+"method": "boundary-valley"
+},
+{
+"w": "Day",
+"s": 30.9333,
+"e": 31.06,
+"s_whisper": 31.06,
+"s_ref": 30.94,
+"s_frame": 1856,
+"delta_ms": -120.0,
+"method": "pause-onset"
+},
+{
+"w": "spring",
+"s": 31.0667,
+"e": 31.38,
+"s_whisper": 31.06,
+"s_ref": 31.06,
+"s_frame": 1864,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "chapel.",
+"s": 31.3833,
+"e": 31.8,
+"s_whisper": 31.38,
+"s_ref": 31.38,
+"s_frame": 1883,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "A",
+"s": 32.4833,
+"e": 32.6,
+"s_whisper": 32.48,
+"s_ref": 32.489,
+"s_frame": 1949,
+"delta_ms": 9.0,
+"method": "pause-onset"
+},
+{
+"w": "parish",
+"s": 32.6167,
+"e": 32.84,
+"s_whisper": 32.6,
+"s_ref": 32.623,
+"s_frame": 1957,
+"delta_ms": 23.0,
+"method": "boundary-valley"
+},
+{
+"w": "of",
+"s": 32.8333,
+"e": 33.36,
+"s_whisper": 32.84,
+"s_ref": 32.84,
+"s_frame": 1970,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "the",
+"s": 33.3667,
+"e": 33.64,
+"s_whisper": 33.36,
+"s_ref": 33.36,
+"s_frame": 2002,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "redeemed",
+"s": 33.6167,
+"e": 33.92,
+"s_whisper": 33.64,
+"s_ref": 33.615,
+"s_frame": 2017,
+"delta_ms": -25.0,
+"method": "boundary-valley"
+},
+{
+"w": "Christian",
+"s": 33.9167,
+"e": 34.34,
+"s_whisper": 33.92,
+"s_ref": 33.92,
+"s_frame": 2035,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "church",
+"s": 34.3333,
+"e": 34.58,
+"s_whisper": 34.34,
+"s_ref": 34.34,
+"s_frame": 2060,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "of",
+"s": 34.6167,
+"e": 34.78,
+"s_whisper": 34.58,
+"s_ref": 34.618,
+"s_frame": 2077,
+"delta_ms": 38.0,
+"method": "boundary-valley"
+},
+{
+"w": "God,",
+"s": 34.7833,
+"e": 35.04,
+"s_whisper": 34.78,
+"s_ref": 34.787,
+"s_frame": 2087,
+"delta_ms": 7.0,
+"method": "boundary-valley"
+},
+{
+"w": "right",
+"s": 35.5167,
+"e": 35.64,
+"s_whisper": 35.5,
+"s_ref": 35.512,
+"s_frame": 2131,
+"delta_ms": 12.0,
+"method": "pause-onset"
+},
+{
+"w": "here",
+"s": 35.6833,
+"e": 35.82,
+"s_whisper": 35.64,
+"s_ref": 35.676,
+"s_frame": 2141,
+"delta_ms": 36.0,
+"method": "boundary-valley"
+},
+{
+"w": "in",
+"s": 35.8167,
+"e": 35.94,
+"s_whisper": 35.82,
+"s_ref": 35.82,
+"s_frame": 2149,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "Houston.",
+"s": 35.9167,
+"e": 36.2,
+"s_whisper": 35.94,
+"s_ref": 35.912,
+"s_frame": 2155,
+"delta_ms": -28.0,
+"method": "boundary-valley"
+},
+{
+"w": "A",
+"s": 37.0167,
+"e": 37.1,
+"s_whisper": 37.0,
+"s_ref": 37.0167,
+"s_frame": 2221,
+"delta_ms": -1.0,
+"method": "clamped to take start (whisper onset fell in silence)"
+},
+{
+"w": "home",
+"s": 37.1167,
+"e": 37.26,
+"s_whisper": 37.1,
+"s_ref": 37.115,
+"s_frame": 2227,
+"delta_ms": 15.0,
+"method": "boundary-valley"
+},
+{
+"w": "in",
+"s": 37.2667,
+"e": 37.44,
+"s_whisper": 37.26,
+"s_ref": 37.269,
+"s_frame": 2236,
+"delta_ms": 9.0,
+"method": "boundary-valley"
+},
+{
+"w": "Houston.",
+"s": 37.4833,
+"e": 37.8,
+"s_whisper": 37.44,
+"s_ref": 37.479,
+"s_frame": 2249,
+"delta_ms": 39.0,
+"method": "boundary-valley"
+},
+{
+"w": "Service",
+"s": 38.5,
+"e": 38.66,
+"s_whisper": 38.56,
+"s_ref": 38.501,
+"s_frame": 2310,
+"delta_ms": -59.0,
+"method": "pause-onset"
+},
+{
+"w": "times,",
+"s": 38.6167,
+"e": 39.1,
+"s_whisper": 38.66,
+"s_ref": 38.611,
+"s_frame": 2317,
+"delta_ms": -49.0,
+"method": "boundary-valley"
+},
+{
+"w": "directions,",
+"s": 39.4,
+"e": 39.8,
+"s_whisper": 39.4,
+"s_ref": 39.4,
+"s_frame": 2364,
+"delta_ms": 0.0,
+"method": "pause-onset"
+},
+{
+"w": "and",
+"s": 40.1333,
+"e": 40.22,
+"s_whisper": 40.14,
+"s_ref": 40.14,
+"s_frame": 2408,
+"delta_ms": 0.0,
+"method": "pause-onset"
+},
+{
+"w": "a",
+"s": 40.2167,
+"e": 40.34,
+"s_whisper": 40.22,
+"s_ref": 40.22,
+"s_frame": 2413,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "plan",
+"s": 40.3667,
+"e": 40.52,
+"s_whisper": 40.34,
+"s_ref": 40.359,
+"s_frame": 2422,
+"delta_ms": 19.0,
+"method": "boundary-valley"
+},
+{
+"w": "for",
+"s": 40.5167,
+"e": 40.74,
+"s_whisper": 40.52,
+"s_ref": 40.52,
+"s_frame": 2431,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "your",
+"s": 40.6833,
+"e": 40.86,
+"s_whisper": 40.74,
+"s_ref": 40.68,
+"s_frame": 2441,
+"delta_ms": -60.0,
+"method": "boundary-valley"
+},
+{
+"w": "first",
+"s": 40.9,
+"e": 41.08,
+"s_whisper": 40.86,
+"s_ref": 40.896,
+"s_frame": 2454,
+"delta_ms": 36.0,
+"method": "boundary-valley"
+},
+{
+"w": "Sunday.",
+"s": 41.0333,
+"e": 41.44,
+"s_whisper": 41.08,
+"s_ref": 41.025,
+"s_frame": 2462,
+"delta_ms": -55.0,
+"method": "boundary-valley"
+},
+{
+"w": "Pastors",
+"s": 42.15,
+"e": 42.58,
+"s_whisper": 42.22,
+"s_ref": 42.151,
+"s_frame": 2529,
+"delta_ms": -69.0,
+"method": "pause-onset"
+},
+{
+"w": "Joel",
+"s": 42.6167,
+"e": 42.9,
+"s_whisper": 42.58,
+"s_ref": 42.62,
+"s_frame": 2557,
+"delta_ms": 40.0,
+"method": "boundary-valley"
+},
+{
+"w": "and",
+"s": 42.9,
+"e": 43.3,
+"s_whisper": 42.9,
+"s_ref": 42.9,
+"s_frame": 2574,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "Funmi",
+"s": 43.3,
+"e": 43.76,
+"s_whisper": 43.3,
+"s_ref": 43.3,
+"s_frame": 2598,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "Uzoma,",
+"s": 43.7667,
+"e": 44.26,
+"s_whisper": 43.76,
+"s_ref": 43.76,
+"s_frame": 2626,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "together",
+"s": 44.75,
+"e": 44.96,
+"s_whisper": 44.76,
+"s_ref": 44.744,
+"s_frame": 2685,
+"delta_ms": -16.0,
+"method": "pause-onset"
+},
+{
+"w": "in",
+"s": 44.9833,
+"e": 45.28,
+"s_whisper": 44.96,
+"s_ref": 44.981,
+"s_frame": 2699,
+"delta_ms": 21.0,
+"method": "boundary-valley"
+},
+{
+"w": "ministry",
+"s": 45.2833,
+"e": 45.6,
+"s_whisper": 45.28,
+"s_ref": 45.28,
+"s_frame": 2717,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "since",
+"s": 45.5667,
+"e": 45.94,
+"s_whisper": 45.6,
+"s_ref": 45.563,
+"s_frame": 2734,
+"delta_ms": -37.0,
+"method": "boundary-valley"
+},
+{
+"w": "1995.",
+"s": 45.9,
+"e": 46.66,
+"s_whisper": 45.94,
+"s_ref": 45.905,
+"s_frame": 2754,
+"delta_ms": -35.0,
+"method": "boundary-valley"
+},
+{
+"w": "Every",
+"s": 47.6,
+"e": 47.86,
+"s_whisper": 47.62,
+"s_ref": 47.6,
+"s_frame": 2856,
+"delta_ms": -36.0,
+"method": "clamped to take start (whisper onset fell in silence)"
+},
+{
+"w": "nation,",
+"s": 47.8667,
+"e": 48.28,
+"s_whisper": 47.86,
+"s_ref": 47.86,
+"s_frame": 2872,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "one",
+"s": 49.6833,
+"e": 49.94,
+"s_whisper": 49.6,
+"s_ref": 49.682,
+"s_frame": 2981,
+"delta_ms": 82.0,
+"method": "pause-onset"
+},
+{
+"w": "family.",
+"s": 49.9,
+"e": 50.56,
+"s_whisper": 49.94,
+"s_ref": 49.892,
+"s_frame": 2994,
+"delta_ms": -48.0,
+"method": "boundary-valley"
+},
+{
+"w": "So",
+"s": 51.6167,
+"e": 51.86,
+"s_whisper": 51.72,
+"s_ref": 51.6167,
+"s_frame": 3097,
+"delta_ms": -119.0,
+"method": "clamped to take start (whisper onset fell in silence)"
+},
+{
+"w": "picture",
+"s": 51.8667,
+"e": 52.16,
+"s_whisper": 51.86,
+"s_ref": 51.86,
+"s_frame": 3112,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "this",
+"s": 52.1333,
+"e": 52.76,
+"s_whisper": 52.16,
+"s_ref": 52.133,
+"s_frame": 3128,
+"delta_ms": -27.0,
+"method": "boundary-valley"
+},
+{
+"w": "Sunday.",
+"s": 52.7333,
+"e": 53.22,
+"s_whisper": 52.76,
+"s_ref": 52.739,
+"s_frame": 3164,
+"delta_ms": -21.0,
+"method": "boundary-valley"
+},
+{
+"w": "1030,",
+"s": 53.8667,
+"e": 54.34,
+"s_whisper": 53.84,
+"s_ref": 53.8667,
+"s_frame": 3232,
+"delta_ms": 12.0,
+"method": "clamped to take start (whisper onset fell in silence)"
+},
+{
+"w": "someone",
+"s": 54.75,
+"e": 54.94,
+"s_whisper": 54.84,
+"s_ref": 54.754,
+"s_frame": 3285,
+"delta_ms": -86.0,
+"method": "pause-onset"
+},
+{
+"w": "holds",
+"s": 54.9333,
+"e": 55.16,
+"s_whisper": 54.94,
+"s_ref": 54.94,
+"s_frame": 3296,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "the",
+"s": 55.1667,
+"e": 55.34,
+"s_whisper": 55.16,
+"s_ref": 55.173,
+"s_frame": 3310,
+"delta_ms": 13.0,
+"method": "boundary-valley"
+},
+{
+"w": "door.",
+"s": 55.35,
+"e": 55.56,
+"s_whisper": 55.34,
+"s_ref": 55.344,
+"s_frame": 3321,
+"delta_ms": 4.0,
+"method": "boundary-valley"
+},
+{
+"w": "The",
+"s": 55.9833,
+"e": 56.32,
+"s_whisper": 55.98,
+"s_ref": 55.98,
+"s_frame": 3359,
+"delta_ms": 0.0,
+"method": "pause-onset"
+},
+{
+"w": "first",
+"s": 56.3667,
+"e": 56.52,
+"s_whisper": 56.32,
+"s_ref": 56.36,
+"s_frame": 3382,
+"delta_ms": 40.0,
+"method": "boundary-valley"
+},
+{
+"w": "song",
+"s": 56.5167,
+"e": 56.84,
+"s_whisper": 56.52,
+"s_ref": 56.522,
+"s_frame": 3391,
+"delta_ms": 2.0,
+"method": "boundary-valley"
+},
+{
+"w": "starts.",
+"s": 56.8167,
+"e": 57.3,
+"s_whisper": 56.84,
+"s_ref": 56.822,
+"s_frame": 3409,
+"delta_ms": -18.0,
+"method": "boundary-valley"
+},
+{
+"w": "You",
+"s": 58.05,
+"e": 58.14,
+"s_whisper": 58.1,
+"s_ref": 58.05,
+"s_frame": 3483,
+"delta_ms": -60.0,
+"method": "clamped to take start (whisper onset fell in silence)"
+},
+{
+"w": "sit",
+"s": 58.1333,
+"e": 58.3,
+"s_whisper": 58.14,
+"s_ref": 58.139,
+"s_frame": 3488,
+"delta_ms": -1.0,
+"method": "boundary-valley"
+},
+{
+"w": "down,",
+"s": 58.3333,
+"e": 58.68,
+"s_whisper": 58.3,
+"s_ref": 58.336,
+"s_frame": 3500,
+"delta_ms": 36.0,
+"method": "boundary-valley"
+},
+{
+"w": "you",
+"s": 59.1667,
+"e": 59.26,
+"s_whisper": 59.18,
+"s_ref": 59.169,
+"s_frame": 3550,
+"delta_ms": -11.0,
+"method": "pause-onset"
+},
+{
+"w": "breathe.",
+"s": 59.2667,
+"e": 59.64,
+"s_whisper": 59.26,
+"s_ref": 59.27,
+"s_frame": 3556,
+"delta_ms": 10.0,
+"method": "boundary-valley"
+},
+{
+"w": "Bring",
+"s": 60.3167,
+"e": 60.46,
+"s_whisper": 60.38,
+"s_ref": 60.3167,
+"s_frame": 3619,
+"delta_ms": -77.0,
+"method": "clamped to take start (whisper onset fell in silence)"
+},
+{
+"w": "it,",
+"s": 60.4667,
+"e": 60.76,
+"s_whisper": 60.46,
+"s_ref": 60.46,
+"s_frame": 3628,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "set",
+"s": 61.0833,
+"e": 61.24,
+"s_whisper": 61.02,
+"s_ref": 61.077,
+"s_frame": 3665,
+"delta_ms": 57.0,
+"method": "pause-onset"
+},
+{
+"w": "it",
+"s": 61.25,
+"e": 61.38,
+"s_whisper": 61.24,
+"s_ref": 61.247,
+"s_frame": 3675,
+"delta_ms": 7.0,
+"method": "boundary-valley"
+},
+{
+"w": "down.",
+"s": 61.3333,
+"e": 61.66,
+"s_whisper": 61.38,
+"s_ref": 61.328,
+"s_frame": 3680,
+"delta_ms": -52.0,
+"method": "boundary-valley"
+},
+{
+"w": "Come",
+"s": 62.7667,
+"e": 62.92,
+"s_whisper": 62.62,
+"s_ref": 62.7667,
+"s_frame": 3766,
+"delta_ms": 0.0,
+"method": "clamped to take start (whisper onset fell in silence)"
+},
+{
+"w": "as",
+"s": 62.8833,
+"e": 63.06,
+"s_whisper": 62.92,
+"s_ref": 62.889,
+"s_frame": 3773,
+"delta_ms": -31.0,
+"method": "boundary-valley"
+},
+{
+"w": "you",
+"s": 63.05,
+"e": 63.16,
+"s_whisper": 63.06,
+"s_ref": 63.043,
+"s_frame": 3783,
+"delta_ms": -17.0,
+"method": "boundary-valley"
+},
+{
+"w": "are.",
+"s": 63.1667,
+"e": 63.64,
+"s_whisper": 63.16,
+"s_ref": 63.16,
+"s_frame": 3790,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "Sunday",
+"s": 64.1333,
+"e": 64.38,
+"s_whisper": 64.26,
+"s_ref": 64.14,
+"s_frame": 3848,
+"delta_ms": -120.0,
+"method": "pause-onset"
+},
+{
+"w": "worship,",
+"s": 64.3833,
+"e": 64.8,
+"s_whisper": 64.38,
+"s_ref": 64.38,
+"s_frame": 3863,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "1030.",
+"s": 65.0833,
+"e": 65.66,
+"s_whisper": 65.08,
+"s_ref": 65.08,
+"s_frame": 3905,
+"delta_ms": 0.0,
+"method": "pause-onset"
+},
+{
+"w": "Plan",
+"s": 66.1667,
+"e": 66.34,
+"s_whisper": 66.12,
+"s_ref": 66.16,
+"s_frame": 3970,
+"delta_ms": 40.0,
+"method": "pause-onset"
+},
+{
+"w": "your",
+"s": 66.3333,
+"e": 66.54,
+"s_whisper": 66.34,
+"s_ref": 66.34,
+"s_frame": 3980,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "visit",
+"s": 66.5167,
+"e": 66.9,
+"s_whisper": 66.54,
+"s_ref": 66.52,
+"s_frame": 3991,
+"delta_ms": -20.0,
+"method": "boundary-valley"
+},
+{
+"w": "at",
+"s": 66.9,
+"e": 67.6,
+"s_whisper": 66.9,
+"s_ref": 66.9,
+"s_frame": 4014,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": "rccgdayspring",
+"s": 67.6,
+"e": 69.84,
+"s_whisper": 67.6,
+"s_ref": 67.6,
+"s_frame": 4056,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+},
+{
+"w": ".org.",
+"s": 69.8333,
+"e": 70.62,
+"s_whisper": 69.84,
+"s_ref": 69.84,
+"s_frame": 4190,
+"delta_ms": 0.0,
+"method": "whisper (no clear boundary)"
+}
+]

@@ -167,5 +167,7 @@ mix = hp(mix, 30)
 fade = int(1.0 * SR); mix[-fade:] *= np.linspace(1, 0, fade)[:, None]
 mix /= np.abs(mix).max() * 1.12
 sf.write(OUT, mix.astype(np.float32), SR, subtype='PCM_24')
-sf.write(OUT.replace('.wav', '.vo_only.wav'), (np.stack([vo, vo], 1) / np.abs(mix).max() / 1.12).astype(np.float32), SR, subtype='PCM_24')
+peak = np.abs(music + np.stack([vo, vo], 1) + np.stack([sfx, sfx], 1)).max() * 1.12
+sf.write(OUT.replace('.wav', '.vo_only.wav'), (np.stack([vo, vo], 1) / peak).astype(np.float32), SR, subtype='PCM_24')
+sf.write(OUT.replace('.wav', '.music_only.wav'), (music / peak).astype(np.float32), SR, subtype='PCM_24')
 print('wrote', OUT, f'{DUR:.2f}s')

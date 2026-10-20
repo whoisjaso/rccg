@@ -91,6 +91,7 @@ function text(o) {
     it.ons = o.wi.map((i) => Wd(o.vo, i) - F1);
     it.word_idx = o.wi.map((i) => TL.lines[o.vo].word_idx[i]);
     if (o.t0 == null) it.t0 = it.ons[0];
+    if (it.ons.length !== units.length) throw new Error(`word links ${it.ons.length} != units ${units.length}: ${o.html}`);
   }
   items.push(it);
   // sound: one cue per word on its visual peak (onset + 0.37*din), exits silent
@@ -138,7 +139,7 @@ text({ vo: 'turn2', wi: R(0, 5), t1: vS - 0.15, html: 'Not too late. Not too muc
 const dS = S0('dawn');
 layer({ t0: vS - 0.45, t1: E('verse') + 0.75, fin: 0.7, fout: 0.45, src: 'slots/detail-hands-1400.webp', pos: V('50% 40%', '50% 32%'), filter: 'brightness(.5) saturate(.85) contrast(1.05)', kb: [1.06, 1.16, 0, 0, 10, -14] });
 layer({ t0: vS - 0.45, t1: E('verse') + 0.75, fin: 0.7, fout: 0.45, blur: 0, html: '', style: V({ background: 'linear-gradient(180deg,rgba(8,7,6,.15),rgba(8,7,6,.55) 45%,rgba(8,7,6,.35))' }, { background: 'linear-gradient(90deg,rgba(8,7,6,.75),rgba(8,7,6,.2) 70%)' }), kb: [1, 1, 0, 0, 0, 0], whoosh: false });
-text({ vo: 'verse', wi: R(0, 15), t1: E('verse') + 0.6, html: 'Come unto me, all ye that labour and are heavy laden, and I will give you rest.', cls: 'serif', pos: V({ x: M, y: 440, fs: 40, w: 600 }, { x: M, y: 190, fs: 42, w: 720 }), din: 0.7, dout: 0.5, sfx: 'pluck', sfxLast: 'bell', drift: 0.02 });
+text({ vo: 'verse', wi: R(0, 16), t1: E('verse') + 0.6, html: 'Come unto me, all ye that labour and are heavy laden, and I will give you rest.', cls: 'serif', pos: V({ x: M, y: 440, fs: 40, w: 600 }, { x: M, y: 190, fs: 42, w: 720 }), din: 0.7, dout: 0.5, sfx: 'pluck', sfxLast: 'bell', drift: 0.02 });
 text({ t0: E('verse') - 0.35, t1: E('verse') + 0.6, html: 'MATTHEW 11:28', cls: 'lab soft', pos: V({ x: M, y: 720, fs: 15 }, { x: M, y: 450, fs: 15 }), split: false, sfx: null });
 
 /* S5 Dawn: the dayspring from on high */
@@ -224,9 +225,9 @@ text({ vo: 'come', wi: [0, 1, 2, 3], t1: 999, html: 'COME AS YOU ARE.', cls: 'ta
 const rule = el('div', 'rule'); Object.assign(rule.style, { left: (W / 2 - 40) + 'px', width: '80px', top: (C0 + (O === 'v' ? 214 : 196)) + 'px' });
 items.push({ kind: 'rule', e: rule, t0: E('come') + 0.05, dur: 0.9 });
 text({ vo: 'where', wi: [0, 1, 2, 3], t1: 999, html: 'Sunday Worship, 10:30 am', cls: 'serif ink', pos: { a: 'c', y: C0 + (O === 'v' ? 244 : 222), fs: O === 'v' ? 31 : 28 }, din: 0.6, sfx: null, drift: 0.06 });
-text({ vo: 'where', wi: [5], t1: 999, html: '10788 Hartsook Street, Houston', cls: 'serif inks', split: false, pos: { a: 'c', y: C0 + (O === 'v' ? 292 : 264), fs: O === 'v' ? 26 : 24 }, din: 0.6, sfx: null, drift: 0.06 });
-text({ vo: 'where', wi: [7], t1: 999, html: '<span class="pill">PLAN YOUR VISIT</span>', split: false, pos: { a: 'c', y: C0 + (O === 'v' ? 370 : 330), fs: 14 }, din: 0.8, rise: 16, sfx: 'tick', drift: 0.06 });
-text({ vo: 'where', wi: [11], t1: 999, html: 'RCCGDAYSPRING.ORG', cls: 'lab deep', split: false, pos: { a: 'c', y: C0 + (O === 'v' ? 460 : 410), fs: 15 }, sfx: null, drift: 0.06 });
+text({ t0: Wd('where', 3) + 0.3, t1: 999, html: '10788 Hartsook Street, Houston', cls: 'serif inks', split: false, pos: { a: 'c', y: C0 + (O === 'v' ? 292 : 264), fs: O === 'v' ? 26 : 24 }, din: 0.6, sfx: null, drift: 0.06 });
+text({ vo: 'where', wi: [4], t1: 999, html: '<span class="pill">PLAN YOUR VISIT</span>', split: false, pos: { a: 'c', y: C0 + (O === 'v' ? 370 : 330), fs: 14 }, din: 0.8, rise: 16, sfx: 'tick', drift: 0.06 });
+text({ vo: 'where', wi: [8], t1: 999, html: 'RCCGDAYSPRING.ORG', cls: 'lab deep', split: false, pos: { a: 'c', y: C0 + (O === 'v' ? 460 : 410), fs: 15 }, sfx: null, drift: 0.06 });
 
 // ---------- grain + vignette (on top, every frame different so no frame repeats) ----------
 const gc = document.createElement('canvas'); gc.width = gc.height = 256; const g = gc.getContext('2d'); const id = g.createImageData(256, 256);

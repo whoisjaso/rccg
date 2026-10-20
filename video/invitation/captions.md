@@ -28,14 +28,16 @@ Sunday Worship 10:30 am · Sunday School 10:00 am · Wednesday Bible Study 7:00 
 Pastors Joel and Funmi Uzoma
 
 0:00 Carrying It Alone
-0:12 You Are Not Too Far Gone
-0:22 The Dayspring From On High
-0:27 A Home In Houston
-0:38 Picture This Sunday
-0:49 Come As You Are
+0:16 You Are Not Too Far Gone
+0:22 Come Unto Me
+0:28 The Dayspring From On High
+0:36 A Home In Houston
+0:51 Picture This Sunday
+1:02 Come As You Are
+(chapters are for the 75 s voice cut; the 56 s text-only cut used 0:00 / 0:12 / 0:22 / 0:27 / 0:38 / 0:49)
 
 ## Paid boost note (Meta)
 Keep the copy about the situation ("For anyone carrying something heavy this week"), never about the viewer's traits. Target radius about 15 miles around 77034. The film's on-screen lines are statements, not "Are you struggling with..." questions, so they're safe to boost.
 
 ## Music
-The film ships with its own original score (synthesized, fully cleared). On Reels or TikTok you can keep it, or mute it in the editor and pick a worship track by name at 10–15%.
+Voice cut: Pastor Joel Uzoma's own songs from *Tell Me* ("Jesus Is Lord", "Tell Me", "I Know Jesus"); credit in the caption: "Music: Joel Uzoma, Tell Me". Text-only cut: original synthesized score.
