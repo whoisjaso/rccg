@@ -116,7 +116,7 @@
   let rafId = 0;
   function startLenis() {
     if (lenis || reduce() || !window.Lenis) return;
-    lenis = new window.Lenis({ duration: 1.15, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true, syncTouch: true, syncTouchLerp: 0.085, touchInertiaMultiplier: 28 });
+    lenis = new window.Lenis({ duration: 1.15, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true, syncTouch: false });
     lenis.on("scroll", emit);
     const raf = (t) => { lenis.raf(t); rafId = requestAnimationFrame(raf); };
     rafId = requestAnimationFrame(raf);
