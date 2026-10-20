@@ -1,0 +1,409 @@
+{
+ "_sources/kenney/impact-sounds/Audio/impactBell_heavy_000.ogg": {
+  "id": "SFXC-IMPACT-KENNEY-001",
+  "sync_ms": 0.0,
+  "lead_ms": -60,
+  "level_under_vo_rel_db": -15,
+  "peak_dbfs": -1.14,
+  "duration_ms": 1480.0,
+  "sound_group": "_sources/kenney/impact-sounds/Audio/impactBell_heavy_000.ogg",
+  "posted_use": "yes",
+  "licence": "CC0 1.0 (public domain); attribution optional",
+  "description": "Medium-length low-pitched tonal bell strike (heavy) hit (~F#2); instant attack, ringing tail",
+  "quality_flags": []
+ },
+ "_sources/kenney/impact-sounds/Audio/impactGlass_heavy_000.ogg": {
+  "id": "SFXC-IMPACT-KENNEY-011",
+  "sync_ms": 0.0,
+  "lead_ms": -60,
+  "level_under_vo_rel_db": -15,
+  "peak_dbfs": -1.09,
+  "duration_ms": 238.0,
+  "sound_group": "_sources/kenney/impact-sounds/Audio/impactGlass_heavy_000.ogg",
+  "posted_use": "yes",
+  "licence": "CC0 1.0 (public domain); attribution optional",
+  "description": "Short warm glass impact (heavy); instant attack, short tail",
+  "quality_flags": []
+ },
+ "_sources/kenney/impact-sounds/Audio/impactGlass_light_000.ogg": {
+  "id": "SFXC-SHIMMER-KENNEY-001",
+  "sync_ms": 0.0,
+  "lead_ms": -114,
+  "level_under_vo_rel_db": -15,
+  "peak_dbfs": -1.53,
+  "duration_ms": 231.0,
+  "sound_group": "_sources/kenney/impact-sounds/Audio/impactGlass_light_000.ogg",
+  "posted_use": "yes",
+  "licence": "CC0 1.0 (public domain); attribution optional",
+  "description": "Short mid light glass tink; instant attack, short tail",
+  "quality_flags": []
+ },
+ "_sources/kenney/impact-sounds/Audio/impactGlass_light_001.ogg": {
+  "id": "SFXC-SHIMMER-KENNEY-002",
+  "sync_ms": 0.0,
+  "lead_ms": -114,
+  "level_under_vo_rel_db": -15,
+  "peak_dbfs": -0.88,
+  "duration_ms": 207.0,
+  "sound_group": "_sources/kenney/impact-sounds/Audio/impactGlass_light_001.ogg",
+  "posted_use": "yes",
+  "licence": "CC0 1.0 (public domain); attribution optional",
+  "description": "Short mid light glass tink; instant attack, short tail",
+  "quality_flags": []
+ },
+ "_sources/kenney/impact-sounds/Audio/impactGlass_light_002.ogg": {
+  "id": "SFX-SHIMMER-KENNEY-03",
+  "sync_ms": 0.0,
+  "lead_ms": -114,
+  "level_under_vo_rel_db": -15,
+  "peak_dbfs": -1.2,
+  "duration_ms": 207.0,
+  "sound_group": "_sources/kenney/impact-sounds/Audio/impactGlass_light_002.ogg",
+  "posted_use": "yes",
+  "licence": "CC0 1.0 (public domain); attribution optional",
+  "description": "Short mid light glass tink; instant attack, short tail. Notes: closest CC0 to the from-refs shimmer (rank 1, poor); closest CC0 to from-refs shimmer (rank 1, poor)",
+  "quality_flags": []
+ },
+ "_sources/kenney/impact-sounds/Audio/impactGlass_medium_000.ogg": {
+  "id": "SFXC-IMPACT-KENNEY-016",
+  "sync_ms": 0.0,
+  "lead_ms": -60,
+  "level_under_vo_rel_db": -15,
+  "peak_dbfs": -1.14,
+  "duration_ms": 540.0,
+  "sound_group": "_sources/kenney/impact-sounds/Audio/impactGlass_medium_000.ogg",
+  "posted_use": "yes",
+  "licence": "CC0 1.0 (public domain); attribution optional",
+  "description": "Medium-length warm glass impact (medium); instant attack, short tail",
+  "quality_flags": []
+ },
+ "_sources/kenney/impact-sounds/Audio/impactPunch_heavy_000.ogg": {
+  "id": "SFXC-IMPACT-KENNEY-061",
+  "sync_ms": 19.0,
+  "lead_ms": -60,
+  "level_under_vo_rel_db": -15,
+  "peak_dbfs": -0.97,
+  "duration_ms": 649.0,
+  "sound_group": "_sources/kenney/impact-sounds/Audio/impactPunch_heavy_000.ogg",
+  "posted_use": "yes",
+  "licence": "CC0 1.0 (public domain); attribution optional",
+  "description": "Medium-length deep punch impact (heavy); snappy attack, ringing tail, heavy sub weight",
+  "quality_flags": [
+   "near-duplicate of hit-boom/kenney_impactPunch_heavy_000.wav (mel-corr 1.0)"
+  ]
+ },
+ "_sources/kenney/impact-sounds/Audio/impactPunch_medium_000.ogg": {
+  "id": "SFXC-IMPACT-KENNEY-064",
+  "sync_ms": 14.0,
+  "lead_ms": -60,
+  "level_under_vo_rel_db": -15,
+  "peak_dbfs": -1.11,
+  "duration_ms": 431.0,
+  "sound_group": "_sources/kenney/impact-sounds/Audio/impactPunch_medium_000.ogg",
+  "posted_use": "yes",
+  "licence": "CC0 1.0 (public domain); attribution optional",
+  "description": "Short warm punch impact (medium); snappy attack, short tail",
+  "quality_flags": [
+   "near-duplicate of hit-boom/kenney_impactPunch_medium_000.wav (mel-corr 1.0)"
+  ]
+ },
+ "_sources/kenney/interface-sounds/Audio/glass_004.ogg": {
+  "id": "SFXC-NOTIFICATION-KENNEY-012",
+  "sync_ms": 0.0,
+  "lead_ms": -50,
+  "level_under_vo_rel_db": -16,
+  "peak_dbfs": -3.36,
+  "duration_ms": 692.0,
+  "sound_group": "_sources/kenney/interface-sounds/Audio/glass_004.ogg",
+  "posted_use": "yes",
+  "licence": "CC0 1.0 (public domain); attribution optional",
+  "description": "Medium-length high-pitched tonal rising glass ding (~A#6); instant attack, ringing tail",
+  "quality_flags": []
+ },
+ "_sources/kenney/interface-sounds/Audio/open_001.ogg": {
+  "id": "SFXC-SWIPE-KENNEY-023",
+  "sync_ms": 142.0,
+  "lead_ms": 0,
+  "level_under_vo_rel_db": -16,
+  "peak_dbfs": -3.74,
+  "duration_ms": 148.0,
+  "sound_group": "_sources/kenney/interface-sounds/Audio/open_001.ogg",
+  "posted_use": "yes",
+  "licence": "CC0 1.0 (public domain); attribution optional",
+  "description": "Short very bright, airy noisy UI open swish; quick-swelling attack, stops dead",
+  "quality_flags": [
+   "near-duplicate of whoosh-swipe/kenney_open_001.wav (mel-corr 1.0)"
+  ]
+ },
+ "glitch/orig_glitch_stab_1.wav": {
+  "id": "SFX-GLITCH-SYNTH-02",
+  "sync_ms": 21.0,
+  "lead_ms": -127,
+  "level_under_vo_rel_db": -18,
+  "peak_dbfs": -7.0,
+  "duration_ms": 179.0,
+  "sound_group": "glitch/orig_glitch_stab_1.wav",
+  "posted_use": "yes",
+  "licence": "House original (own work, no third-party material)",
+  "description": "Very short (~0.15 s) bright digital glitch stab (variant 1): two or three gated noise bursts that stutter and cut.",
+  "quality_flags": []
+ },
+ "hit-boom/orig_impact_boom.wav": {
+  "id": "SFX-IMPACT-SYNTH-01",
+  "sync_ms": 0.0,
+  "lead_ms": -60,
+  "level_under_vo_rel_db": -15,
+  "peak_dbfs": -1.99,
+  "duration_ms": 750.0,
+  "sound_group": "hit-boom/orig_impact_boom.wav",
+  "posted_use": "yes",
+  "licence": "House original (own work, no third-party material)",
+  "description": "Synth sub boom: an instant thump at ~A1 that rings and decays over ~0.7 s, almost a clean sine (no noise layer). Layer it under a thinner hit for weight.",
+  "quality_flags": [
+   "noisy floor / bed: quietest 50 ms is only 20 dB under the peak; high-pass or gate before use"
+  ]
+ },
+ "hit-boom/orig_impact_cinematic.wav": {
+  "id": "SFX-IMPACT-SYNTH-02",
+  "sync_ms": 0.0,
+  "lead_ms": -60,
+  "level_under_vo_rel_db": -15,
+  "peak_dbfs": -2.01,
+  "duration_ms": 900.0,
+  "sound_group": "hit-boom/orig_impact_cinematic.wav",
+  "posted_use": "yes",
+  "licence": "House original (own work, no third-party material)",
+  "description": "Synth cinematic hit: a short noisy transient over a pitched sub (~G1) ringing ~0.9 s.",
+  "quality_flags": [
+   "noisy floor / bed: quietest 50 ms is only 13 dB under the peak; high-pass or gate before use"
+  ]
+ },
+ "hit-boom/orig_swell_into_hit_cut_at_350ms.wav": {
+  "id": "SFX-IMPACT-SYNTH-03",
+  "sync_ms": 360,
+  "lead_ms": -60,
+  "level_under_vo_rel_db": -15,
+  "peak_dbfs": -1.99,
+  "duration_ms": 850.0,
+  "sound_group": "hit-boom/orig_swell_into_hit_cut_at_350ms.wav",
+  "posted_use": "yes",
+  "licence": "House original (own work, no third-party material)",
+  "description": "Reverse-style swell into a sub hit: noise swells for ~0.35 s and is cut off by the hit, which rings out to 0.85 s. Land the hit (360 ms) on the slam word.",
+  "quality_flags": []
+ },
+ "notification-ios-style/orig_notif_ding_single.wav": {
+  "id": "SFX-NOTIF-SYNTH-04",
+  "sync_ms": 0.0,
+  "lead_ms": -50,
+  "level_under_vo_rel_db": -16,
+  "peak_dbfs": -6.0,
+  "duration_ms": 900.0,
+  "sound_group": "notification-ios-style/orig_notif_ding_single.wav",
+  "posted_use": "yes",
+  "licence": "House original (own work, no third-party material)",
+  "description": "Single clean sine ding (~G6, very high) with a long smooth decay (0.9 s).",
+  "quality_flags": [
+   "noisy floor / bed: quietest 50 ms is only 28 dB under the peak; high-pass or gate before use"
+  ]
+ },
+ "riser/orig_riser_1s_noise.wav": {
+  "id": "SFX-RISER-SYNTH-01",
+  "sync_ms": 939.0,
+  "lead_ms": -100,
+  "level_under_vo_rel_db": -19,
+  "peak_dbfs": -5.0,
+  "duration_ms": 1000.0,
+  "sound_group": "riser/orig_riser_1s_noise.wav",
+  "posted_use": "yes",
+  "licence": "House original (own work, no third-party material)",
+  "description": "1 s white-noise riser that swells and brightens to a hard stop at ~0.95 s.",
+  "quality_flags": [
+   "lead silence 157 ms (sync_ms already includes it)"
+  ]
+ },
+ "riser/orig_riser_2s.wav": {
+  "id": "SFX-RISER-SYNTH-02",
+  "sync_ms": 2084.0,
+  "lead_ms": -100,
+  "level_under_vo_rel_db": -19,
+  "peak_dbfs": -4.0,
+  "duration_ms": 2200.0,
+  "sound_group": "riser/orig_riser_2s.wav",
+  "posted_use": "yes",
+  "licence": "House original (own work, no third-party material)",
+  "description": "2.2 s riser: a rising sine sweep inside swelling noise, climax at ~2.08 s, then stops.",
+  "quality_flags": [
+   "lead silence 240 ms (sync_ms already includes it)"
+  ]
+ },
+ "tick-click/orig_tick_word_1.wav": {
+  "id": "SFX-TICK-SYNTH-03",
+  "sync_ms": 0.0,
+  "lead_ms": -100,
+  "level_under_vo_rel_db": -19,
+  "peak_dbfs": -6.0,
+  "duration_ms": 22.0,
+  "sound_group": "tick-click/orig_tick_word_1.wav",
+  "posted_use": "yes",
+  "licence": "House original (own work, no third-party material)",
+  "description": "Tiny (22 ms) very bright high-passed noise tick (variant 1): one per word on word-by-word entrances.",
+  "quality_flags": [
+   "near-duplicate of tick-click/orig_tick_word_2.wav (mel-corr 0.996)"
+  ]
+ },
+ "tick-click/orig_tick_word_2.wav": {
+  "id": "SFX-TICK-SYNTH-04",
+  "sync_ms": 0.0,
+  "lead_ms": -100,
+  "level_under_vo_rel_db": -19,
+  "peak_dbfs": -6.0,
+  "duration_ms": 22.0,
+  "sound_group": "tick-click/orig_tick_word_1.wav",
+  "posted_use": "yes",
+  "licence": "House original (own work, no third-party material)",
+  "description": "Tiny (22 ms) very bright high-passed noise tick (variant 2): one per word on word-by-word entrances.",
+  "quality_flags": [
+   "near-duplicate of tick-click/orig_tick_word_1.wav (mel-corr 0.996)"
+  ]
+ },
+ "tick-click/orig_tick_word_3.wav": {
+  "id": "SFX-TICK-SYNTH-05",
+  "sync_ms": 0.0,
+  "lead_ms": -100,
+  "level_under_vo_rel_db": -19,
+  "peak_dbfs": -6.0,
+  "duration_ms": 22.0,
+  "sound_group": "tick-click/orig_tick_word_2.wav",
+  "posted_use": "yes",
+  "licence": "House original (own work, no third-party material)",
+  "description": "Tiny (22 ms) very bright high-passed noise tick (variant 3): one per word on word-by-word entrances.",
+  "quality_flags": [
+   "near-duplicate of tick-click/orig_tick_word_2.wav (mel-corr 0.99)"
+  ]
+ },
+ "typewriter/orig_typewriter_key_1.wav": {
+  "id": "SFX-TYPE-SYNTH-01",
+  "sync_ms": 0.0,
+  "lead_ms": 0,
+  "level_under_vo_rel_db": -22,
+  "peak_dbfs": -10.0,
+  "duration_ms": 60.0,
+  "sound_group": "typewriter/orig_typewriter_key_1.wav",
+  "posted_use": "yes",
+  "licence": "House original (own work, no third-party material)",
+  "description": "Tiny dry typewriter-style key click (~50 ms, variant 1), bright and noisy; rotate the 4 variants per character.",
+  "quality_flags": [
+   "near-duplicate of typewriter/orig_typewriter_key_3.wav (mel-corr 0.995)"
+  ]
+ },
+ "typewriter/orig_typewriter_key_2.wav": {
+  "id": "SFX-TYPE-SYNTH-02",
+  "sync_ms": 0.0,
+  "lead_ms": 0,
+  "level_under_vo_rel_db": -22,
+  "peak_dbfs": -10.03,
+  "duration_ms": 40.0,
+  "sound_group": "typewriter/orig_typewriter_key_2.wav",
+  "posted_use": "yes",
+  "licence": "House original (own work, no third-party material)",
+  "description": "Tiny dry typewriter-style key click (~50 ms, variant 2), bright and noisy; rotate the 4 variants per character.",
+  "quality_flags": []
+ },
+ "typewriter/orig_typewriter_key_3.wav": {
+  "id": "SFX-TYPE-SYNTH-03",
+  "sync_ms": 0.0,
+  "lead_ms": 0,
+  "level_under_vo_rel_db": -22,
+  "peak_dbfs": -9.99,
+  "duration_ms": 57.0,
+  "sound_group": "typewriter/orig_typewriter_key_1.wav",
+  "posted_use": "yes",
+  "licence": "House original (own work, no third-party material)",
+  "description": "Tiny dry typewriter-style key click (~50 ms, variant 3), bright and noisy; rotate the 4 variants per character.",
+  "quality_flags": [
+   "near-duplicate of typewriter/orig_typewriter_key_1.wav (mel-corr 0.995)"
+  ]
+ },
+ "typewriter/orig_typewriter_key_4.wav": {
+  "id": "SFX-TYPE-SYNTH-04",
+  "sync_ms": 0.0,
+  "lead_ms": 0,
+  "level_under_vo_rel_db": -22,
+  "peak_dbfs": -9.99,
+  "duration_ms": 50.0,
+  "sound_group": "typewriter/orig_typewriter_key_3.wav",
+  "posted_use": "yes",
+  "licence": "House original (own work, no third-party material)",
+  "description": "Tiny dry typewriter-style key click (~50 ms, variant 4), bright and noisy; rotate the 4 variants per character.",
+  "quality_flags": [
+   "near-duplicate of typewriter/orig_typewriter_key_3.wav (mel-corr 0.991)"
+  ]
+ },
+ "whoosh-swipe/orig_shimmer_chars.wav": {
+  "id": "SFX-WHOOSH-SYNTH-01",
+  "sync_ms": 1.0,
+  "lead_ms": -114,
+  "level_under_vo_rel_db": -15,
+  "peak_dbfs": -10.0,
+  "duration_ms": 660.0,
+  "sound_group": "whoosh-swipe/orig_shimmer_chars.wav",
+  "posted_use": "yes",
+  "licence": "House original (own work, no third-party material)",
+  "description": "0.66 s dense bright shimmer: continuous high sparkle noise sized for a character cascade (charsDown); one bed for the whole cascade, never per character.",
+  "quality_flags": []
+ },
+ "whoosh-swipe/orig_swipe_short.wav": {
+  "id": "SFX-WHOOSH-SYNTH-02",
+  "sync_ms": 88.0,
+  "lead_ms": 0,
+  "level_under_vo_rel_db": -16,
+  "peak_dbfs": -6.0,
+  "duration_ms": 220.0,
+  "sound_group": "whoosh-swipe/orig_swipe_short.wav",
+  "posted_use": "yes",
+  "licence": "House original (own work, no third-party material)",
+  "description": "Short (0.2 s) bright noise swipe that rises and falls fast, peak at 88 ms.",
+  "quality_flags": []
+ },
+ "whoosh-swipe/orig_whoosh_long.wav": {
+  "id": "SFX-WHOOSH-SYNTH-03",
+  "sync_ms": 482.0,
+  "lead_ms": 0,
+  "level_under_vo_rel_db": -16,
+  "peak_dbfs": -4.0,
+  "duration_ms": 1050.0,
+  "sound_group": "whoosh-swipe/orig_whoosh_long.wav",
+  "posted_use": "yes",
+  "licence": "House original (own work, no third-party material)",
+  "description": "1 s synth noise whoosh, swelling to a peak at ~0.48 s; mid-band, slightly upward, soft edges.",
+  "quality_flags": []
+ },
+ "whoosh-swipe/orig_whoosh_soft_down.wav": {
+  "id": "SFX-WHOOSH-SYNTH-04",
+  "sync_ms": 256.0,
+  "lead_ms": 0,
+  "level_under_vo_rel_db": -16,
+  "peak_dbfs": -8.0,
+  "duration_ms": 450.0,
+  "sound_group": "whoosh-swipe/orig_whoosh_soft_down.wav",
+  "posted_use": "yes",
+  "licence": "House original (own work, no third-party material)",
+  "description": "Soft 0.45 s synth noise whoosh, gentle, slightly falling in pitch; peak at ~0.26 s.",
+  "quality_flags": [
+   "noisy floor / bed: quietest 50 ms is only 28 dB under the peak; high-pass or gate before use"
+  ]
+ },
+ "whoosh-swipe/orig_whoosh_soft_up.wav": {
+  "id": "SFX-WHOOSH-SYNTH-05",
+  "sync_ms": 261.0,
+  "lead_ms": 0,
+  "level_under_vo_rel_db": -16,
+  "peak_dbfs": -8.0,
+  "duration_ms": 450.0,
+  "sound_group": "whoosh-swipe/orig_whoosh_soft_up.wav",
+  "posted_use": "yes",
+  "licence": "House original (own work, no third-party material)",
+  "description": "Soft 0.45 s synth noise whoosh, gentle, slightly rising in pitch; peak at ~0.26 s.",
+  "quality_flags": []
+ }
+}

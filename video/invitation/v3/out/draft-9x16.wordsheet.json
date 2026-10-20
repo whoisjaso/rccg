@@ -1,0 +1,1067 @@
+{
+ "fps": 60,
+ "text": [
+  {
+   "id": "b00_0",
+   "role": "hero",
+   "word_idx": [
+    null,
+    null
+   ],
+   "units": [
+    0.03333333333333334,
+    0.4666666666666667
+   ],
+   "first_visible": [
+    3,
+    29
+   ]
+  },
+  {
+   "id": "b00_1",
+   "role": "hero",
+   "word_idx": [
+    null,
+    null
+   ],
+   "units": [
+    0.85,
+    1.45
+   ],
+   "first_visible": [
+    52,
+    88
+   ]
+  },
+  {
+   "id": "b00_2",
+   "role": "script",
+   "word_idx": [
+    null
+   ],
+   "units": [
+    1.7166666666666668
+   ],
+   "first_visible": [
+    104
+   ]
+  },
+  {
+   "id": "b00_3",
+   "role": "text",
+   "word_idx": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "units": [
+    2.7,
+    3.033333333333333,
+    3.25,
+    3.6166666666666667
+   ],
+   "first_visible": [
+    163,
+    183,
+    196,
+    218
+   ]
+  },
+  {
+   "id": "b01_4",
+   "role": "hero",
+   "word_idx": [
+    null,
+    null
+   ],
+   "units": [
+    4.666666666666667,
+    5
+   ],
+   "first_visible": [
+    281,
+    301
+   ]
+  },
+  {
+   "id": "b01_5",
+   "role": "script",
+   "word_idx": [
+    null
+   ],
+   "units": [
+    5.383333333333334
+   ],
+   "first_visible": [
+    324
+   ]
+  },
+  {
+   "id": "b02_6",
+   "role": "hero",
+   "word_idx": [
+    null,
+    null,
+    null
+   ],
+   "units": [
+    6.333333333333333,
+    6.666666666666667,
+    7.1
+   ],
+   "first_visible": [
+    381,
+    401,
+    427
+   ]
+  },
+  {
+   "id": "b02_7",
+   "role": "script",
+   "word_idx": [
+    null
+   ],
+   "units": [
+    7.416666666666667
+   ],
+   "first_visible": [
+    446
+   ]
+  },
+  {
+   "id": "b03_8",
+   "role": "hero",
+   "word_idx": [
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "units": [
+    8.266666666666666,
+    8.6,
+    9.033333333333333,
+    9.35,
+    9.733333333333333
+   ],
+   "first_visible": [
+    496,
+    517,
+    543,
+    562,
+    585
+   ]
+  },
+  {
+   "id": "b03_9",
+   "role": "script",
+   "word_idx": [
+    null
+   ],
+   "units": [
+    10.116666666666665
+   ],
+   "first_visible": [
+    607
+   ]
+  },
+  {
+   "id": "b04_10",
+   "role": "hero",
+   "word_idx": [
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "units": [
+    10.966666666666665,
+    11.299999999999999,
+    12,
+    12.333333333333332,
+    12.716666666666665
+   ],
+   "first_visible": [
+    658,
+    678,
+    721,
+    740,
+    763
+   ]
+  },
+  {
+   "id": "b05_11",
+   "role": "script",
+   "word_idx": [
+    null
+   ],
+   "units": [
+    15.083333333333332
+   ],
+   "first_visible": [
+    905
+   ]
+  },
+  {
+   "id": "b05_12",
+   "role": "hero",
+   "word_idx": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "units": [
+    16.616666666666667,
+    17.05,
+    17.366666666666667,
+    17.816666666666666
+   ],
+   "first_visible": [
+    998,
+    1024,
+    1043,
+    1070
+   ]
+  },
+  {
+   "id": "b06_13",
+   "role": "text",
+   "word_idx": [
+    null,
+    null,
+    null
+   ],
+   "units": [
+    18.916666666666668,
+    19.233333333333334,
+    19.616666666666667
+   ],
+   "first_visible": [
+    1136,
+    1155,
+    1178
+   ]
+  },
+  {
+   "id": "b06_14",
+   "role": "script",
+   "word_idx": [
+    null
+   ],
+   "units": [
+    20.05
+   ],
+   "first_visible": [
+    1204
+   ]
+  },
+  {
+   "id": "b06_15",
+   "role": "text",
+   "word_idx": [
+    null,
+    null,
+    null
+   ],
+   "units": [
+    20.983333333333334,
+    21.35,
+    21.900000000000002
+   ],
+   "first_visible": [
+    1260,
+    1282,
+    1315
+   ]
+  },
+  {
+   "id": "b07_16",
+   "role": "stamp",
+   "word_idx": [
+    null,
+    null,
+    null
+   ],
+   "units": [
+    23.55,
+    23.883333333333333,
+    24.26666666666667
+   ],
+   "first_visible": [
+    1414,
+    1434,
+    1457
+   ]
+  },
+  {
+   "id": "b08_17",
+   "role": "hero",
+   "word_idx": [
+    null,
+    null,
+    null
+   ],
+   "units": [
+    25.05,
+    25.383333333333333,
+    25.7
+   ],
+   "first_visible": [
+    1504,
+    1524,
+    1543
+   ]
+  },
+  {
+   "id": "b08_18",
+   "role": "hero",
+   "word_idx": [
+    null,
+    null
+   ],
+   "units": [
+    26.033333333333335,
+    26.35
+   ],
+   "first_visible": [
+    1563,
+    1582
+   ]
+  },
+  {
+   "id": "b08_19",
+   "role": "script",
+   "word_idx": [
+    null
+   ],
+   "units": [
+    26.683333333333334
+   ],
+   "first_visible": [
+    1602
+   ]
+  },
+  {
+   "id": "b09_20",
+   "role": "text",
+   "word_idx": [
+    null,
+    null,
+    null
+   ],
+   "units": [
+    27.633333333333333,
+    27.95,
+    28.383333333333333
+   ],
+   "first_visible": [
+    1659,
+    1678,
+    1704
+   ]
+  },
+  {
+   "id": "b09_21",
+   "role": "hero",
+   "word_idx": [
+    null,
+    null
+   ],
+   "units": [
+    28.71666666666667,
+    29.033333333333335
+   ],
+   "first_visible": [
+    1724,
+    1743
+   ]
+  },
+  {
+   "id": "b10_22",
+   "role": "stamp",
+   "word_idx": [
+    null,
+    null
+   ],
+   "units": [
+    29.933333333333334,
+    30.26666666666667
+   ],
+   "first_visible": [
+    1797,
+    1817
+   ]
+  },
+  {
+   "id": "b10_23",
+   "role": "text",
+   "word_idx": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "units": [
+    30.8,
+    31.133333333333333,
+    31.45,
+    31.783333333333335,
+    32.1,
+    32.6
+   ],
+   "first_visible": [
+    1849,
+    1869,
+    1888,
+    1908,
+    1927,
+    1957
+   ]
+  },
+  {
+   "id": "b11_24",
+   "role": "text",
+   "word_idx": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "units": [
+    34.166666666666664,
+    34.550000000000004,
+    34.93333333333334,
+    35.31666666666667,
+    35.65,
+    35.916666666666664,
+    36.300000000000004,
+    36.78333333333333,
+    37.11666666666667,
+    37.43333333333334,
+    37.86666666666667
+   ],
+   "first_visible": [
+    2051,
+    2074,
+    2097,
+    2120,
+    2140,
+    2156,
+    2179,
+    2208,
+    2228,
+    2247,
+    2273
+   ]
+  },
+  {
+   "id": "b12_25",
+   "role": "text",
+   "word_idx": [
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "units": [
+    38.56666666666667,
+    38.9,
+    39.11666666666667,
+    39.5,
+    39.86666666666667
+   ],
+   "first_visible": [
+    2315,
+    2335,
+    2348,
+    2371,
+    2393
+   ]
+  },
+  {
+   "id": "b12_26",
+   "role": "script",
+   "word_idx": [
+    null
+   ],
+   "units": [
+    40.2
+   ],
+   "first_visible": [
+    2413
+   ]
+  },
+  {
+   "id": "b13_27",
+   "role": "text",
+   "word_idx": [
+    null
+   ],
+   "units": [
+    41.75
+   ],
+   "first_visible": [
+    2506
+   ]
+  },
+  {
+   "id": "b13_28",
+   "role": "reveal",
+   "word_idx": [
+    null
+   ],
+   "units": [
+    42.06666666666667
+   ],
+   "first_visible": [
+    2525
+   ]
+  },
+  {
+   "id": "b13_29",
+   "role": "hero",
+   "word_idx": [
+    null,
+    null,
+    null
+   ],
+   "units": [
+    42.733333333333334,
+    43.11666666666667,
+    43.38333333333333
+   ],
+   "first_visible": [
+    2565,
+    2588,
+    2604
+   ]
+  },
+  {
+   "id": "b13_30",
+   "role": "text",
+   "word_idx": [
+    null,
+    null,
+    null
+   ],
+   "units": [
+    44.31666666666667,
+    44.68333333333334,
+    45.233333333333334
+   ],
+   "first_visible": [
+    2660,
+    2682,
+    2715
+   ]
+  },
+  {
+   "id": "b14_31",
+   "role": "hero",
+   "word_idx": [
+    null,
+    null
+   ],
+   "units": [
+    46.166666666666664,
+    46.833333333333336
+   ],
+   "first_visible": [
+    2771,
+    2811
+   ]
+  },
+  {
+   "id": "b14_32",
+   "role": "text",
+   "word_idx": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "units": [
+    47.53333333333333,
+    47.75,
+    48.25,
+    48.516666666666666,
+    48.833333333333336,
+    49.43333333333334,
+    50.1,
+    50.583333333333336,
+    50.85
+   ],
+   "first_visible": [
+    2853,
+    2866,
+    2896,
+    2912,
+    2931,
+    2967,
+    3007,
+    3036,
+    3052
+   ]
+  },
+  {
+   "id": "b14_33",
+   "role": "text",
+   "word_idx": [
+    null,
+    null,
+    null
+   ],
+   "units": [
+    51.300000000000004,
+    51.733333333333334,
+    52.11666666666667
+   ],
+   "first_visible": [
+    3079,
+    3105,
+    3128
+   ]
+  },
+  {
+   "id": "b14_34",
+   "role": "script",
+   "word_idx": [
+    null
+   ],
+   "units": [
+    52.38333333333333
+   ],
+   "first_visible": [
+    3144
+   ]
+  },
+  {
+   "id": "b15_35",
+   "role": "hero",
+   "word_idx": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "units": [
+    53.6,
+    53.81666666666667,
+    54.2,
+    54.46666666666667
+   ],
+   "first_visible": [
+    3217,
+    3230,
+    3253,
+    3269
+   ]
+  },
+  {
+   "id": "b16_36",
+   "role": "hero",
+   "word_idx": [
+    null
+   ],
+   "units": [
+    60
+   ],
+   "first_visible": [
+    3601
+   ]
+  },
+  {
+   "id": "b16_37",
+   "role": "text",
+   "word_idx": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "units": [
+    60.550000000000004,
+    60.93333333333334,
+    61.25,
+    61.68333333333334
+   ],
+   "first_visible": [
+    3634,
+    3657,
+    3676,
+    3702
+   ]
+  },
+  {
+   "id": "b16_38",
+   "role": "text",
+   "word_idx": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "units": [
+    62.35,
+    62.95,
+    63.21666666666667,
+    63.81666666666667
+   ],
+   "first_visible": [
+    3742,
+    3778,
+    3794,
+    3830
+   ]
+  },
+  {
+   "id": "b17_39",
+   "role": "hero",
+   "word_idx": [
+    null,
+    null
+   ],
+   "units": [
+    66.13333333333334,
+    66.56666666666666
+   ],
+   "first_visible": [
+    3969,
+    3995
+   ]
+  },
+  {
+   "id": "b17_40",
+   "role": "hero",
+   "word_idx": [
+    null
+   ],
+   "units": [
+    67.26666666666667
+   ],
+   "first_visible": [
+    4037
+   ]
+  },
+  {
+   "id": "b17_41",
+   "role": "script",
+   "word_idx": [
+    null
+   ],
+   "units": [
+    67.6
+   ],
+   "first_visible": [
+    4056
+   ]
+  },
+  {
+   "id": "b18_42",
+   "role": "hero",
+   "word_idx": [
+    null,
+    null
+   ],
+   "units": [
+    69.73333333333333,
+    70.26666666666667
+   ],
+   "first_visible": [
+    4185,
+    4217
+   ]
+  },
+  {
+   "id": "b18_43",
+   "role": "script",
+   "word_idx": [
+    null
+   ],
+   "units": [
+    70.65
+   ],
+   "first_visible": [
+    4240
+   ]
+  },
+  {
+   "id": "b19_44",
+   "role": "stamp",
+   "word_idx": [
+    null
+   ],
+   "units": [
+    71.66666666666667
+   ],
+   "first_visible": [
+    4301
+   ]
+  },
+  {
+   "id": "b19_45",
+   "role": "text",
+   "word_idx": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "units": [
+    72.7,
+    73.35,
+    73.9,
+    74.21666666666667,
+    74.6,
+    74.93333333333334
+   ],
+   "first_visible": [
+    4363,
+    4402,
+    4435,
+    4454,
+    4477,
+    4497
+   ]
+  },
+  {
+   "id": "b20_46",
+   "role": "hero",
+   "word_idx": [
+    null,
+    null
+   ],
+   "units": [
+    75.71666666666667,
+    76.05
+   ],
+   "first_visible": [
+    4544,
+    4564
+   ]
+  },
+  {
+   "id": "b20_47",
+   "role": "script",
+   "word_idx": [
+    null
+   ],
+   "units": [
+    76.48333333333333
+   ],
+   "first_visible": [
+    4590
+   ]
+  },
+  {
+   "id": "b20_48",
+   "role": "hero",
+   "word_idx": [
+    null
+   ],
+   "units": [
+    76.86666666666667
+   ],
+   "first_visible": [
+    4613
+   ]
+  },
+  {
+   "id": "b21_49",
+   "role": "hero",
+   "word_idx": [
+    null,
+    null,
+    null
+   ],
+   "units": [
+    78.15,
+    78.48333333333333,
+    78.8
+   ],
+   "first_visible": [
+    4690,
+    4710,
+    4729
+   ]
+  },
+  {
+   "id": "b21_50",
+   "role": "text",
+   "word_idx": [
+    null,
+    null,
+    null
+   ],
+   "units": [
+    79.4,
+    79.73333333333333,
+    80.05
+   ],
+   "first_visible": [
+    4765,
+    4785,
+    4804
+   ]
+  },
+  {
+   "id": "b21_51",
+   "role": "reveal",
+   "word_idx": [
+    null
+   ],
+   "units": [
+    80.6
+   ],
+   "first_visible": [
+    4837
+   ]
+  },
+  {
+   "id": "b22_52",
+   "role": "hero",
+   "word_idx": [
+    null,
+    null
+   ],
+   "units": [
+    82.03333333333333,
+    82.46666666666667
+   ],
+   "first_visible": [
+    4923,
+    4949
+   ]
+  },
+  {
+   "id": "b22_53",
+   "role": "stamp",
+   "word_idx": [
+    null,
+    null,
+    null
+   ],
+   "units": [
+    82.96666666666667,
+    83.28333333333333,
+    83.55
+   ],
+   "first_visible": [
+    4979,
+    4998,
+    5014
+   ]
+  },
+  {
+   "id": "b23_54",
+   "role": "hero",
+   "word_idx": [
+    null,
+    null
+   ],
+   "units": [
+    84.75,
+    85.13333333333334
+   ],
+   "first_visible": [
+    5086,
+    5109
+   ]
+  },
+  {
+   "id": "b23_55",
+   "role": "script",
+   "word_idx": [
+    null
+   ],
+   "units": [
+    85.4
+   ],
+   "first_visible": [
+    5125
+   ]
+  },
+  {
+   "id": "b23_56",
+   "role": "hero",
+   "word_idx": [
+    null
+   ],
+   "units": [
+    85.73333333333333
+   ],
+   "first_visible": [
+    5145
+   ]
+  },
+  {
+   "id": "b24_57",
+   "role": "text",
+   "word_idx": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "units": [
+    86.61666666666667,
+    87.11666666666667,
+    87.78333333333333,
+    88.1
+   ],
+   "first_visible": [
+    5198,
+    5228,
+    5268,
+    5287
+   ]
+  },
+  {
+   "id": "b24_58",
+   "role": "cta",
+   "word_idx": [
+    null
+   ],
+   "units": [
+    88.81666666666666
+   ],
+   "first_visible": [
+    5330
+   ]
+  },
+  {
+   "id": "b24_59",
+   "role": "text",
+   "word_idx": [
+    null
+   ],
+   "units": [
+    90.28333333333333
+   ],
+   "first_visible": [
+    5418
+   ]
+  }
+ ]
+}

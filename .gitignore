@@ -8,3 +8,6 @@ video/*/out/*.cues.json
 video/*/out/vo/*.mkv
 video/*/out/vo/*.cues.json
 video/*/vo/takes/
+video/*/v3/work/
+video/*/v3/out/*.mkv
+video/*/v3/out/*.cues.json

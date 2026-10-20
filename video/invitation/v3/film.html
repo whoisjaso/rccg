@@ -1,0 +1,442 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>The Dayspring v3</title>
+<style>
+@font-face{font-family:'Dela';src:url(work/fonts/DelaGothicOne-Regular.ttf)}
+@font-face{font-family:'Pinyon';src:url(work/fonts/PinyonScript-Regular.ttf)}
+@font-face{font-family:'Anton';src:url(work/fonts/Anton-Regular.ttf)}
+@font-face{font-family:'Inter';font-weight:100 900;src:url('work/fonts/Inter[opsz,wght].ttf')}
+/* Motion colour combos (docs/color-combos.md): Crimson Night = hook + pain, Espresso Gold = turn, proof, future pace, CTA */
+:root{--cn-base:#0E0606;--cn-em:#E10304;--cn-sec:#F5E4D0;--cn-tint:#1E0100;--eg-base:#1A0F0A;--eg-em:#FFBF0B;--eg-sec:#FFE6CC;--eg-tint:#4F2B1F}
+html,body{margin:0;background:#000;overflow:hidden}
+#stage{position:relative;overflow:hidden;background:var(--cn-base)}
+.L{position:absolute;inset:0;transform-origin:50% 50%}
+.L>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.L>canvas{position:absolute;inset:0}
+.T{position:absolute;white-space:nowrap;color:#fff}
+.T .w{display:inline-block;will-change:transform,opacity,filter}
+.cap{font-family:'Dela',sans-serif;text-transform:uppercase;letter-spacing:.005em;line-height:1.07}
+.scr{font-family:'Pinyon',cursive;line-height:1;letter-spacing:0;text-transform:none}
+.body{font-family:'Inter',sans-serif;font-variation-settings:'opsz' 32;font-weight:400;letter-spacing:-.006em;line-height:1.32;color:rgba(255,255,255,.92);white-space:normal}
+.anton{font-family:'Anton',sans-serif;text-transform:uppercase;letter-spacing:.01em;line-height:.96}
+.lab{font-family:'Inter',sans-serif;font-weight:600;letter-spacing:.22em;text-transform:uppercase}
+.red{color:var(--cn-em)}.gold{color:var(--eg-em)}.cream{color:var(--eg-sec)}.rose{color:var(--cn-sec)}
+.glow-red{text-shadow:0 0 38px rgba(225,3,4,.45),0 0 90px rgba(225,3,4,.25)}
+.glow-gold{text-shadow:0 0 40px rgba(255,191,11,.40),0 0 110px rgba(255,191,11,.22)}
+.soft-shadow{text-shadow:0 2px 22px rgba(0,0,0,.55)}
+.bubble{position:absolute;padding:.7em 1em;border-radius:1.1em;background:#2a2a2e;color:#fff;font-family:'Inter';font-weight:500;letter-spacing:-.01em;white-space:nowrap}
+.chip{display:inline-flex;align-items:center;gap:.55em;padding:.55em 1.1em;margin:.3em .4em;border-radius:999px;background:rgba(255,191,11,.12);border:1px solid rgba(255,191,11,.55);color:#fff;font-family:'Inter';font-weight:500}
+.chip b{display:inline-grid;place-items:center;width:1.2em;height:1.2em;border-radius:50%;background:var(--eg-em);color:#1A0F0A;font-size:.8em}
+.win{position:absolute;border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 50px 120px -30px rgba(0,0,0,.7),0 0 0 1px rgba(255,191,11,.35)}
+.win .bar{height:44px;background:#efedea;display:flex;align-items:center;gap:10px;padding:0 18px;font:500 16px 'Inter';color:#8a8580}
+.win .bar i{width:13px;height:13px;border-radius:50%;background:#d8d4cf;display:inline-block}
+.win .bar span{margin:0 auto;transform:translateX(-30px)}
+.win img{display:block;width:100%}
+.pill{display:inline-block;padding:.85em 2.1em;border-radius:999px;background:var(--eg-em);color:#1A0F0A;font-family:'Inter';font-weight:700;letter-spacing:.14em}
+</style></head>
+<body><div id="stage"></div>
+<script>
+const Q = new URLSearchParams(location.search);
+const O = Q.get('o') === 'h' ? 'h' : 'v';
+const W = O === 'v' ? 1080 : 1920, H = O === 'v' ? 1920 : 1080;
+const IMG = '../../../site/assets/img/';
+const stage = document.getElementById('stage'); stage.style.width = W + 'px'; stage.style.height = H + 'px';
+const TL = (() => { const x = new XMLHttpRequest(); x.open('GET', 'work/timeline.json', false); x.send(); return JSON.parse(x.responseText); })();
+const DUR = TL.dur, F1 = 1 / 60;
+const Wd = (b, i) => TL.lines[b].on[i < 0 ? TL.lines[b].on.length + i : i];
+const S0 = (b) => TL.lines[b].on[0];
+const E = (b) => TL.lines[b].e;
+const NW = (b) => TL.lines[b].words.length;
+
+// ---------- easing ----------
+const cl = (x) => Math.max(0, Math.min(1, x));
+const eOutQuint = (x) => 1 - Math.pow(1 - x, 5), eOutExpo = (x) => (x >= 1 ? 1 : 1 - Math.pow(2, -10 * x));
+const eOutCubic = (x) => 1 - Math.pow(1 - x, 3), eInCubic = (x) => x * x * x, eInOutSine = (x) => -(Math.cos(Math.PI * x) - 1) / 2;
+const lerp = (a, b, k) => a + (b - a) * k;
+const V = (v, h) => ({ v, h }); const P = (o) => (o && (o.v !== undefined || o.h !== undefined) ? o[O] : o);
+const seeded = (s) => () => ((s = (s * 16807) % 2147483647) / 2147483647);
+
+// ---------- core ----------
+const items = [], cues = [], waits = []; let z = 0;
+function el(tag, cls, html, parent) { const e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; e.style.zIndex = ++z; (parent || stage).appendChild(e); return e; }
+const envelope = (t, t0, t1, fin, fout) => Math.min(fin <= 0.011 ? 1 : eInOutSine(cl((t - t0) / fin)), eInOutSine(cl((t1 - t) / fout)));
+const cue = (t, role, extra = {}) => cues.push({ t, role, ...extra });
+
+// Layer: photo / block / canvas. Every change of plate rides a blur (transitions are blur dissolves).
+function L(o) {
+  const e = el('div', 'L');
+  if (o.src) { const i = document.createElement('img'); i.src = IMG + o.src; i.style.objectPosition = P(o.pos) || '50% 50%'; if (o.filter) i.style.filter = o.filter; e.appendChild(i); waits.push(i.decode().catch(() => {})); }
+  if (o.html) e.insertAdjacentHTML('beforeend', o.html);
+  if (o.style) Object.assign(e.style, P(o.style));
+  let cv = null; if (o.draw) { cv = document.createElement('canvas'); cv.width = W; cv.height = H; e.appendChild(cv); }
+  const it = { kind: 'layer', e, cv, ctx: cv && cv.getContext('2d'), fin: 0.5, fout: 0.5, blur: 14, kb: [1.04, 1.1, 0, 0, 0, 0], ...o };
+  items.push(it);
+  if (o.whoosh !== false && o.t0 > 0.1) cue(o.t0 + it.fin * 0.5, 'whoosh', { gain: o.wgain ?? 1 });
+  return it;
+}
+// Text unit. fx = measured presets (text-animation-library.md): up = Words Up (200 ms settle, 6 px blur),
+// blur = hero blur-settle (ghosted 110% -> 100%), stamp = word stamp (no blur, lands hard), script = hand-drawn wipe + settle.
+const FX = { up: { din: 0.24, rise: 0.25, blur: 6, scale: 0 }, blur: { din: 0.42, rise: 0.06, blur: 16, scale: 0.1 }, stamp: { din: 0.13, rise: 0, blur: 0, scale: 0.28 }, script: { din: 0.7, rise: 0.08, blur: 7, scale: 0.04 } };
+function T(o) {
+  const pos = P(o.pos), e = el('div', 'T ' + (o.cls || ''));
+  e.style.fontSize = pos.fs + 'px'; if (pos.lh) e.style.lineHeight = pos.lh;
+  const a = pos.a || 'l'; e.style.textAlign = { l: 'left', c: 'center', r: 'right' }[a];
+  if (a === 'c') { e.style.left = (pos.x ?? 0) + 'px'; e.style.width = (pos.w ?? W - 2 * (pos.x ?? 0)) + 'px'; e.style.transformOrigin = '50% 50%'; }
+  else if (a === 'l') { e.style.left = pos.x + 'px'; if (pos.w) e.style.width = pos.w + 'px'; e.style.transformOrigin = '0% 60%'; }
+  else { e.style.right = pos.x + 'px'; if (pos.w) e.style.width = pos.w + 'px'; e.style.transformOrigin = '100% 60%'; }
+  if (pos.y != null) e.style.top = pos.y + 'px'; else e.style.bottom = pos.b + 'px';
+  if (o.split === false) e.innerHTML = `<span class="w">${o.html}</span>`;
+  else e.innerHTML = o.html.split(/(<br>)/).map((c) => (c === '<br>' ? '<br>' : c.split(' ').filter(Boolean).map((w) => `<span class="w">${w}</span>`).join(' '))).join('');
+  if (o.style) e.style.cssText += o.style;
+  const units = [...e.querySelectorAll('.w')];
+  const fx = { ...FX[o.fx || 'up'], ...(o.fxo || {}) };
+  const it = { kind: 'text', e, units, dout: 0.28, drift: 0.03, fs: pos.fs, ...o, F: fx };
+  if (o.b) {
+    it.ons = o.wi.map((i) => Wd(o.b, i) - F1);
+    it.word_idx = o.wi.map((i) => TL.lines[o.b].word_idx[i < 0 ? NW(o.b) + i : i]);
+    if (it.ons.length !== units.length) throw new Error(`word links ${it.ons.length} != units ${units.length}: ${o.html}`);
+    if (o.t0 == null) it.t0 = it.ons[0];
+  } else it.ons = units.map((_, i) => it.t0 + i * (o.stagger ?? 0.06));
+  items.push(it);
+  // signature sound on the visual peak of hero / script / stamp / number units; body text riding the voice stays silent
+  if (o.sfx) units.forEach((u, i) => { const pk = it.ons[i] + (o.fx === 'stamp' ? 0.02 : 0.37 * fx.din); cue(pk, (o.sfxLast && i === units.length - 1) ? o.sfxLast : o.sfx, { i, n: units.length, word: u.textContent }); });
+  return it;
+}
+// Script emphasis word that interlocks with the caps line (carousel-system.md §2): ~3.3x the caps.
+// Pinyon is the OFL twin of Tempting, set ~3.9x the caps (carousel-system.md §2): scale the 3.3x layout values by 1.18
+const SCR = (o) => T({ fx: 'script', split: false, sfx: 'script', drift: 0.04, ...o, pos: (() => { const p = { ...P(o.pos) }; p.fs *= 1.18; return p; })(), cls: 'scr ' + (o.cls || '') });
+function FXL(o) { const it = { kind: 'fx', ...o }; items.push(it); return it; }   // custom per-frame effect
+
+const M = O === 'v' ? 84 : 150;   // side margin (safe zone)
+
+// =====================================================================================================
+// ACT 1, CRIMSON NIGHT: the weight
+// =====================================================================================================
+const b01 = S0('b01');
+// embers rising through the whole first act
+function embers(n, seed, color) {
+  const r = seeded(seed), ps = [...Array(n)].map(() => ({ x: r() * W, y: r() * H, s: 1 + r() * 3.2, v: 18 + r() * 45, ph: r() * 6.28, a: 0.25 + r() * 0.6 }));
+  return (ctx, t) => { ctx.clearRect(0, 0, W, H); for (const p of ps) { const y = ((p.y - t * p.v) % H + H) % H, x = p.x + Math.sin(t * 0.6 + p.ph) * 24; const g = ctx.createRadialGradient(x, y, 0, x, y, p.s * 6); g.addColorStop(0, color.replace('A', p.a.toFixed(2))); g.addColorStop(1, color.replace('A', '0')); ctx.fillStyle = g; ctx.fillRect(x - p.s * 6, y - p.s * 6, p.s * 12, p.s * 12); } };
+}
+L({ t0: -1, t1: b01 + 0.35, fin: 0.01, fout: 0.6, src: 'slots/band-crossover-2400.webp', pos: V('50% 50%', '50% 45%'), filter: 'brightness(.55) saturate(.8) contrast(1.08)', kb: [1.16, 1.26, 0, -18, 0, 0], whoosh: false });
+L({ t0: -1, t1: b01 + 0.35, fin: 0.01, fout: 0.6, blur: 0, html: '', style: { background: 'linear-gradient(180deg,rgba(14,6,6,.55),rgba(30,1,0,.35) 45%,rgba(14,6,6,.88))', mixBlendMode: 'normal' }, kb: [1, 1, 0, 0, 0, 0], whoosh: false });
+L({ t0: -1, t1: S0('b07') - 0.1, fin: 0.01, fout: 0.4, blur: 0, draw: embers(70, 11, 'rgba(255,90,40,A)'), kb: [1, 1, 0, 0, 0, 0], whoosh: false });
+
+/* b00 hook: "You've been carrying it alone... for a long time." The caps sink under their own weight. */
+const capV = O === 'v' ? 92 : 104;
+const hk1 = T({ b: 'b00', wi: [0, 1], t1: b01 - 0.02, html: "YOU'VE BEEN", cls: 'cap soft-shadow', fx: 'blur', pos: V({ x: M, y: 560, fs: capV }, { x: M, y: 250, fs: capV }), sfx: 'hero' });
+const hk2 = T({ b: 'b00', wi: [2, 3], t1: b01 - 0.02, html: 'CARRYING IT', cls: 'cap soft-shadow', fx: 'blur', pos: V({ x: M, y: 560 + capV * 1.07, fs: capV }, { x: M, y: 250 + capV * 1.07, fs: capV }), sfx: 'hero' });
+SCR({ b: 'b00', wi: [4], t1: b01 - 0.02, html: 'alone.', cls: 'red glow-red', pos: V({ x: M + 120, y: 560 + capV * 1.6, fs: capV * 3.3 }, { x: M + 200, y: 250 + capV * 1.55, fs: capV * 3.1 }) });
+T({ b: 'b00', wi: [5, 6, 7, 8], t1: b01 - 0.02, html: 'for a long time.', cls: 'body rose', pos: V({ x: M, y: 1330, fs: 46 }, { x: M, y: 820, fs: 44 }) });
+FXL({ render: (t) => { const k = eInOutSine(cl((t - Wd('b00', 2)) / 2.6)) * (O === 'v' ? 34 : 22); [hk1, hk2].forEach((h) => (h.sink = k)); } });
+
+/* b01 the late nights: a giant 2:47 clock breathing in the dark */
+const night = (b, html, pos, extra = {}) => T({ b, html, pos, cls: 'cap soft-shadow', fx: 'blur', sfx: 'hero', ...extra });
+const clockHost = L({ t0: b01 - 0.3, t1: S0('b02') + 0.2, fin: 0.4, fout: 0.35, blur: 10, html: `<div style="position:absolute;inset:0;display:grid;place-items:center"><div class="clk" style="font-family:Inter;font-weight:100;font-size:${O === 'v' ? 400 : 420}px;letter-spacing:-.04em;color:rgba(245,228,208,.13);font-feature-settings:'tnum'">2<span class="col">:</span>47</div></div>`, kb: [1.0, 1.06, 0, 0, 0, 0] });
+FXL({ render: (t) => { const c = clockHost.e.querySelector('.col'); if (c) c.style.opacity = (Math.floor(t * 2) % 2 ? 0.25 : 1); } });
+for (let k = 0; k < 4; k++) cue(b01 + 0.15 + k * 0.5, 'clock');
+night('b01', 'THE LATE', V({ x: M, y: 640, fs: capV }, { x: M, y: 300, fs: capV }), { wi: [0, 1], t1: S0('b02') - 0.02 });
+SCR({ b: 'b01', wi: [2], t1: S0('b02') - 0.02, html: 'nights.', cls: 'red glow-red', pos: V({ x: M + 60, y: 640 + capV * 0.5, fs: capV * 3.3 }, { x: M + 120, y: 300 + capV * 0.45, fs: capV * 3.1 }) });
+
+/* b02 the habit you hide: a dark panel slides over the words, the script surfaces from behind it */
+const b02t1 = S0('b03') - 0.02;
+night('b02', 'THE HABIT<br>YOU', V({ x: M, y: 620, fs: capV }, { x: M, y: 280, fs: capV }), { wi: [0, 1, 2], t1: b02t1 });
+const panel = L({ t0: Wd('b02', 2) + 0.05, t1: b02t1 + 0.25, fin: 0.01, fout: 0.25, blur: 0, html: '', style: V({ background: 'linear-gradient(90deg,rgba(14,6,6,0),#0E0606 18%)', left: '0px', top: '600px', height: '260px', inset: 'auto', width: W + 'px' }, { background: 'linear-gradient(90deg,rgba(14,6,6,0),#0E0606 18%)', left: '0px', top: '260px', height: '260px', inset: 'auto', width: W + 'px' }), kb: [1, 1, 0, 0, 0, 0], whoosh: false });
+panel.slide = true; cue(Wd('b02', 2) + 0.12, 'swipe');
+SCR({ b: 'b02', wi: [3], t1: b02t1, html: 'hide.', cls: 'red glow-red', pos: V({ x: M + 280, y: 620 + capV * 1.2, fs: capV * 3.4 }, { x: M + 420, y: 280 + capV * 1.1, fs: capV * 3.1 }) });
+
+/* b03 the words you can't take back: a sent message the cursor can't delete */
+const b03t1 = S0('b04') - 0.02;
+const bub = el('div', 'bubble', '<span class="txt"></span><span class="car">|</span>'); Object.assign(bub.style, O === 'v' ? { left: M + 'px', top: '470px', fontSize: '44px' } : { left: M + 'px', top: '170px', fontSize: '40px' });
+const MSG = "You never cared anyway.";
+FXL({ render: (t) => {
+  const a = Wd('b03', 0) - 0.25, vis = t > a && t < b03t1; bub.style.display = vis ? 'block' : 'none'; if (!vis) return;
+  const n = Math.min(MSG.length, Math.floor((t - a) / 0.045)); let txt = MSG.slice(0, n);
+  const tryDel = Wd('b03', 3);      // "can't": the cursor tries, the words won't go
+  if (t > tryDel) { const j = Math.floor((t - tryDel) * 14); txt = MSG; bub.style.transform = `translateX(${(j % 2 ? 1 : -1) * 6 * Math.max(0, 1 - (t - tryDel) / 0.9)}px)`; bub.style.background = j % 3 === 0 && t - tryDel < 0.9 ? '#4a0d0d' : '#2a2a2e'; }
+  bub.querySelector('.txt').textContent = txt; bub.querySelector('.car').style.opacity = Math.floor(t * 2.4) % 2 ? 0 : 1;
+  bub.style.opacity = Math.min(cl((t - a) / 0.2), cl((b03t1 - t) / 0.25));
+} });
+for (let i = 0; i < MSG.length; i += 2) cue(Wd('b03', 0) - 0.25 + i * 0.045, 'key', { i });
+cue(Wd('b03', 3) + 0.02, 'glitch');
+night('b03', "THE WORDS<br>YOU CAN'T<br>TAKE", V({ x: M, y: 720, fs: capV }, { x: M, y: 330, fs: capV * 0.92 }), { wi: [0, 1, 2, 3, 4], t1: b03t1 });
+SCR({ b: 'b03', wi: [5], t1: b03t1, html: 'back.', cls: 'red glow-red', pos: V({ x: M + 330, y: 720 + capV * 2.15, fs: capV * 3.4 }, { x: M + 440, y: 330 + capV * 1.9, fs: capV * 3.0 }) });
+
+/* b04 bitterness you keep calling fine: FINE cracks in two */
+const b04t1 = S0('b05') - 0.02;
+night('b04', 'THE BITTERNESS<br>YOU KEEP CALLING', V({ x: M, y: 520, fs: capV * 0.72 }, { x: M, y: 210, fs: capV * 0.8 }), { wi: [0, 1, 2, 3, 4], t1: b04t1 });
+const fineT = Wd('b04', 5);
+const fine = el('div', 'T anton', `<div class="fA" style="clip-path:polygon(0 0,52% 0,46% 38%,55% 61%,44% 100%,0 100%)">FINE.</div><div class="fB" style="position:absolute;inset:0;clip-path:polygon(52% 0,100% 0,100% 100%,44% 100%,55% 61%,46% 38%)">FINE.</div><svg class="ck" viewBox="0 0 100 100" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible"><polyline points="52,0 46,38 55,61 44,100" fill="none" stroke="#E10304" stroke-width=".9" vector-effect="non-scaling-stroke" style="stroke-width:5px"/></svg>`);
+Object.assign(fine.style, O === 'v' ? { left: M + 'px', top: '760px', fontSize: '470px', color: '#fff' } : { left: M + 'px', top: '420px', fontSize: '420px', color: '#fff' });
+FXL({ render: (t) => {
+  const vis = t > fineT - F1 && t < b04t1; fine.style.display = vis ? 'block' : 'none'; if (!vis) return;
+  const k = eOutExpo(cl((t - fineT + F1) / 0.13)); fine.style.opacity = Math.min(k, cl((b04t1 - t) / 0.25)); fine.style.transform = `scale(${1.3 - 0.3 * k})`;
+  const c = cl((t - fineT - 0.55) / 0.4), ce = eOutCubic(c);
+  fine.querySelector('.ck').style.opacity = c > 0 ? 1 : 0; fine.querySelector('.ck polyline').style.strokeDasharray = '200'; fine.querySelector('.ck polyline').style.strokeDashoffset = 200 * (1 - cl(c * 3));
+  fine.querySelector('.fA').style.transform = `translate(${-26 * ce}px,${18 * ce}px) rotate(${-2.5 * ce}deg)`; fine.querySelector('.fB').style.transform = `translate(${26 * ce}px,${-8 * ce}px) rotate(${2 * ce}deg)`;
+  fine.querySelector('.fB').style.color = c > 0 ? `rgb(255,${255 - 200 * ce},${255 - 230 * ce})` : '#fff';
+} });
+cue(fineT + 0.02, 'stamp'); cue(fineT + 0.6, 'crack');
+
+/* b05 that empty feeling after the party ends: party lights die and fall */
+const b05t1 = S0('b06') - 0.02;
+L({ t0: S0('b05') - 0.3, t1: b05t1 + 0.3, fin: 0.3, fout: 0.4, blur: 0, kb: [1, 1, 0, 0, 0, 0], whoosh: false, draw: (() => {
+  const r = seeded(41), cols = ['255,80,160', '80,180,255', '255,200,60', '160,90,255', '255,110,60'];
+  const ps = [...Array(46)].map(() => ({ x: r() * W, y: r() * H * 0.8, s: 30 + r() * 110, c: cols[Math.floor(r() * 5)], v: 30 + r() * 80, d: r() * 0.8 }));
+  return (ctx, t) => { ctx.clearRect(0, 0, W, H); const k = cl((t - S0('b05')) / Math.max(0.5, E('b05') - S0('b05'))); for (const p of ps) { const fall = eInCubic(cl(k * 1.3 - p.d * 0.3)); const y = p.y + fall * p.v * 6, a = 0.32 * (1 - eOutCubic(cl(k * 1.15 - p.d * 0.2))); if (a <= 0.01) continue; const g = ctx.createRadialGradient(p.x, y, 0, p.x, y, p.s); g.addColorStop(0, `rgba(${p.c},${a})`); g.addColorStop(1, `rgba(${p.c},0)`); ctx.fillStyle = g; ctx.fillRect(p.x - p.s, y - p.s, p.s * 2, p.s * 2); } };
+})() });
+SCR({ b: 'b05', wi: [1], t1: b05t1, html: 'empty', cls: 'red glow-red', pos: V({ x: M, y: 440, fs: capV * 3.4 }, { x: M, y: 120, fs: capV * 3.1 }) });
+night('b05', 'AFTER THE<br>PARTY ENDS.', V({ x: M, y: 850, fs: capV }, { x: M, y: 520, fs: capV }), { wi: [3, 4, 5, 6], t1: b05t1 });
+
+/* b06 the quiet ache nothing fixes: a heartbeat that slows and flatlines (and stays flat through the meaning pause) */
+const b06 = S0('b06'), flat = E('b06') - 0.2, b07 = S0('b07');
+L({ t0: b06 - 0.25, t1: b07 + 0.05, fin: 0.3, fout: 0.05, blur: 0, kb: [1, 1, 0, 0, 0, 0], whoosh: false, draw: (ctx, t) => {
+  ctx.clearRect(0, 0, W, H); const y0 = O === 'v' ? 1180 : 760, span = W - 2 * M, px = (t - b06 + 0.25) * 520;
+  ctx.lineWidth = 5; ctx.strokeStyle = '#E10304'; ctx.shadowColor = 'rgba(225,3,4,.8)'; ctx.shadowBlur = 22; ctx.beginPath();
+  const beats = [0.15, 0.95, 1.95, 3.3];  // slowing
+  for (let x = 0; x <= Math.min(px, span); x += 3) { const s = x / 520 + b06 - 0.25; let y = y0; for (const bt of beats) { const d = s - (b06 + bt); if (s < flat && d > 0 && d < 0.28) y -= Math.sin(d / 0.28 * Math.PI * 2) * 140 * Math.exp(-d * 6) * (1 - bt / 4); } x === 0 ? ctx.moveTo(M + x, y) : ctx.lineTo(M + x, y); }
+  ctx.stroke(); const hx = M + Math.min(px, span); ctx.fillStyle = '#ff4a4a'; ctx.beginPath(); ctx.arc(hx, y0, 9, 0, 6.28); ctx.fill();
+} });
+[0.15, 0.95, 1.95, 3.3].forEach((bt) => { if (b06 + bt < flat) cue(b06 + bt, 'heartbeat', { gain: 1 - bt / 5 }); });
+cue(flat, 'flatline');
+T({ b: 'b06', wi: [0, 1, 2], t1: b07 - 0.05, html: 'And that quiet', cls: 'body rose', pos: V({ x: M, y: 560, fs: 54 }, { x: M, y: 220, fs: 54 }) });
+SCR({ b: 'b06', wi: [3], t1: b07 - 0.05, html: 'ache...', cls: 'red glow-red', pos: V({ x: M + 40, y: 560, fs: capV * 3.6 }, { x: M + 60, y: 220, fs: capV * 3.2 }) });
+T({ b: 'b06', wi: [4, 5, 6], t1: b07 - 0.05, html: 'that nothing fixes.', cls: 'body rose', pos: V({ x: M, y: 960, fs: 54 }, { x: M, y: 600, fs: 54 }) });
+
+// =====================================================================================================
+// ACT 2, ESPRESSO GOLD: the turn
+// =====================================================================================================
+/* b07 But hear me. Stern punch, a flash. The one energy-5 hit of the film. */
+const b08 = S0('b08');
+L({ t0: b07 - 0.12, t1: S0('b11') - 0.2, fin: 0.12, fout: 0.4, blur: 0, html: '', style: { background: 'radial-gradient(120% 90% at 50% 45%,#2a170e 0%,#1A0F0A 55%,#0d0705 100%)' }, kb: [1, 1, 0, 0, 0, 0], whoosh: false });
+L({ t0: b07 - 0.05, t1: b07 + 0.35, fin: 0.04, fout: 0.3, blur: 0, html: '', style: { background: '#fff6e0' }, kb: [1, 1, 0, 0, 0, 0], whoosh: false });
+T({ b: 'b07', wi: [0, 1, 2], t1: b08 - 0.02, html: 'BUT<br>HEAR ME.', cls: 'anton', fx: 'stamp', pos: V({ a: 'c', y: 640, fs: 250 }, { a: 'c', y: 230, fs: 260 }), sfx: 'stamp', sfxLast: 'slam', drift: 0.05 });
+
+/* b08 You are not too far gone: a seam of gold light breaks the dark open */
+const b09 = S0('b09');
+L({ t0: b08 - 0.2, t1: b09 + 0.2, fin: 0.3, fout: 0.35, blur: 0, kb: [1, 1, 0, 0, 0, 0], whoosh: false, draw: (ctx, t) => {
+  ctx.clearRect(0, 0, W, H); const k = eOutCubic(cl((t - b08) / 1.6)), w = 4 + k * (O === 'v' ? 380 : 520), cx = W / 2;
+  const g = ctx.createLinearGradient(cx - w, 0, cx + w, 0); g.addColorStop(0, 'rgba(255,191,11,0)'); g.addColorStop(0.5, `rgba(255,215,120,${0.55 * k + 0.2})`); g.addColorStop(1, 'rgba(255,191,11,0)');
+  ctx.fillStyle = g; ctx.fillRect(cx - w, 0, w * 2, H); ctx.fillStyle = `rgba(255,248,225,${0.7 * k + 0.3})`; ctx.fillRect(cx - 2 - k * 6, 0, 4 + k * 12, H);
+} });
+cue(b08, 'rise_soft');
+T({ b: 'b08', wi: [0, 1, 2], t1: b09 - 0.02, html: 'YOU ARE NOT', cls: 'cap soft-shadow', fx: 'blur', pos: V({ a: 'c', y: 640, fs: capV }, { a: 'c', y: 250, fs: capV }), sfx: 'hero' });
+T({ b: 'b08', wi: [3, 4], t1: b09 - 0.02, html: 'TOO FAR', cls: 'cap soft-shadow', fx: 'blur', pos: V({ a: 'c', y: 640 + capV * 1.07, fs: capV }, { a: 'c', y: 250 + capV * 1.07, fs: capV }), sfx: 'hero' });
+SCR({ b: 'b08', wi: [5], t1: b09 - 0.02, html: 'gone.', cls: 'gold glow-gold', pos: V({ a: 'c', y: 640 + capV * 1.55, fs: capV * 3.4 }, { a: 'c', y: 250 + capV * 1.5, fs: capV * 3.1 }) });
+
+/* b09 skeptical: "You think it's too late?" tilts and hesitates; b10 "It's not." stamps and strikes it out */
+const b10 = S0('b10'), b11 = S0('b11');
+T({ b: 'b09', wi: [0, 1, 2], t1: b11 - 0.25, html: "You think it's", cls: 'body cream', pos: V({ x: M, y: 620, fs: 54 }, { x: M, y: 230, fs: 54 }) });
+const late = T({ b: 'b09', wi: [3, 4], t1: b11 - 0.25, html: 'TOO LATE?', cls: 'cap', fx: 'blur', pos: V({ x: M, y: 700, fs: capV * 1.12 }, { x: M, y: 310, fs: capV * 1.2 }), sfx: 'hero', drift: 0.02 });
+FXL({ render: (t) => { if (t < S0('b09')) return; const k = t - Wd('b09', 3); late.e.style.rotate = `${-3 * Math.sin(k * 3.1) * Math.exp(-Math.max(0, k) * 1.2)}deg`; late.e.style.opacity = t > b10 ? 0.45 : 1; } });
+const strike = el('div', ''); Object.assign(strike.style, { position: 'absolute', height: '10px', background: '#FFBF0B', boxShadow: '0 0 24px rgba(255,191,11,.8)', transformOrigin: '0 50%', left: M + 'px', top: (O === 'v' ? 700 + capV * 0.62 : 310 + capV * 0.66) + 'px', width: (O === 'v' ? 860 : 1020) + 'px' });
+FXL({ render: (t) => { const vis = t > b10 && t < b11 - 0.25; strike.style.display = vis ? 'block' : 'none'; strike.style.transform = `scaleX(${eOutExpo(cl((t - b10) / 0.22))})`; strike.style.opacity = cl((b11 - 0.25 - t) / 0.25); } });
+T({ b: 'b10', wi: [0, 1], t1: b11 - 0.25, html: "IT'S NOT.", cls: 'anton gold glow-gold', fx: 'stamp', pos: V({ x: M, y: 880, fs: 230 }, { x: M, y: 470, fs: 240 }), sfx: 'stamp', drift: 0.04 });
+T({ b: 'b10', wi: [2, 3, 4, 5, 6, 7], t1: b11 - 0.25, html: "And it's not too much, either.", cls: 'body cream', pos: V({ x: M, y: 1130, fs: 50 }, { x: M, y: 760, fs: 50 }) });
+
+/* b11 + b12 Matthew 11:28 over raised hands; "rest." is the script word */
+const b13 = S0('b13');
+L({ t0: b11 - 0.45, t1: b13 - 0.35, fin: 0.6, fout: 0.45, src: 'slots/detail-hands-1400.webp', pos: V('50% 40%', '50% 30%'), filter: 'brightness(.42) saturate(.75) sepia(.35)', kb: [1.06, 1.18, 0, 0, 10, -16] });
+L({ t0: b11 - 0.45, t1: b13 - 0.35, fin: 0.6, fout: 0.45, blur: 0, html: '', style: { background: 'linear-gradient(180deg,rgba(26,15,10,.35),rgba(79,43,31,.28) 50%,rgba(26,15,10,.75))' }, kb: [1, 1, 0, 0, 0, 0], whoosh: false });
+T({ b: 'b11', wi: [...Array(11).keys()], t1: b13 - 0.5, html: 'Come unto me, all ye that labour and are heavy laden,', cls: 'body', pos: V({ x: M, y: 520, fs: 62, w: W - 2 * M }, { x: M, y: 200, fs: 60, w: 1100 }), drift: 0.02 });
+T({ b: 'b12', wi: [0, 1, 2, 3, 4], t1: b13 - 0.5, html: 'and I will give you', cls: 'body', pos: V({ x: M, y: 860, fs: 62 }, { x: M, y: 420, fs: 60 }), drift: 0.02 });
+SCR({ b: 'b12', wi: [5], t1: b13 - 0.5, html: 'rest.', cls: 'gold glow-gold', pos: V({ x: M + 300, y: 860, fs: capV * 3.6 }, { x: M + 560, y: 380, fs: capV * 3.2 }), sfxLast: 'bell' });
+T({ t0: E('b12') - 0.2, t1: b13 - 0.5, html: 'MATTHEW 11:28', cls: 'lab cream', split: false, pos: V({ x: M, y: 1300, fs: 22 }, { x: M, y: 780, fs: 20 }) });
+cue(E('b12') + 0.15, 'riser_to', { at: b13 - 0.08 });
+
+/* b13 Dawn: sunrise rays; "dayspring" is the script word */
+const b14 = S0('b14');
+L({ t0: b13 - 0.6, t1: b14 + 0.6, fin: 1.0, fout: 0.6, blur: 0, html: '', style: { background: 'linear-gradient(0deg,#ffcf8a 0%,#f08a4b 16%,#7a3b4f 38%,#2b1a35 62%,#120a14 100%)', top: '-300px' }, kb: [1, 1, 0, 0, 300, 0], whoosh: false, rise: true });
+L({ t0: b13 - 0.4, t1: b14 + 0.6, fin: 1.4, fout: 0.6, blur: 0, kb: [1, 1, 0, 0, 0, 0], whoosh: false, draw: (ctx, t) => {
+  ctx.clearRect(0, 0, W, H); const cx = W / 2, cy = H * 1.02, k = eOutCubic(cl((t - b13 + 0.4) / 2.5));
+  for (let i = 0; i < 26; i++) { const a = -Math.PI / 2 + (i - 12.5) * 0.11 + Math.sin(t * 0.3) * 0.03; const g = ctx.createLinearGradient(cx, cy, cx + Math.cos(a) * H, cy + Math.sin(a) * H); g.addColorStop(0, `rgba(255,230,180,${0.35 * k})`); g.addColorStop(1, 'rgba(255,230,180,0)'); ctx.fillStyle = g; ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(cx + Math.cos(a - 0.025) * H * 1.3, cy + Math.sin(a - 0.025) * H * 1.3); ctx.lineTo(cx + Math.cos(a + 0.025) * H * 1.3, cy + Math.sin(a + 0.025) * H * 1.3); ctx.fill(); }
+  const sg = ctx.createRadialGradient(cx, cy, 0, cx, cy, H * 0.45 * (0.6 + 0.4 * k)); sg.addColorStop(0, `rgba(255,248,225,${0.95 * k})`); sg.addColorStop(1, 'rgba(255,200,120,0)'); ctx.fillStyle = sg; ctx.fillRect(0, 0, W, H);
+} });
+T({ b: 'b13', wi: [0], t1: b14 - 0.05, html: 'The', cls: 'body', pos: V({ a: 'c', y: 480, fs: 56 }, { a: 'c', y: 150, fs: 56 }) });
+SCR({ b: 'b13', wi: [1], t1: b14 - 0.05, html: 'dayspring', cls: 'gold glow-gold', pos: V({ a: 'c', y: 500, fs: capV * 3.3 }, { a: 'c', y: 170, fs: capV * 3.0 }), sfx: 'reveal' });
+T({ b: 'b13', wi: [2, 3, 4], t1: b14 - 0.05, html: 'FROM ON HIGH', cls: 'cap soft-shadow', fx: 'blur', pos: V({ a: 'c', y: 860, fs: capV * 0.85 }, { a: 'c', y: 540, fs: capV * 0.85 }), sfx: 'hero' });
+T({ b: 'b13', wi: [5, 6, 7], t1: b14 - 0.05, html: 'hath visited us.', cls: 'body', pos: V({ a: 'c', y: 1000, fs: 56 }, { a: 'c', y: 680, fs: 56 }) });
+T({ t0: E('b13') - 0.3, t1: b14 - 0.05, html: 'LUKE 1:78', cls: 'lab', split: false, pos: V({ a: 'c', y: 1110, fs: 22 }, { a: 'c', y: 790, fs: 20 }) });
+
+// =====================================================================================================
+// ACT 3: the proof
+// =====================================================================================================
+/* b14 the campus at blue hour, emblem lockup, "Houston." in gold script */
+const b15 = S0('b15');
+L({ t0: b14 - 0.45, t1: b15 + 0.3, fin: 0.6, fout: 0.45, src: 'slots/hero-campus-1920.webp', pos: V('50% 50%', '50% 55%'), filter: 'brightness(.62) saturate(.9)', kb: [1.14, 1.04, 0, 0, 0, 0] });
+L({ t0: b14 - 0.45, t1: b15 + 0.3, fin: 0.6, fout: 0.45, blur: 0, html: '', style: { background: 'linear-gradient(180deg,rgba(26,15,10,.82) 0%,rgba(26,15,10,.25) 45%,rgba(26,15,10,.55) 100%)' }, kb: [1, 1, 0, 0, 0, 0], whoosh: false });
+T({ t0: b14 - 0.2, t1: b15 - 0.02, html: `<img src="${IMG}rccg-emblem-400.png" style="width:${O === 'v' ? 130 : 110}px;display:block">`, split: false, fx: 'blur', pos: V({ x: M, y: 330, fs: 10 }, { x: M, y: 120, fs: 10 }), sfx: 'chime' });
+T({ b: 'b14', wi: [0, 1], t1: b15 - 0.02, html: 'DAYSPRING<br>CHAPEL', cls: 'cap soft-shadow', fx: 'blur', pos: V({ x: M, y: 500, fs: capV }, { x: M, y: 260, fs: capV }), sfx: 'hero' });
+T({ b: 'b14', wi: [2, 3, 4, 5, 6, 7, 8, 9, 10], t1: b15 - 0.02, html: 'A parish of The Redeemed Christian<br>Church of God,', cls: 'body cream', pos: V({ x: M, y: 740, fs: 42 }, { x: M, y: 500, fs: 40 }) });
+T({ b: 'b14', wi: [11, 12, 13], t1: b15 - 0.02, html: 'right here in', cls: 'body', pos: V({ x: M, y: 880, fs: 48 }, { x: M, y: 640, fs: 46 }) });
+SCR({ b: 'b14', wi: [14], t1: b15 - 0.02, html: 'Houston.', cls: 'gold glow-gold', pos: V({ x: M + 40, y: 880, fs: capV * 3.0 }, { x: M + 300, y: 590, fs: capV * 2.6 }) });
+
+/* b15 the real site in a desktop window, with three checklist chips on their words */
+const b16 = S0('b16');
+L({ t0: b15 - 0.4, t1: b16 + 0.25, fin: 0.5, fout: 0.45, blur: 0, html: '', style: { background: 'radial-gradient(110% 80% at 50% 40%,#2a170e,#1A0F0A 60%,#0d0705)' }, kb: [1, 1, 0, 0, 0, 0] });
+T({ b: 'b15', wi: [0, 1, 2, 3], t1: b16 - 0.02, html: 'A HOME IN HOUSTON.', cls: 'cap', fx: 'blur', pos: V({ a: 'c', y: 300, fs: capV * 0.72 }, { a: 'c', y: 60, fs: capV * 0.66 }), sfx: 'hero' });
+const win = el('div', 'win'); Object.assign(win.style, O === 'v' ? { left: '60px', top: '460px', width: '960px', height: '644px' } : { left: '110px', top: '170px', width: '1180px', height: '780px' });
+win.innerHTML = `<div class="bar"><i></i><i></i><i></i><span>rccgdayspring.org</span></div><div style="height:${O === 'v' ? 600 : 736}px;overflow:hidden"><img></div>`;
+const scr = win.querySelector('img'); const SITE_N = 324;
+items.push({ kind: 'device', e: win, t0: b15 - 0.2, t1: b16 + 0.1, din: 0.9, dout: 0.4, site0: Math.max(b15, b16 - SITE_N / 60) });
+const chips = [[4, 5, 'Service times'], [6, 6, 'Directions'], [7, 12, 'A plan for your first Sunday']];
+chips.forEach(([a, b, label], k) => {
+  const c = el('div', '', `<span class="chip" style="font-size:${O === 'v' ? 34 : 30}px"><b>&#10003;</b>${label}</span>`);
+  Object.assign(c.style, O === 'v' ? { position: 'absolute', left: '0px', width: W + 'px', textAlign: 'center', top: (1160 + k * 92) + 'px' } : { position: 'absolute', left: '1330px', top: (430 + k * 96) + 'px' });
+  items.push({ kind: 'pop', e: c, t0: Wd('b15', a) - F1, t1: b16 - 0.02 }); cue(Wd('b15', a) + 0.06, 'tick', { i: k });
+});
+
+/* b16 Pastors: the title sits behind them; 1995 counts up on its words */
+const b17 = S0('b17');
+L({ t0: b16 - 0.3, t1: b17 + 0.25, fin: 0.45, fout: 0.45, blur: 0, html: '', style: { background: 'radial-gradient(80% 60% at 50% 55%,#4a3220 0%,#2a1a10 55%,#140b06 100%)' }, kb: [1, 1, 0, 0, 0, 0] });
+T({ b: 'b16', wi: [0], t1: b17 - 0.02, html: 'PASTORS', cls: 'cap', split: false, fx: 'blur', pos: V({ a: 'c', y: 300, fs: 168 }, { a: 'c', y: 40, fs: 250 }), sfx: 'hero', drift: 0.05, style: 'opacity:.95' });
+L({ t0: b16 - 0.1, t1: b17 + 0.25, fin: 0.55, fout: 0.45, blur: 10, html: `<img src="${IMG}pastors-cutout-1200.webp" style="object-fit:contain;object-position:50% 100%;${O === 'v' ? 'top:420px;height:1500px' : 'top:150px;height:930px'}">`, kb: [1.0, 1.03, 0, 0, 30, 0], whoosh: false, origin: '50% 100%' });
+L({ t0: b16 - 0.1, t1: b17 + 0.25, fin: 0.55, fout: 0.45, blur: 0, html: '', style: { background: 'linear-gradient(0deg,rgba(20,11,6,.96) 0%,rgba(20,11,6,.85) 14%,rgba(20,11,6,0) 34%)' }, kb: [1, 1, 0, 0, 0, 0], whoosh: false });
+T({ b: 'b16', wi: [1, 2, 3, 4], t1: b17 - 0.02, html: 'Joel and Funmi Uzoma', cls: 'body', pos: V({ a: 'c', y: 220, fs: 44 }, { x: M, y: 640, fs: 44 }) });
+T({ b: 'b16', wi: [5, 6, 7, 8], t1: b17 - 0.02, html: 'Together in ministry since', cls: 'body cream soft-shadow', pos: V({ a: 'c', y: 1530, fs: 44 }, { x: M, y: 720, fs: 40 }) });
+const yr = el('div', 'T anton gold glow-gold', '1995'); Object.assign(yr.style, O === 'v' ? { left: '0px', width: W + 'px', textAlign: 'center', top: '1590px', fontSize: '190px' } : { left: M + 'px', top: '780px', fontSize: '180px' });
+FXL({ render: (t) => { const a = Wd('b16', 9) - F1, vis = t > a && t < b17 - 0.02; yr.style.display = vis ? 'block' : 'none'; if (!vis) return; const k = eOutExpo(cl((t - a) / 0.55)); yr.textContent = String(Math.round(1900 + 95 * k)); yr.style.opacity = Math.min(cl((t - a) / 0.08), cl((b17 - 0.02 - t) / 0.25)); } });
+cue(Wd('b16', 9) + 0.55, 'ding');
+
+/* b17 Every nation. One family. */
+const b18 = S0('b18');
+L({ t0: b17 - 0.35, t1: b18 + 0.3, fin: 0.55, fout: 0.45, src: 'slots/band-congregation-2400.webp', pos: V('50% 20%', '50% 15%'), filter: 'brightness(.62)', kb: [1.05, 1.12, 0, -20, 0, 0] });
+L({ t0: b17 - 0.35, t1: b18 + 0.3, fin: 0.55, fout: 0.45, blur: 0, html: '', style: { background: 'linear-gradient(180deg,rgba(26,15,10,.7),rgba(26,15,10,.15) 40%,rgba(26,15,10,.85))' }, kb: [1, 1, 0, 0, 0, 0], whoosh: false });
+T({ b: 'b17', wi: [0, 1], t1: b18 - 0.02, html: 'EVERY NATION.', cls: 'cap soft-shadow', fx: 'blur', pos: V({ a: 'c', y: 360, fs: capV * 0.9 }, { x: M, y: 220, fs: capV }), sfx: 'hero' });
+T({ b: 'b17', wi: [2], t1: b18 - 0.02, html: 'ONE', cls: 'cap soft-shadow', fx: 'blur', pos: V({ a: 'c', y: 1180, fs: capV }, { x: M, y: 560, fs: capV }), sfx: 'hero' });
+SCR({ b: 'b17', wi: [3], t1: b18 - 0.02, html: 'family.', cls: 'gold glow-gold', pos: V({ a: 'c', y: 1180 + capV * 0.5, fs: capV * 3.3 }, { x: M + 260, y: 560 - capV * 0.3, fs: capV * 3.0 }) });
+
+// =====================================================================================================
+// ACT 4: picture this Sunday
+// =====================================================================================================
+const b19 = S0('b19'), b20 = S0('b20'), b21 = S0('b21'), b22 = S0('b22'), b23 = S0('b23');
+/* b18 the imagination window opens onto the entrance */
+L({ t0: b18 - 0.35, t1: b20 + 0.3, fin: 0.4, fout: 0.45, blur: 0, html: '', style: { background: '#1A0F0A' }, kb: [1, 1, 0, 0, 0, 0] });
+const ent = L({ t0: b18 - 0.1, t1: b20 + 0.3, fin: 0.01, fout: 0.45, src: 'slots/ed-ribbon-1400.webp', pos: V('50% 45%', '50% 35%'), filter: 'brightness(.72)', kb: [1.12, 1.02, 0, 0, 0, 0], whoosh: false });
+ent.iris = { t0: b18, dur: 1.2 }; cue(b18 + 0.1, 'whoosh_up');
+T({ b: 'b18', wi: [1, 2], t1: b19 - 0.02, html: 'PICTURE THIS', cls: 'cap soft-shadow', fx: 'blur', pos: V({ x: M, y: 980, fs: capV * 0.92 }, { x: M, y: 420, fs: capV }), sfx: 'hero' });
+SCR({ b: 'b18', wi: [3], t1: b19 - 0.02, html: 'Sunday.', cls: 'gold glow-gold', pos: V({ x: M + 60, y: 980 + capV * 0.55, fs: capV * 3.3 }, { x: M + 200, y: 420 + capV * 0.5, fs: capV * 3.0 }) });
+/* b19 10:30, somebody's holding the door: the doors part and warm light spills out */
+const doors = el('div', '', '<div class="dl" style="position:absolute;left:0;top:0;bottom:0;width:50%;background:linear-gradient(90deg,#120a06,#2b1a10)"></div><div class="dr" style="position:absolute;right:0;top:0;bottom:0;width:50%;background:linear-gradient(270deg,#120a06,#2b1a10)"></div><div class="lt" style="position:absolute;inset:0;background:radial-gradient(40% 60% at 50% 55%,rgba(255,214,140,.55),rgba(255,191,11,0))"></div>');
+Object.assign(doors.style, { position: 'absolute', inset: '0' });
+FXL({ render: (t) => { const a = Wd('b19', 2), vis = t > b19 - 0.1 && t < b20 + 0.1; doors.style.display = vis ? 'block' : 'none'; if (!vis) return; const k = eInOutSine(cl((t - a) / 1.3)); doors.querySelector('.dl').style.transform = `translateX(${-100 * k}%)`; doors.querySelector('.dr').style.transform = `translateX(${100 * k}%)`; doors.querySelector('.lt').style.opacity = Math.sin(Math.PI * cl((t - a) / 1.8)); doors.style.opacity = Math.min(cl((t - b19 + 0.1) / 0.2), 1); } });
+cue(Wd('b19', 2), 'door');
+T({ b: 'b19', wi: [0], t1: b20 - 0.02, html: '10:30', cls: 'anton gold glow-gold', split: false, fx: 'stamp', pos: V({ x: M, y: 560, fs: 300 }, { x: M, y: 170, fs: 300 }), sfx: 'stamp', drift: 0.05 });
+T({ b: 'b19', wi: [2, 3, 4, 5, 6, 7], t1: b20 - 0.02, html: "Somebody's holding<br>the door for you.", cls: 'body soft-shadow', pos: V({ x: M, y: 920, fs: 60 }, { x: M, y: 520, fs: 58 }) });
+/* b20 the first song starts: worship photo + gold music bars rising under the word */
+L({ t0: b20 - 0.35, t1: b21 + 0.3, fin: 0.5, fout: 0.45, src: 'worship-2400.webp', pos: V('44% 50%', '50% 38%'), filter: 'brightness(.6) saturate(.9)', kb: [1.05, 1.13, 0, -14, 0, 0] });
+L({ t0: b20 - 0.35, t1: b21 + 0.3, fin: 0.5, fout: 0.45, blur: 0, kb: [1, 1, 0, 0, 0, 0], whoosh: false, draw: (ctx, t) => {
+  ctx.clearRect(0, 0, W, H); const g = ctx.createLinearGradient(0, H * 0.35, 0, H); g.addColorStop(0, 'rgba(26,15,10,0)'); g.addColorStop(1, 'rgba(26,15,10,.92)'); ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+  const n = 34, bw = (W - 2 * M) / n, k = eOutCubic(cl((t - b20) / 1.2)), base = O === 'v' ? 1500 : 980;
+  for (let i = 0; i < n; i++) { const h = k * (40 + 180 * Math.abs(Math.sin(t * (2.1 + i * 0.13) + i * 1.7)) * (0.4 + 0.6 * Math.sin(i / n * Math.PI))); ctx.fillStyle = `rgba(255,191,11,${0.35 + 0.4 * (h / 220)})`; ctx.fillRect(M + i * bw + bw * 0.2, base - h, bw * 0.6, h); }
+} });
+T({ b: 'b20', wi: [0, 1], t1: b21 - 0.02, html: 'THE FIRST', cls: 'cap soft-shadow', fx: 'blur', pos: V({ x: M, y: 820, fs: capV }, { x: M, y: 300, fs: capV }), sfx: 'hero' });
+SCR({ b: 'b20', wi: [2], t1: b21 - 0.02, html: 'song', cls: 'gold glow-gold', pos: V({ x: M + 280, y: 820 + capV * 0.4, fs: capV * 3.3 }, { x: M + 420, y: 300 + capV * 0.4, fs: capV * 3.0 }) });
+T({ b: 'b20', wi: [3], t1: b21 - 0.02, html: 'STARTS...', cls: 'cap soft-shadow', fx: 'blur', pos: V({ x: M, y: 820 + capV * 3.4, fs: capV }, { x: M, y: 300 + capV * 3.2, fs: capV }), sfx: 'hero' });
+/* b21 sit down, breathe: a gold ring breathes in and out */
+L({ t0: b21 - 0.35, t1: b22 + 0.3, fin: 0.5, fout: 0.45, src: 'slots/ed-sanctuary-1400.webp', pos: V('50% 50%', '50% 55%'), filter: 'brightness(.5) saturate(.85)', kb: [1.1, 1.03, 0, 0, 0, 0] });
+L({ t0: b21 - 0.35, t1: b22 + 0.3, fin: 0.5, fout: 0.45, blur: 0, kb: [1, 1, 0, 0, 0, 0], whoosh: false, draw: (ctx, t) => {
+  ctx.clearRect(0, 0, W, H); const cx = W / 2, cy = O === 'v' ? H * 0.42 : H * 0.5, br = 0.5 - 0.5 * Math.cos((t - b21) * Math.PI * 2 / 3.2), r = (O === 'v' ? 230 : 250) * (0.78 + 0.32 * br);
+  const g = ctx.createRadialGradient(cx, cy, r * 0.6, cx, cy, r * 1.5); g.addColorStop(0, `rgba(255,191,11,${0.18 + 0.12 * br})`); g.addColorStop(1, 'rgba(255,191,11,0)'); ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+  ctx.strokeStyle = `rgba(255,215,140,${0.65 + 0.3 * br})`; ctx.lineWidth = 4; ctx.beginPath(); ctx.arc(cx, cy, r, 0, 6.29); ctx.stroke();
+} });
+T({ b: 'b21', wi: [0, 1, 2], t1: b22 - 0.02, html: 'YOU SIT DOWN.', cls: 'cap soft-shadow', fx: 'blur', pos: V({ a: 'c', y: 1180, fs: capV * 0.8 }, { x: M, y: 140, fs: capV * 0.8 }), sfx: 'hero' });
+T({ b: 'b21', wi: [3, 4, 5], t1: b22 - 0.02, html: 'And you finally', cls: 'body', pos: V({ a: 'c', y: 1320, fs: 52 }, { x: M, y: 820, fs: 50 }) });
+SCR({ b: 'b21', wi: [6], t1: b22 - 0.02, html: 'breathe.', cls: 'gold glow-gold', pos: V({ a: 'c', y: 1340, fs: capV * 3.3 }, { x: M + 380, y: 760, fs: capV * 3.0 }), sfx: 'reveal' });
+/* b22 bring it, set it down: every burden word from act 1 falls, lands, and dissolves into light */
+L({ t0: b22 - 0.35, t1: b23 + 0.25, fin: 0.5, fout: 0.4, src: 'slots/detail-bible-1400.webp', pos: V('50% 50%', '50% 60%'), filter: 'brightness(.55) saturate(.85)', kb: [1.04, 1.12, 0, 0, 0, 0] });
+T({ b: 'b22', wi: [1, 2], t1: b23 - 0.02, html: 'BRING IT.', cls: 'cap soft-shadow', fx: 'blur', pos: V({ x: M, y: 420, fs: capV * 1.1 }, { x: M, y: 140, fs: capV * 1.1 }), sfx: 'hero' });
+const BURDENS = ['ALONE', 'LATE NIGHTS', 'THE HABIT', 'THE WORDS', 'FINE', 'EMPTY', 'THE ACHE'];
+const stack = el('div', ''); Object.assign(stack.style, { position: 'absolute', left: '0', width: W + 'px', top: (O === 'v' ? 640 : 300) + 'px', textAlign: 'center' });
+stack.innerHTML = BURDENS.map((w, i) => `<div class="bw" style="font-family:Dela;font-size:${O === 'v' ? 56 : 50}px;color:#E10304;line-height:1.15;text-shadow:0 0 20px rgba(225,3,4,.5);transform-origin:50% 50%">${w}</div>`).join('');
+const setT = Wd('b22', 3);
+FXL({ render: (t) => {
+  const vis = t > Wd('b22', 0) - 0.2 && t < b23 - 0.02; stack.style.display = vis ? 'block' : 'none'; if (!vis) return;
+  stack.querySelectorAll('.bw').forEach((d, i) => {
+    const appear = cl((t - Wd('b22', 1) - i * 0.06) / 0.25); const fall = eInCubic(cl((t - setT + 0.05 - i * 0.03) / 0.35)); const land = t > setT + 0.32 + i * 0.03;
+    const melt = cl((t - setT - 0.45) / 0.9); const y = fall * ((O === 'v' ? 760 : 470) - i * (O === 'v' ? 8 : 6));
+    d.style.transform = `translateY(${y}px) rotate(${(i % 2 ? 1 : -1) * 3 * fall}deg) scaleY(${land ? 1 - 0.35 * cl((t - setT - 0.32) / 0.08) * (1 - melt) : 1})`;
+    d.style.opacity = appear * (1 - melt); d.style.filter = `blur(${8 * melt}px)`; d.style.color = melt > 0 ? `rgb(${225 + 30 * melt},${3 + 188 * melt},${4 + 7 * melt})` : '#E10304';
+  });
+} });
+L({ t0: setT + 0.3, t1: b23 + 0.1, fin: 0.12, fout: 0.8, blur: 0, html: '', style: { background: `radial-gradient(60% 30% at 50% ${O === 'v' ? '78%' : '85%'},rgba(255,215,140,.55),rgba(255,191,11,0))` }, kb: [1, 1.15, 0, 0, 0, 0], whoosh: false });
+T({ b: 'b22', wi: [3, 4, 5], t1: b23 - 0.02, html: 'SET IT DOWN.', cls: 'anton', fx: 'stamp', pos: V({ a: 'c', y: 1500, fs: 170 }, { a: 'c', y: 860, fs: 150 }), sfx: 'stamp', sfxLast: 'slam_soft', drift: 0.04 });
+cue(setT + 0.34, 'land');
+
+// =====================================================================================================
+// CTA, ESPRESSO GOLD: come as you are (Pastor Joel's own voice sings it out)
+// =====================================================================================================
+L({ t0: b23 - 0.4, t1: 999, fin: 0.6, fout: 0.1, blur: 18, html: '', style: { background: 'radial-gradient(110% 80% at 50% 38%,#2c1a0f 0%,#1A0F0A 55%,#0b0604 100%)' }, kb: [1, 1, 0, 0, 0, 0] });
+L({ t0: b23 - 0.2, t1: 999, fin: 2.0, fout: 0.1, blur: 0, kb: [1, 1, 0, 0, 0, 0], whoosh: false, draw: embers(46, 7, 'rgba(255,191,11,A)') });
+const C0 = O === 'v' ? 380 : 150, CX = O === 'v' ? 0 : M;   // 16:9: the lockup on the left, the details in a right column
+const lockA = O === 'v' ? { a: 'c' } : { a: 'l', x: CX };
+T({ t0: b23 - 0.25, t1: 999, html: `<img src="${IMG}rccg-emblem-400.png" style="width:${O === 'v' ? 120 : 100}px;display:block;${O === 'v' ? 'margin:0 auto' : ''}">`, split: false, fx: 'blur', pos: { ...lockA, y: C0, fs: 10 }, sfx: 'chime', drift: 0.05 });
+T({ b: 'b23', wi: [0, 1], t1: 999, html: 'COME AS', cls: 'cap', fx: 'blur', pos: { ...lockA, y: C0 + (O === 'v' ? 190 : 150), fs: capV * 1.05 }, sfx: 'hero', drift: 0.05 });
+SCR({ b: 'b23', wi: [2], t1: 999, html: 'you', cls: 'gold glow-gold', pos: { ...(O === 'v' ? lockA : { a: 'l', x: CX + 60 }), y: C0 + (O === 'v' ? 230 : 190), fs: capV * 3.4 }, drift: 0.05 });
+T({ b: 'b23', wi: [3], t1: 999, html: 'ARE.', cls: 'cap', fx: 'blur', pos: { ...(O === 'v' ? lockA : { a: 'l', x: CX + 330 }), y: C0 + (O === 'v' ? 560 : 500), fs: capV * 1.05 }, sfx: 'hero', drift: 0.05 });
+const D0 = O === 'v' ? C0 + 760 : 380, DA = O === 'v' ? { a: 'c' } : { a: 'l', x: 1120 };
+T({ b: 'b24', wi: [0, 1, 2, 3], t1: 999, html: 'Sunday Worship, 10:30 am', cls: 'body', pos: { ...DA, y: D0, fs: O === 'v' ? 52 : 50 }, drift: 0.03 });
+T({ t0: Wd('b24', 3) + 0.25, t1: 999, html: '10788 Hartsook Street, Houston', cls: 'body cream', split: false, pos: { ...DA, y: D0 + 74, fs: O === 'v' ? 42 : 40 }, drift: 0.03 });
+T({ b: 'b24', wi: [4], t1: 999, html: '<span class="pill">PLAN YOUR VISIT</span>', split: false, fx: 'stamp', pos: { ...DA, y: D0 + 190, fs: 30 }, sfx: 'cta', drift: 0.03 });
+T({ b: 'b24', wi: [8], t1: 999, html: 'RCCGDAYSPRING.ORG', cls: 'lab gold', split: false, pos: { ...DA, y: D0 + 330, fs: 30 }, drift: 0.03 });
+
+// ---------- grain + vignette ----------
+const gc = document.createElement('canvas'); gc.width = gc.height = 256; const gx = gc.getContext('2d'), gid = gx.createImageData(256, 256), rr = seeded(7);
+for (let i = 0; i < gid.data.length; i += 4) { const v = 128 + (rr() - 0.5) * 120; gid.data[i] = gid.data[i + 1] = gid.data[i + 2] = v; gid.data[i + 3] = 255; }
+gx.putImageData(gid, 0, 0);
+const grain = el('div', 'L'); Object.assign(grain.style, { background: `url(${gc.toDataURL()})`, mixBlendMode: 'overlay', opacity: '.08', inset: '-40px' });
+const vig = el('div', 'L'); vig.style.background = 'radial-gradient(120% 90% at 50% 50%,rgba(0,0,0,0) 55%,rgba(0,0,0,.42) 100%)';
+
+// ---------- render ----------
+let lastSite = -1;
+async function renderAt(t) {
+  for (const it of items) {
+    if (it.kind === 'layer') {
+      const vis = t > it.t0 && t < it.t1; it.e.style.display = vis ? 'block' : 'none'; if (!vis) continue;
+      const op = envelope(t, it.t0, it.t1, it.fin, it.fout), p = eInOutSine(cl((t - it.t0) / Math.min(30, it.t1 - it.t0)));
+      const [s0, s1, x0, x1, y0, y1] = it.kb; let tx = lerp(x0, x1, p), ty = lerp(y0, y1, p), s = lerp(s0, s1, p);
+      if (it.rise) ty = lerp(it.kb[4], 0, eOutCubic(cl((t - it.t0) / 3.0)));
+      if (it.slide) tx = lerp(W, O === 'v' ? 300 : 520, eOutExpo(cl((t - it.t0) / 0.5)));
+      it.e.style.opacity = op.toFixed(4); it.e.style.transform = `translate(${tx.toFixed(2)}px,${ty.toFixed(2)}px) scale(${s.toFixed(5)})`;
+      if (it.origin) it.e.style.transformOrigin = it.origin;
+      it.e.style.filter = it.blur ? `blur(${((1 - op) * it.blur).toFixed(2)}px)` : 'none';
+      if (it.iris) { const k = eOutCubic(cl((t - it.iris.t0) / it.iris.dur)), r = 6 + 94 * k; it.e.style.clipPath = `inset(${(50 - r / 2) * 0.9}% ${(50 - r / 2) * 0.9}% ${(50 - r / 2) * 0.9}% ${(50 - r / 2) * 0.9}% round ${40 * (1 - k)}px)`; }
+      if (it.draw) it.draw(it.ctx, t);
+    } else if (it.kind === 'text') {
+      const vis = t > it.t0 - 0.02 && t < it.t1 + 0.01; it.e.style.display = vis ? 'block' : 'none'; if (!vis) continue;
+      const pd = eInOutSine(cl((t - it.t0) / Math.max(0.5, Math.min(it.t1, DUR) - it.t0)));
+      it.e.style.transform = `translateY(${(it.sink || 0).toFixed(2)}px) scale(${(1 + it.drift * pd).toFixed(5)})`;
+      const eo = eInCubic(cl((t - (it.t1 - it.dout)) / it.dout)), f = it.F;
+      it.units.forEach((u, i) => {
+        const k0 = cl((t - it.ons[i]) / f.din), k = it.fx === 'stamp' ? eOutExpo(k0) : eOutQuint(k0);
+        const op = (k0 > 0 ? Math.max(0.12, k) : 0) * (1 - eo);
+        u.style.opacity = op.toFixed(4);
+        const sc = 1 + f.scale * (1 - (it.fx === 'stamp' ? eOutExpo(k0) : k));
+        const shake = it.fx === 'stamp' && k0 >= 1 ? Math.sin((t - it.ons[i]) * 70) * 5 * Math.exp(-(t - it.ons[i] - f.din) * 9) : 0;
+        u.style.transform = `translate(${shake.toFixed(2)}px,${(f.rise * it.fs * (1 - k) - 10 * eo).toFixed(2)}px) scale(${sc.toFixed(4)})`;
+        const b = f.blur * (1 - k) + 8 * eo; u.style.filter = b > 0.05 ? `blur(${b.toFixed(2)}px)` : 'none';
+        if (it.fx === 'script') { const w = eOutCubic(cl((t - it.ons[i]) / 0.75)); u.style.clipPath = `inset(-60% ${(100 - 100 * w).toFixed(2)}% -60% -45%)`; }
+      });
+    } else if (it.kind === 'device') {
+      const vis = t > it.t0 && t < it.t1; it.e.style.display = vis ? 'block' : 'none'; if (!vis) continue;
+      const k = eOutQuint(cl((t - it.t0) / it.din)), eo = eInCubic(cl((t - (it.t1 - it.dout)) / it.dout));
+      it.e.style.opacity = (k * (1 - eo)).toFixed(4); it.e.style.transform = `translateY(${(90 * (1 - k) - 30 * eo).toFixed(2)}px) scale(${(0.96 + 0.04 * k + 0.02 * cl((t - it.t0) / 6)).toFixed(5)})`;
+      const b = 14 * (1 - k) + 12 * eo; it.e.style.filter = b > 0.05 ? `blur(${b.toFixed(2)}px)` : 'none';
+      const fr = Math.max(0, Math.min(SITE_N - 1, Math.round((t - it.site0) * 60)));
+      if (fr !== lastSite) { lastSite = fr; scr.src = 'work/site-desktop/f' + String(fr).padStart(4, '0') + '.jpg'; await scr.decode().catch(() => {}); }
+    } else if (it.kind === 'pop') {
+      const vis = t > it.t0 && t < it.t1; it.e.style.display = vis ? 'block' : 'none'; if (!vis) continue;
+      const k = cl((t - it.t0) / 0.32), s = k < 1 ? 0.6 + 0.4 * (1 + 2.2 * Math.pow(k - 1, 3) + 1.2 * Math.pow(k - 1, 2)) : 1;
+      it.e.style.opacity = Math.min(cl(k * 4), cl((it.t1 - t) / 0.25)); it.e.style.transform = `scale(${s.toFixed(4)})`; it.e.style.filter = k < 1 ? `blur(${(6 * (1 - k)).toFixed(2)}px)` : 'none';
+    } else if (it.kind === 'fx') it.render(t);
+  }
+  const fr = Math.round(t * 60); grain.style.transform = `translate(${((fr * 37) % 40) - 20}px,${((fr * 61) % 40) - 20}px)`;
+}
+window.__ready = (async () => { await document.fonts.load('100px Dela'); await document.fonts.load('100px Pinyon'); await document.fonts.load('100px Anton'); await document.fonts.load('400 40px Inter'); await document.fonts.ready; await Promise.all(waits);
+  for (const it of items) if (it.kind === 'text') { it.e.style.display = 'block'; const r = it.e.getBoundingClientRect(), over = Math.max(r.right - (W - M * 0.6), M * 0.6 - r.left);
+    if (over > 0 && it.e.style.textAlign !== 'center') { const k = Math.max(0.55, (r.width - over) / r.width); it.fs *= k; it.e.style.fontSize = it.fs + 'px'; }
+    else if (it.e.style.textAlign === 'center' && r.width > W - M * 1.2) { const k = Math.max(0.55, (W - M * 1.2) / r.width); it.fs *= k; it.e.style.fontSize = it.fs + 'px'; } it.e.style.display = 'none'; }
+  await renderAt(0); return true; })();
+window.__wordsheet = () => items.filter((it) => it.kind === 'text' && it.word_idx).map((it, n) => ({ id: (it.b || 'x') + '_' + n, role: it.sfx || 'text', word_idx: it.word_idx, units: it.ons,
+  first_visible: it.ons.map((on) => Math.floor(on * 60) + 1) }));
+window.renderAt = renderAt; window.__cues = () => cues.sort((a, b) => a.t - b.t); window.__dur = DUR;
+</script></body></html>
