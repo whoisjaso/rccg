@@ -6,7 +6,7 @@ import { spawn } from 'child_process';
 import { mkdirSync, writeFileSync, unlinkSync } from 'fs';
 const [mode, o, out, arg] = process.argv.slice(2);
 const W = o === 'v' ? 720 : 1280, H = o === 'v' ? 1280 : 720;
-const URL = `http://localhost:8766/video/invitation/film.html?o=${o}`;
+const URL = `http://localhost:8766/video/invitation/${process.env.FILM || 'film.html'}?o=${o}`;
 const browser = await chromium.launch();
 async function open() {
   const page = await browser.newPage({ viewport: { width: W, height: H }, deviceScaleFactor: 1 });
@@ -20,10 +20,12 @@ if (mode === 'stills') {
   const page = await open();
   for (const t of arg.split(',').map(Number)) { await page.evaluate((t) => window.renderAt(t), t); writeFileSync(`${out}/${o}-${t.toFixed(2)}.png`, await shot(page)); }
   writeFileSync(`${out}/cues-${o}.json`, JSON.stringify(await page.evaluate(() => window.__cues()), null, 1));
+  if (await page.evaluate(() => !!window.__wordsheet)) writeFileSync(`${out}/wordsheet-${o}.json`, JSON.stringify({ fps: 60, text: await page.evaluate(() => window.__wordsheet()) }, null, 1));
 } else {
   const page0 = await open();
   const dur = await page0.evaluate(() => window.__dur);
   writeFileSync(out.replace(/\.mp4$/, '.cues.json'), JSON.stringify(await page0.evaluate(() => window.__cues()), null, 1));
+  if (await page0.evaluate(() => !!window.__wordsheet)) writeFileSync(out.replace(/\.mp4$/, '.wordsheet.json'), JSON.stringify({ fps: 60, text: await page0.evaluate(() => window.__wordsheet()) }, null, 1));
   await page0.close();
   const N = Math.round(dur * 60), K = parseInt(arg || '4');
   const F0 = Math.round(parseFloat(process.env.FROM || '0') * 60), F1 = process.env.TO ? Math.round(parseFloat(process.env.TO) * 60) : N;

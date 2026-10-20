@@ -1,0 +1,28 @@
+{
+  "voice": "tara",
+  "note": "One line per take. Each take is generated separately, then placed on the timeline with meaning pauses between. Spoken numbers are spelled the way they're said.",
+  "lines": [
+    {"id": "hook",    "text": "You've been carrying it alone... for a long time."},
+    {"id": "b1",      "text": "The late nights."},
+    {"id": "b2",      "text": "The habit you hide."},
+    {"id": "b3",      "text": "The words you can't take back."},
+    {"id": "b4",      "text": "The bitterness you call fine."},
+    {"id": "b5",      "text": "The empty, after the party ends."},
+    {"id": "ache",    "text": "And that quiet ache... nothing fixes."},
+    {"id": "turn",    "text": "But hear me. You are not too far gone."},
+    {"id": "turn2",   "text": "Not too late. Not too much."},
+    {"id": "verse",   "text": "Come unto me, all ye that labour and are heavy laden, and I will give you rest."},
+    {"id": "dawn",    "text": "The dayspring from on high hath visited us."},
+    {"id": "name",    "text": "Dayspring Chapel. A parish of The Redeemed Christian Church of God, right here in Houston."},
+    {"id": "home",    "text": "A home in Houston. Service times, directions, and a plan for your first Sunday."},
+    {"id": "pastors", "text": "Pastors Joel and Funmi Uzoma. Together in ministry since nineteen ninety five."},
+    {"id": "family",  "text": "Every nation. One family."},
+    {"id": "picture", "text": "So picture this Sunday."},
+    {"id": "door",    "text": "Ten thirty. Someone holds the door."},
+    {"id": "song",    "text": "The first song starts."},
+    {"id": "sit",     "text": "You sit down. You breathe."},
+    {"id": "bring",   "text": "Bring it. Set it down."},
+    {"id": "come",    "text": "Come as you are."},
+    {"id": "where",   "text": "Sunday worship, ten thirty, on Hartsook Street. Plan your visit at r c c g dayspring dot org."}
+  ]
+}
