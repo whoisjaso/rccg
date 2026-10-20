@@ -385,3 +385,5 @@ html.reduce-motion *, html.reduce-motion *::before, html.reduce-motion *::after 
 @media (max-width: 860px) { .op-campus { object-position: 70% 50%; } }
 .header:not(.is-solid) .header__left, .header:not(.is-solid) .header__right, .header:not(.is-solid) .brand { filter: drop-shadow(0 0 1.5px rgb(0 0 0 / .55)) drop-shadow(0 1px 10px rgb(0 0 0 / .45)); }
 .page-lost .header .header__left, .page-lost .header .header__right, .page-lost .header .brand { filter: none; }
+.op-group { object-position: 62% 22%; }
+@media (max-width: 860px) { .op-group { object-position: 70% 22%; } }
