@@ -140,20 +140,19 @@ text({ t0: 26.0, t1: 27.45, html: 'A parish of The Redeemed Christian Church of 
 
 /* S6a Proof: the real site, scrolled 27.4-33.0 */
 layer({ t0: 27.35, t1: 33.25, fin: 0.55, fout: 0.45, blur: 18, html: '', style: { background: 'var(--paper)' }, kb: [1, 1, 0, 0, 0, 0], wgain: 0.9 });
-text({ t0: 27.6, t1: 33.05, html: 'RCCG DAYSPRING CHAPEL', cls: 'lab taupe', pos: V({ a: 'c', y: 96, fs: 13 }, { a: 'c', y: 26, fs: 12 }), split: false, sfx: null });
-text({ t0: 27.75, t1: 33.05, html: 'A HOME IN HOUSTON.', cls: 'taupe', pos: V({ a: 'c', y: 126, fs: 42 }, { a: 'c', y: 48, fs: 34 }), stagger: 0.1, sfx: 'tick' });
+text({ t0: 27.6, t1: 33.05, html: 'RCCG DAYSPRING CHAPEL', cls: 'lab taupe', pos: V({ a: 'c', y: 250, fs: 13 }, { a: 'c', y: 26, fs: 12 }), split: false, sfx: null });
+text({ t0: 27.75, t1: 33.05, html: 'A HOME IN HOUSTON.', cls: 'taupe', pos: V({ a: 'c', y: 280, fs: 42 }, { a: 'c', y: 48, fs: 34 }), stagger: 0.1, sfx: 'tick' });
 let device, scr;
-if (O === 'v') {
-  device = el('div', 'phone'); Object.assign(device.style, { left: '150px', top: '226px', width: '420px', height: '892px' });
-  device.innerHTML = '<div class="scr" style="left:11px;top:11px;width:398px;height:870px"><img></div>';
-} else {
-  device = el('div', 'win'); Object.assign(device.style, { left: '236px', top: '112px', width: '808px', height: '540px' });
-  device.innerHTML = '<div class="bar"><i></i><i></i><i></i><span>rccgdayspring.org</span></div><div style="height:506px;overflow:hidden"><img></div>';
-}
+if (O === 'v') text({ t0: 28.6, t1: 33.05, html: 'Service times, directions and a plan<br>for your first Sunday.', cls: 'serif inks', pos: { a: 'c', y: 920, fs: 26 }, stagger: 0.06, din: 0.6, sfx: null });
+// Desktop view in both cuts: the full hero reads clean (owner, 2026-10-20)
+device = el('div', 'win');
+if (O === 'v') Object.assign(device.style, { left: '24px', top: '420px', width: '672px', height: '454px' });
+else Object.assign(device.style, { left: '236px', top: '112px', width: '808px', height: '540px' });
+device.innerHTML = `<div class="bar"><i></i><i></i><i></i><span>rccgdayspring.org</span></div><div style="height:${O === 'v' ? 420 : 506}px;overflow:hidden"><img></div>`;
 scr = device.querySelector('img');
 items.push({ kind: 'device', e: device, t0: 27.55, t1: 33.1, din: 0.95, dout: 0.45 });
 cues.push({ t: 27.55 + 0.35, type: 'tick' });
-const SITE_DIR = O === 'v' ? 'work/site-mobile/' : 'work/site-desktop/';
+const SITE_DIR = 'work/site-desktop/';
 const SITE_T0 = 27.75, SITE_N = 324;
 
 /* S6b Pastors 33.0-35.8: their name behind them */
