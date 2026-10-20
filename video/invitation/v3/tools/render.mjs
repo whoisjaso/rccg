@@ -14,11 +14,12 @@ async function open() {
   await page.evaluate(() => window.__ready);
   return page;
 }
-const shot = (page) => page.screenshot({ type: 'png', clip: { x: 0, y: 0, width: W, height: H } });
+const JPEG = process.env.FRAMES !== 'png';   // q96 JPEG frames: about 2x faster than PNG at 1080p; FRAMES=png for a lossless pass
+const shot = (page) => page.screenshot(JPEG ? { type: 'jpeg', quality: 96, clip: { x: 0, y: 0, width: W, height: H } } : { type: 'png', clip: { x: 0, y: 0, width: W, height: H } });
 if (mode === 'stills') {
   mkdirSync(out, { recursive: true });
   const page = await open();
-  for (const t of arg.split(',').map(Number)) { await page.evaluate((t) => window.renderAt(t), t); writeFileSync(`${out}/${o}-${t.toFixed(2)}.png`, await shot(page)); }
+  for (const t of arg.split(',').map(Number)) { await page.evaluate((t) => window.renderAt(t), t); writeFileSync(`${out}/${o}-${t.toFixed(2)}.${JPEG ? 'jpg' : 'png'}`, await shot(page)); }
   writeFileSync(`${out}/cues-${o}.json`, JSON.stringify(await page.evaluate(() => window.__cues()), null, 1));
   if (await page.evaluate(() => !!window.__wordsheet)) writeFileSync(`${out}/wordsheet-${o}.json`, JSON.stringify({ fps: 60, text: await page.evaluate(() => window.__wordsheet()) }, null, 1));
 } else {
@@ -33,7 +34,7 @@ if (mode === 'stills') {
   await Promise.all([...Array(K).keys()].map(async (k) => {
     const a = F0 + Math.floor(((F1 - F0) * k) / K), b = F0 + Math.floor(((F1 - F0) * (k + 1)) / K);
     const part = `${out}.part${k}.mkv`; parts[k] = part;
-    const ff = spawn('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'image2pipe', '-framerate', '60', '-c:v', 'png', '-i', '-', '-c:v', 'libx264', '-preset', 'veryfast', '-qp', '0', '-pix_fmt', 'yuv444p', '-r', '60', part]);
+    const ff = spawn('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'image2pipe', '-framerate', '60', '-c:v', JPEG ? 'mjpeg' : 'png', '-i', '-', '-c:v', 'libx264', '-preset', 'veryfast', '-qp', '0', '-pix_fmt', 'yuv444p', '-r', '60', part]);
     const page = await open();
     for (let f = a; f < b; f++) {
       await page.evaluate((t) => window.renderAt(t), f / 60);
