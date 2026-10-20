@@ -389,3 +389,5 @@ html.reduce-motion *, html.reduce-motion *::before, html.reduce-motion *::after 
 @media (max-width: 860px) { .op-group { object-position: 70% 22%; } }
 .op-orig { object-position: 50% 0%; }
 @media (max-width: 860px) { .op-orig { object-position: 52% 0%; } }
+.op-candles { object-position: 65% 50%; }
+@media (max-width: 860px) { .op-candles { object-position: 72% 50%; } }
